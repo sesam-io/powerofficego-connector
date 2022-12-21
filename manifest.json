@@ -1,0 +1,13 @@
+{
+  "additional_parameters": {
+    "application_key": {},
+    "base_url": {},
+    "client_key": {}
+  },
+  "datatypes": {
+    "customer": {
+      "template": "templates/customer.json"
+    }
+  },
+  "system-template": "templates/system.json"
+}

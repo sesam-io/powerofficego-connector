@@ -1,0 +1,17 @@
+{
+    "_id": "{{@ system @}}",
+    "oauth2": {
+        "client_id": "{{@ application_key @}}",
+        "client_secret": "{{@ client_key @}}",
+        "token_url": "{{@ base_url @}}/OAuth/Token"
+    },
+    "operations": {
+        "list-customer": {
+            "method": "GET",
+            "url": "/Customer"
+        }
+    },
+    "type": "system:rest",
+    "url_pattern": "{{@ base_url @}}/%s",
+    "verify_ssl": true
+}

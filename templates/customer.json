@@ -1,0 +1,12 @@
+{
+    "_id": "{{@ system @}}-customer-collect",
+    "namespaced_identifiers": false,
+    "source": {
+        "id_expression": "{{ id }}",
+        "operation": "list-customer",
+        "payload_property": "data",
+        "system": "{{@ system @}}",
+        "type": "rest"
+    },
+    "type": "pipe"
+}
