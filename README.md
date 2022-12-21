@@ -1,4 +1,4 @@
-# PowerOffice Goj
+# PowerOffice Go
 A Sesam connector for PowerOffice Go
 
 # How to test
