@@ -1,7 +1,7 @@
 {
   "additional_parameters": {
     "application_key": {},
-    "base_url": {},
+    "base_url": {}
   },
   "datatypes": {
     "customer": {
