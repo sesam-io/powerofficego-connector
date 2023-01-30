@@ -1,17 +1,30 @@
 {
-    "_id": "{{@ system @}}",
-    "oauth2": {
-        "client_id": "{{@ application_key @}}",
-        "client_secret": "$SECRET(api_key)",
-        "token_url": "{{@ base_url @}}/OAuth/Token"
-    },
-    "operations": {
-        "list-customer": {
-            "method": "GET",
-            "url": "/Customer"
-        }
-    },
-    "type": "system:rest",
-    "url_pattern": "{{@ base_url @}}/%s",
-    "verify_ssl": true
+  "_id": "{{@ system @}}",
+  "oauth2": {
+    "client_id": "{{@ application_key @}}",
+    "client_secret": "$SECRET(jwt)",
+    "token_url": "{{@ base_url @}}/OAuth/Token"
+  },
+  "operations": {
+    "list-customer": {
+      "headers": {
+        "X-Sesam-Page": "{% if (previous_body is defined and previous_body.count is defined and previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{% if previous_body.data|length > 0 %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}{{ previous_request_headers['X-Sesam-Page'] }}{% endif %}{% else %}0{% endif %}"
+      },
+      "method": "GET",
+      "next_page_link": "{{@ base_url @}}/{{ properties.datatype|capitalize }}",
+      "next_page_termination_strategy": [
+        "same-next-page-request",
+        "empty-result"
+      ],
+      "params": {
+        "$orderby": "{{ properties.ordering }}",
+        "$skip": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ properties.top|int*previous_request_headers['X-Sesam-Page']|int }}{% else %}sesam:markskip{% endif %}",
+        "$top": "{{ properties.top }}"
+      },
+      "url": "/{{ properties.datatype|capitalize }}"
+    }
+  },
+  "type": "system:rest",
+  "url_pattern": "{{@ base_url @}}/%s",
+  "verify_ssl": true
 }

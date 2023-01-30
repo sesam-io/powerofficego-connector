@@ -1,25 +1,9 @@
 {
-  "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+  "_id": "{{@ system @}}-customer-collect",
   "namespaced_identifiers": false,
   "source": {
     "id_expression": "{{ id }}",
-    "operation": "list-{{@ datatype @}}",
-    "operations": {
-      "list-{{@ datatype @}}": {
-        "method": "GET",
-        "next_page_link": "{{@ base_url @}}/{{ properties.datatype|capitalize }}?$skip={{ (body.data is defined and body.data|length > 0 and properties.skip + '20') or '0' }}&$orderby={{ properties.ordering }}&$top={{ properties.top }}",
-        "next_page_termination_strategy": [
-          "next-page-link-empty",
-          "empty-result"
-        ],
-        "params": {
-          "$orderby": "Name asc",
-          "$skip": 0,
-          "$top": 20
-        },
-        "url": "/{{ properties.datatype|capitalize }}"
-      }
-    },
+    "operation": "list-customer",
     "payload_property": "data",
     "properties": {
       "datatype": "{{@ datatype @}}",
@@ -28,6 +12,7 @@
       "top": "20"
     },
     "system": "{{@ system @}}",
+    "trace": true,
     "type": "rest"
   },
   "type": "pipe"
