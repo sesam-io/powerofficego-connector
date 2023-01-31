@@ -1,12 +1,19 @@
 {
-    "_id": "{{@ system @}}-customer-collect",
-    "namespaced_identifiers": false,
-    "source": {
-        "id_expression": "{{ id }}",
-        "operation": "list-customer",
-        "payload_property": "data",
-        "system": "{{@ system @}}",
-        "type": "rest"
+  "_id": "{{@ system @}}-customer-collect",
+  "namespaced_identifiers": false,
+  "source": {
+    "id_expression": "{{ id }}",
+    "operation": "list-customer",
+    "payload_property": "data",
+    "properties": {
+      "datatype": "{{@ datatype @}}",
+      "ordering": "Name asc",
+      "skip": "0",
+      "top": "20"
     },
-    "type": "pipe"
+    "system": "{{@ system @}}",
+    "trace": true,
+    "type": "rest"
+  },
+  "type": "pipe"
 }
