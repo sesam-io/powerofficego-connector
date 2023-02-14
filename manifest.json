@@ -3,11 +3,11 @@
     "application_key": {},
     "base_url": {}
   },
+  "auth": "api_key",
   "datatypes": {
     "customer": {
       "template": "templates/customer.json"
     }
   },
-  "system-template": "templates/system.json",
-  "auth": "api_key"
+  "system-template": "templates/system.json"
 }
