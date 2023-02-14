@@ -6,9 +6,9 @@
     "token_url": "{{@ base_url @}}/OAuth/Token"
   },
   "operations": {
-    "list-customer": {
+    "list": {
       "headers": {
-        "X-Sesam-Page": "{% if (previous_body is defined and previous_body.count is defined and previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{% if previous_body.data|length > 0 %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}{{ previous_request_headers['X-Sesam-Page'] }}{% endif %}{% else %}0{% endif %}"
+        "X-Sesam-Page": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}1{% endif %}"
       },
       "method": "GET",
       "next_page_link": "{{@ base_url @}}/{{ properties.datatype|capitalize }}",
@@ -18,7 +18,7 @@
       ],
       "params": {
         "$orderby": "{{ properties.ordering }}",
-        "$skip": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ properties.top|int*previous_request_headers['X-Sesam-Page']|int }}{% else %}sesam:markskip{% endif %}",
+        "$skip": "{% if (previous_request_headers['X-Sesam-Page'] is defined) %}{{ 10|int*headers['X-Sesam-Page']|int }}{% else %}0{% endif %}sesam:markjson",
         "$top": "{{ properties.top }}"
       },
       "url": "/{{ properties.datatype|capitalize }}"
