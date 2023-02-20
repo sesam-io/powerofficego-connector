@@ -18,10 +18,10 @@
       ],
       "params": {
         "$orderby": "{{ properties.ordering }}",
-        "$skip": "{% if (previous_request_headers['X-Sesam-Page'] is defined) %}{{ 10|int*headers['X-Sesam-Page']|int }}{% else %}0{% endif %}sesam:markjson",
+        "$skip": "{% if (previous_request_headers['X-Sesam-Page'] is defined) %}{{ properties.top|int*(headers['X-Sesam-Page']|int-1) }}{% else %}0{% endif %}sesam:markjson",
         "$top": "{{ properties.top }}"
       },
-      "url": "/{{ properties.datatype|capitalize }}"
+      "url": "{{ properties.datatype|capitalize }}"
     }
   },
   "type": "system:rest",
