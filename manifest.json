@@ -7,6 +7,15 @@
   "datatypes": {
     "customer": {
       "template": "templates/customer.json"
+    },
+    "product": {
+      "template": "templates/customer.json"
+    },
+    "productgroup": {
+      "template": "templates/productgroup.json"
+    },
+    "supplier": {
+      "template": "templates/customer.json"
     }
   },
   "system-template": "templates/system.json"

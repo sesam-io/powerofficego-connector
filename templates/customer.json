@@ -12,7 +12,6 @@
       "top": "20"
     },
     "system": "{{@ system @}}",
-    "trace": true,
     "type": "rest"
   },
   "type": "pipe"
