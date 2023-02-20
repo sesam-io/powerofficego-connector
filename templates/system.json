@@ -6,6 +6,10 @@
     "token_url": "{{@ base_url @}}/OAuth/Token"
   },
   "operations": {
+    "alternate_list": {
+      "method": "GET",
+      "url": "{{ properties.datatype|capitalize }}"
+    },
     "list": {
       "headers": {
         "X-Sesam-Page": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}1{% endif %}"
