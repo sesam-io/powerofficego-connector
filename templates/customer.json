@@ -1,12 +1,12 @@
 {
-  "_id": "{{@ system @}}-customer-collect",
+  "_id": "{{@ system @}}-{{@ datatype @}}-collect",
   "namespaced_identifiers": false,
   "source": {
     "id_expression": "{{ id }}",
     "operation": "list",
     "payload_property": "data",
     "properties": {
-      "datatype": "customer",
+      "datatype": "{{@ datatype @}}",
       "ordering": "Name asc",
       "skip": "0",
       "top": "20"
