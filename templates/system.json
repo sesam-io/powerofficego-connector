@@ -26,6 +26,10 @@
         "$top": "{{ properties.top }}"
       },
       "url": "{{ properties.datatype|capitalize }}"
+    },
+    "lookup": {
+      "method": "GET",
+      "url": "{{ properties.datatype|capitalize }}/{{ entity.id }}"
     }
   },
   "type": "system:rest",

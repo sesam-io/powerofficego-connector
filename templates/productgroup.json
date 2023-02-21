@@ -1,0 +1,18 @@
+{
+  "_id": "{{@ system @}}-productgroup-collect",
+  "namespaced_identifiers": false,
+  "source": {
+    "id_expression": "{{ id }}",
+    "operation": "list",
+    "payload_property": "data",
+    "properties": {
+      "datatype": "productgroup",
+      "ordering": "Name asc",
+      "skip": "0",
+      "top": "20"
+    },
+    "system": "{{@ system @}}",
+    "type": "rest"
+  },
+  "type": "pipe"
+}

@@ -14,6 +14,15 @@
     "employee": {
       "template": "templates/employee.json"
     },
+    "outgoinginvoice": {
+      "template": "templates/outgoinginvoice.json"
+    },
+    "outgoinginvoiceline": {
+      "template": "templates/outgoinginvoiceline.json"
+    },
+    "outgoinginvoicelistitem": {
+      "template": "templates/outgoinginvoicelistitem.json"
+    },
     "product": {
       "template": "templates/customer.json"
     },

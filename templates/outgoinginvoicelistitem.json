@@ -1,0 +1,15 @@
+{
+  "_id": "{{@ system @}}-outgoinginvoicelistitem-collect",
+  "namespaced_identifiers": false,
+  "source": {
+    "id_expression": "{{ id }}",
+    "operation": "alternate_list",
+    "payload_property": "data",
+    "properties": {
+      "datatype": "outgoinginvoice/List"
+    },
+    "system": "{{@ system @}}",
+    "type": "rest"
+  },
+  "type": "pipe"
+}

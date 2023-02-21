@@ -1,0 +1,48 @@
+{
+  "_id": "{{@ system @}}-outgoinginvoice-collect",
+  "namespaced_identifiers": false,
+  "source": {
+    "dataset": "{{@ system @}}-outgoinginvoicelistitem-collect",
+    "type": "dataset"
+  },
+  "transform": [
+    {
+      "id_expression": "{{ id }}",
+      "operation": "lookup",
+      "payload_property": "data",
+      "properties": {
+        "datatype": "outgoinginvoice"
+      },
+      "replace_entity": true,
+      "system": "{{@ system @}}",
+      "type": "rest"
+    },
+    {
+      "rules": {
+        "default": [
+          [
+            "add",
+            "_id",
+            "_S.data.id"
+          ],
+          [
+            "merge",
+            [
+              "apply",
+              "flatten",
+              "_S.data"
+            ]
+          ]
+        ],
+        "flatten": [
+          [
+            "copy",
+            "*"
+          ]
+        ]
+      },
+      "type": "dtl"
+    }
+  ],
+  "type": "pipe"
+}
