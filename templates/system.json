@@ -6,6 +6,10 @@
     "token_url": "{{@ base_url @}}/OAuth/Token"
   },
   "operations": {
+    "alternate_list": {
+      "method": "GET",
+      "url": "{{ properties.datatype|capitalize }}"
+    },
     "list": {
       "headers": {
         "X-Sesam-Page": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}1{% endif %}"
@@ -17,11 +21,16 @@
         "empty-result"
       ],
       "params": {
+        "$filter": "{% if since is defined and since is not none %}(Since ge DateTime'{{ since }}'){% else %}(Since ge DateTime'2019-12-15'){% endif %}",
         "$orderby": "{{ properties.ordering }}",
         "$skip": "{% if (previous_request_headers['X-Sesam-Page'] is defined) %}{{ properties.top|int*(headers['X-Sesam-Page']|int-1) }}{% else %}0{% endif %}sesam:markjson",
         "$top": "{{ properties.top }}"
       },
       "url": "{{ properties.datatype|capitalize }}"
+    },
+    "lookup": {
+      "method": "GET",
+      "url": "{{ properties.datatype|capitalize }}/{{ entity.id }}"
     }
   },
   "type": "system:rest",

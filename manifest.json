@@ -5,11 +5,23 @@
   },
   "auth": "api_key",
   "datatypes": {
+    "contactperson": {
+      "template": "templates/contactperson.json"
+    },
     "customer": {
       "template": "templates/customer.json"
     },
+    "employee": {
+      "template": "templates/employee.json"
+    },
+    "outgoinginvoice": {
+      "template": "templates/outgoinginvoice.json"
+    },
+    "outgoinginvoicelistitem": {
+      "template": "templates/outgoinginvoicelistitem.json"
+    },
     "product": {
-      "template": "templates/customer.json"
+      "template": "templates/product.json"
     },
     "productgroup": {
       "template": "templates/productgroup.json"

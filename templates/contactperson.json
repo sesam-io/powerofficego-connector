@@ -37,13 +37,10 @@
     "namespaced_identifiers": false,
     "source": {
       "id_expression": "{{ id }}",
-      "operation": "list",
+      "operation": "alternate_list",
       "payload_property": "data",
       "properties": {
-        "datatype": "{{@ datatype @}}",
-        "ordering": "Name asc",
-        "skip": "0",
-        "top": "20"
+        "datatype": "partycontactperson"
       },
       "system": "{{@ system @}}",
       "type": "rest"
