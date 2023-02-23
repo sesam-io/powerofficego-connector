@@ -21,6 +21,7 @@
         "empty-result"
       ],
       "params": {
+        "$filter": "{% if since is defined and since is not none %}(Since ge DateTime'{{ since }}'){% else %}(Since ge DateTime'2019-12-15'){% endif %}",
         "$orderby": "{{ properties.ordering }}",
         "$skip": "{% if (previous_request_headers['X-Sesam-Page'] is defined) %}{{ properties.top|int*(headers['X-Sesam-Page']|int-1) }}{% else %}0{% endif %}sesam:markjson",
         "$top": "{{ properties.top }}"

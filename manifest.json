@@ -17,14 +17,11 @@
     "outgoinginvoice": {
       "template": "templates/outgoinginvoice.json"
     },
-    "outgoinginvoiceline": {
-      "template": "templates/outgoinginvoiceline.json"
-    },
     "outgoinginvoicelistitem": {
       "template": "templates/outgoinginvoicelistitem.json"
     },
     "product": {
-      "template": "templates/customer.json"
+      "template": "templates/product.json"
     },
     "productgroup": {
       "template": "templates/productgroup.json"
