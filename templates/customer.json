@@ -45,8 +45,11 @@
         "skip": "0",
         "top": "20"
       },
+      "since_property_name": "since",
+      "supports_since": true,
       "system": "{{@ system @}}",
-      "type": "rest"
+      "type": "rest",
+      "updated_expression": "{{ lastChanged|truncate(10, True, '') }}"
     },
     "transform": {
       "properties": {
