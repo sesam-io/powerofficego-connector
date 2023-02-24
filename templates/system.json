@@ -2,7 +2,7 @@
   "_id": "{{@ system @}}",
   "oauth2": {
     "client_id": "{{@ application_key @}}",
-    "client_secret": "$SECRET(jwt)",
+    "client_secret": "$SECRET(api_key)",
     "token_url": "{{@ base_url @}}/OAuth/Token"
   },
   "operations": {
