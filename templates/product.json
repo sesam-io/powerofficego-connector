@@ -10,7 +10,8 @@
       "operation": "alternate_list",
       "payload_property": "data",
       "properties": {
-        "datatype": "{{@ datatype @}}"
+        "datatype": "{{@ datatype @}}",
+        "since_param": "LastChanged"
       },
       "since_property_name": "since",
       "supports_since": true,
@@ -20,7 +21,7 @@
     },
     "transform": {
       "properties": {
-        "primary_key": "{{ id }}",
+        "primary_key": "id",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
       "template": "transform-collect-rest",
@@ -49,7 +50,7 @@
     },
     "transform": {
       "properties": {
-        "primary_key": "{{ id }}",
+        "primary_key": "id",
         "rest_system": "{{@ system @}}",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },

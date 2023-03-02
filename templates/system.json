@@ -2,15 +2,40 @@
   "_id": "{{@ system @}}",
   "oauth2": {
     "client_id": "{{@ application_key @}}",
-    "client_secret": "$SECRET(api_key)",
+    "client_secret": "$SECRET(jwt)",
     "token_url": "{{@ base_url @}}/OAuth/Token"
   },
   "operations": {
+    "alternate_delete": {
+      "method": "DELETE",
+      "url": "{{ properties.datatype1 }}/{{ entity['$source'].partyId }}/{{ properties.datatype2 }}/{{ entity.id }}"
+    },
+    "alternate_insert": {
+      "method": "POST",
+      "url": "{{ properties.datatype1 }}/{{ entity['$source'].partyId }}/{{ properties.datatype2 }}"
+    },
     "alternate_list": {
       "method": "GET",
       "params": {
-        "$filter": "{% if since is defined and since is not none %}(LastChanged ge datetimeoffset'{{ since }}'){% else %}(LastChanged ge datetimeoffset'1970-01-01'){% endif %}"
+        "$filter": "{% if since is defined and since is not none %}({{ properties.since_param }} ge datetimeoffset'{{ since }}'){% else %}({{ properties.since_param }} ge datetimeoffset'1970-01-01'){% endif %}"
       },
+      "url": "{{ properties.datatype|capitalize }}"
+    },
+    "alternate_lookup": {
+      "method": "GET",
+      "payload_property": "data",
+      "url": "{{ properties.datatype1 }}/{{ entity['$source'].partyId }}/{{ properties.datatype2 }}/{{ entity.id }}"
+    },
+    "alternate_update": {
+      "method": "POST",
+      "url": "{{ properties.datatype1 }}/{{ entity['$source'].partyId }}/{{ properties.datatype2 }}"
+    },
+    "delete": {
+      "method": "DELETE",
+      "url": "{{ properties.datatype|capitalize }}/{{ entity.id }}"
+    },
+    "insert": {
+      "method": "POST",
       "url": "{{ properties.datatype|capitalize }}"
     },
     "list": {
@@ -24,7 +49,7 @@
         "empty-result"
       ],
       "params": {
-        "$filter": "{% if since is defined and since is not none %}(LastChanged ge datetimeoffset'{{ since }}'){% else %}(LastChanged ge datetimeoffset'1970-01-01'){% endif %}",
+        "$filter": "{% if since is defined and since is not none %}({{ properties.since_param }} ge datetimeoffset'{{ since }}'){% else %}({{ properties.since_param }} ge datetimeoffset'1970-01-01'){% endif %}",
         "$orderby": "{{ properties.ordering }}",
         "$skip": "{% if (previous_request_headers['X-Sesam-Page'] is defined) %}{{ properties.top|int*(headers['X-Sesam-Page']|int-1) }}{% else %}0{% endif %}sesam:markjson",
         "$top": "{{ properties.top }}"
@@ -33,7 +58,12 @@
     },
     "lookup": {
       "method": "GET",
+      "payload_property": "data",
       "url": "{{ properties.datatype|capitalize }}/{{ entity.id }}"
+    },
+    "update": {
+      "method": "POST",
+      "url": "{{ properties.datatype|capitalize }}"
     }
   },
   "type": "system:rest",

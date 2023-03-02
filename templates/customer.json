@@ -20,7 +20,19 @@
     },
     "transform": {
       "properties": {
-        "primary_key": "{{ id }}",
+        "operation_delete_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_insert_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_lookup_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_update_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "primary_key": "id",
         "rest_system": "{{@ system @}}",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
@@ -42,6 +54,7 @@
       "properties": {
         "datatype": "{{@ datatype @}}",
         "ordering": "Name asc",
+        "since_param": "LastChanged",
         "skip": "0",
         "top": "20"
       },
@@ -53,7 +66,7 @@
     },
     "transform": {
       "properties": {
-        "primary_key": "{{ id }}",
+        "primary_key": "id",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
       "template": "transform-collect-rest",
