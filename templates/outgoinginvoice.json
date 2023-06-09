@@ -37,7 +37,7 @@
       },
       {
         "properties": {
-          "primary_key": "{{ id }}",
+          "primary_key": "_S.id",
           "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
         },
         "template": "transform-collect-rest",
@@ -67,7 +67,7 @@
     },
     "transform": {
       "properties": {
-        "primary_key": "{{ id }}",
+        "primary_key": "_S.id",
         "rest_system": "{{@ system @}}",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
