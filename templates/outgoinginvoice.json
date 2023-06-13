@@ -57,6 +57,9 @@
         "operation_update_properties": {
           "datatype": "{{@ datatype @}}"
         },
+        "operation_delete_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
         "primary_key": "id",
         "rest_system": "{{@ system @}}",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
