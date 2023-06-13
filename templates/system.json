@@ -47,6 +47,11 @@
       "method": "POST",
       "payload-type": "json",
       "payload_property": "data"
+    },
+    "delete": {
+      "method": "DELETE",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}/{{ entity.id }}"
     }
   },
   "type": "system:rest",
