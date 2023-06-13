@@ -11,33 +11,13 @@
     },
     "transform": [
       {
-        "operation": "lookup",
         "properties": {
-          "datatype": "{{@ datatype @}}"
-        },
-        "replace_entity": true,
-        "system": "{{@ system @}}",
-        "type": "rest"
-      },
-      {
-        "rules": {
-          "default": [
-            [
-              "merge",
-              "_S.data"
-            ],
-            [
-              "add",
-              "_id",
-              "_S.data.id"
-            ]
-          ]
-        },
-        "type": "dtl"
-      },
-      {
-        "properties": {
+          "operation_lookup": "lookup",
+          "operation_lookup_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
           "primary_key": "id",
+          "rest_system": "{{@ system @}}",
           "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
         },
         "template": "transform-collect-rest",
@@ -66,13 +46,22 @@
       "type": "dataset"
     },
     "transform": {
+      "type": "template",
       "properties": {
+        "operation_insert_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_lookup_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_update_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
         "primary_key": "id",
         "rest_system": "{{@ system @}}",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
-      "template": "transform-share-rest",
-      "type": "template"
+      "template": "transform-share-rest"
     },
     "type": "pipe"
   }

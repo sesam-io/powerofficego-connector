@@ -11,14 +11,20 @@
       "params": {
         "$filter": "{% if since is defined and since is not none %}(LastChanged ge datetimeoffset'{{ since }}'){% else %}(LastChanged ge datetimeoffset'1970-01-01'){% endif %}"
       },
-      "url": "{{ properties.datatype|capitalize }}"
+      "url": "{{ properties.datatype }}"
+    },
+    "insert": {
+      "url": "{{ properties.datatype }}",
+      "method": "POST",
+      "payload-type": "json",
+      "payload_property": "data"
     },
     "list": {
       "headers": {
         "X-Sesam-Page": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}1{% endif %}"
       },
       "method": "GET",
-      "next_page_link": "{{@ base_url @}}/{{ properties.datatype|capitalize }}",
+      "next_page_link": "{{@ base_url @}}/{{ properties.datatype }}",
       "next_page_termination_strategy": [
         "same-next-page-request",
         "empty-result"
@@ -29,11 +35,18 @@
         "$skip": "{% if (previous_request_headers['X-Sesam-Page'] is defined) %}{{ properties.top|int*(headers['X-Sesam-Page']|int-1) }}{% else %}0{% endif %}sesam:markjson",
         "$top": "{{ properties.top }}"
       },
-      "url": "{{ properties.datatype|capitalize }}"
+      "url": "{{ properties.datatype }}"
     },
     "lookup": {
       "method": "GET",
-      "url": "{{ properties.datatype|capitalize }}/{{ entity.id }}"
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}/{{ entity.id }}"
+    },
+    "update": {
+      "url": "{{ properties.datatype }}",
+      "method": "POST",
+      "payload-type": "json",
+      "payload_property": "data"
     }
   },
   "type": "system:rest",
