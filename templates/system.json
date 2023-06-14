@@ -13,11 +13,27 @@
       },
       "url": "{{ properties.datatype }}"
     },
-    "insert": {
-      "url": "{{ properties.datatype }}",
+    "contact_insert": {
       "method": "POST",
       "payload-type": "json",
-      "payload_property": "data"
+      "payload_property": "data",
+      "url": "{{ properties.parenttype }}/{{ entity['$source']['partyId'] }}/{{ properties.datatype }}"
+    },
+    "contact_lookup": {
+      "method": "GET",
+      "payload_property": "data",
+      "url": "{{ properties.parenttype }}/{{ entity['$source']['partyId'] }}/{{ properties.datatype }}/{{ entity.id }}"
+    },
+    "delete": {
+      "method": "DELETE",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}/{{ entity.id }}"
+    },
+    "insert": {
+      "method": "POST",
+      "payload-type": "json",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}"
     },
     "list": {
       "headers": {
@@ -43,15 +59,10 @@
       "url": "{{ properties.datatype }}/{{ entity.id }}"
     },
     "update": {
-      "url": "{{ properties.datatype }}",
       "method": "POST",
       "payload-type": "json",
-      "payload_property": "data"
-    },
-    "delete": {
-      "method": "DELETE",
       "payload_property": "data",
-      "url": "{{ properties.datatype }}/{{ entity.id }}"
+      "url": "{{ properties.datatype }}"
     }
   },
   "type": "system:rest",

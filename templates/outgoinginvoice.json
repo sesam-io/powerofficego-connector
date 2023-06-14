@@ -6,7 +6,7 @@
     ],
     "namespaced_identifiers": false,
     "source": {
-      "dataset": "{{@ system @}}-outgoinginvoicelistitem-collect",
+      "dataset": "{{@ system @}}-{{@ datatype @}}listitem-collect",
       "type": "dataset"
     },
     "transform": [
@@ -46,8 +46,11 @@
       "type": "dataset"
     },
     "transform": {
-      "type": "template",
       "properties": {
+        "enable_deletes": true,
+        "operation_delete_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
         "operation_insert_properties": {
           "datatype": "{{@ datatype @}}"
         },
@@ -57,14 +60,12 @@
         "operation_update_properties": {
           "datatype": "{{@ datatype @}}"
         },
-        "operation_delete_properties": {
-          "datatype": "{{@ datatype @}}"
-        },
         "primary_key": "id",
         "rest_system": "{{@ system @}}",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
-      "template": "transform-share-rest"
+      "template": "transform-share-rest",
+      "type": "template"
     },
     "type": "pipe"
   }
