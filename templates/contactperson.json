@@ -13,6 +13,7 @@
         "datatype": "party{{@ datatype @}}"
       },
       "since_property_name": "since",
+      "since_property_location": "manual",
       "supports_since": true,
       "system": "{{@ system @}}",
       "type": "rest",
