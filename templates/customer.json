@@ -13,7 +13,7 @@
         "datatype": "{{@ datatype @}}",
         "ordering": "Name asc",
         "skip": "0",
-        "top": "20"
+        "top": "5000"
       },
       "since_property_name": "since",
       "supports_since": true,

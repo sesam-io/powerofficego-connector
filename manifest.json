@@ -18,10 +18,10 @@
       "template": "templates/outgoinginvoice.json"
     },
     "product": {
-      "template": "templates/product.json"
+      "template": "templates/employee.json"
     },
     "productgroup": {
-      "template": "templates/productgroup.json"
+      "template": "templates/employee.json"
     },
     "supplier": {
       "template": "templates/customer.json"
