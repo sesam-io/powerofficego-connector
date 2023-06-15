@@ -17,9 +17,6 @@
     "outgoinginvoice": {
       "template": "templates/outgoinginvoice.json"
     },
-    "outgoinginvoicelistitem": {
-      "template": "templates/outgoinginvoicelistitem.json"
-    },
     "product": {
       "template": "templates/product.json"
     },
