@@ -1,47 +1,5 @@
 [
   {
-    "_id": "{{@ system @}}-{{@ datatype @}}-share",
-    "add_namespaces": false,
-    "batch_size": 1,
-    "compaction": {
-      "keep_versions": 100
-    },
-    "exclude_completeness": [
-      "{{@ system @}}-{{@ datatype @}}-share"
-    ],
-    "namespaced_identifiers": false,
-    "sink": {
-      "deletion_tracking": false,
-      "set_initial_offset": "onload"
-    },
-    "source": {
-      "dataset": "{{@ system @}}-{{@ datatype @}}-transform",
-      "type": "dataset"
-    },
-    "transform": {
-      "properties": {
-        "operation_insert_properties": {
-          "datatype": "{{@ datatype @}}"
-        },
-        "operation_lookup_properties": {
-          "datatype": "{{@ datatype @}}"
-        },
-        "operation_update_properties": {
-          "datatype": "{{@ datatype @}}"
-        },
-        "operation_delete_properties": {
-          "datatype": "{{@ datatype @}}"
-        },
-        "primary_key": "id",
-        "rest_system": "{{@ system @}}",
-        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
-      },
-      "template": "transform-share-rest",
-      "type": "template"
-    },
-    "type": "pipe"
-  },
-  {
     "_id": "{{@ system @}}-{{@ datatype @}}-collect",
     "exclude_completeness": [
       "{{@ system @}}-{{@ datatype @}}-share"
@@ -69,6 +27,48 @@
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
       "template": "transform-collect-rest",
+      "type": "template"
+    },
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-share",
+    "add_namespaces": false,
+    "batch_size": 1,
+    "compaction": {
+      "keep_versions": 100
+    },
+    "exclude_completeness": [
+      "{{@ system @}}-{{@ datatype @}}-share"
+    ],
+    "namespaced_identifiers": false,
+    "sink": {
+      "deletion_tracking": false,
+      "set_initial_offset": "onload"
+    },
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-transform",
+      "type": "dataset"
+    },
+    "transform": {
+      "properties": {
+        "operation_delete_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_insert_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_lookup_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_update_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "primary_key": "id",
+        "rest_system": "{{@ system @}}",
+        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
+      },
+      "template": "transform-share-rest",
       "type": "template"
     },
     "type": "pipe"

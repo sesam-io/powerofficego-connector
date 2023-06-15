@@ -49,6 +49,9 @@
     },
     "transform": {
       "properties": {
+        "operation_delete_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
         "operation_insert_properties": {
           "datatype": "{{@ datatype @}}"
         },
@@ -56,9 +59,6 @@
           "datatype": "{{@ datatype @}}"
         },
         "operation_update_properties": {
-          "datatype": "{{@ datatype @}}"
-        },
-        "operation_delete_properties": {
           "datatype": "{{@ datatype @}}"
         },
         "primary_key": "id",
