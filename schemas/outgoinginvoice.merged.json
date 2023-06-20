@@ -2,7 +2,243 @@
   "$id": "/api/pipes/xxxxxx-outgoinginvoice-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "balance": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "brandingThemeCode": {
+      "type": "string"
+    },
+    "cid": {
+      "type": "string"
+    },
+    "contractNo": {
+      "type": "string"
+    },
+    "createdDate": {
+      "type": "string"
+    },
+    "currencyCode": {
+      "type": "string"
+    },
+    "currencyExchangeRate": {
+      "type": "integer"
+    },
+    "customerCode": {
+      "type": "integer"
+    },
+    "customerEmail": {
+      "type": "string"
+    },
+    "customerReference": {
+      "type": "string"
+    },
+    "customerReferenceContactPersonId": {
+      "type": "integer"
+    },
+    "deliveryAddress1": {
+      "type": "string"
+    },
+    "deliveryAddressCity": {
+      "type": "string"
+    },
+    "deliveryAddressCountryCode": {
+      "type": "string"
+    },
+    "deliveryAddressId": {
+      "type": "integer"
+    },
+    "deliveryAddressZipCode": {
+      "type": "string"
+    },
+    "deliveryDate": {
+      "type": "string"
+    },
+    "deliveryTerm": {
+      "type": "string"
+    },
+    "departmentCode": {
+      "type": "string"
+    },
+    "documentNo": {
+      "type": "string"
+    },
+    "dueDate": {
+      "type": "string"
+    },
+    "expectedDueDate": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "invoiceDebtCollectionStatus": {
+      "type": "integer"
+    },
+    "invoiceDeliveryType": {
+      "type": "integer"
+    },
+    "invoiceNo": {
+      "type": "integer"
+    },
+    "isInvoiceBeingProcessed": {
+      "type": "boolean"
+    },
+    "lastChanged": {
+      "type": "string"
+    },
+    "netAmount": {
+      "type": "integer"
+    },
+    "orderDate": {
+      "type": "string"
+    },
+    "orderNo": {
+      "type": "integer"
+    },
+    "ourReferenceEmployeeCode": {
+      "type": "integer"
+    },
+    "outgoingInvoiceLines": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "departmentCode": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "discountPercent": {
+            "anyOf": [
+              {
+                "subtype": "decimal",
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "exemptVat": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "lineType": {
+            "type": "integer"
+          },
+          "netAmount": {
+            "type": "integer"
+          },
+          "productCode": {
+            "type": "string"
+          },
+          "projectCode": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "salesAccount": {
+            "type": "integer"
+          },
+          "salesPersonEmployeeCode": {
+            "type": "integer"
+          },
+          "sortOrder": {
+            "type": "integer"
+          },
+          "totalAmount": {
+            "anyOf": [
+              {
+                "subtype": "decimal",
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "unitCost": {
+            "type": "integer"
+          },
+          "unitOfMeasure": {
+            "type": "string"
+          },
+          "unitOfMeasureCode": {
+            "type": "integer"
+          },
+          "unitPrice": {
+            "type": "integer"
+          },
+          "vatCode": {
+            "type": "string"
+          },
+          "vatExemptSalesAccount": {
+            "type": "integer"
+          },
+          "vatRate": {
+            "anyOf": [
+              {
+                "subtype": "decimal",
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "vatReturnSpecification": {
+            "type": "integer"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "paymentTerms": {
+      "type": "integer"
+    },
+    "projectCode": {
+      "type": "string"
+    },
+    "purchaseOrderNo": {
+      "type": "string"
+    },
+    "sentDate": {
+      "type": "string"
+    },
+    "status": {
+      "type": "integer"
+    },
+    "totalAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "voucherDate": {
+      "type": "string"
+    },
+    "voucherNo": {
+      "type": "integer"
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-outgoinginvoice-collect",
   "type": "object"
 }
