@@ -1,0 +1,126 @@
+{
+  "$id": "/api/pipes/xxxxxx-employee-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "contactGroups": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "createdDate": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "string"
+    },
+    "emailAddress": {
+      "type": "string"
+    },
+    "employeeCreatedDate": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "integer"
+    },
+    "hourlyRates": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "internationalIdType": {
+      "type": "integer"
+    },
+    "isArchived": {
+      "type": "boolean"
+    },
+    "lastChanged": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "mailAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "isPrimary": {
+          "type": "boolean"
+        },
+        "lastChanged": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "payrollEmailAddress": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "reportInternationalId": {
+      "type": "boolean"
+    },
+    "socialSecurityNumber": {
+      "type": "string"
+    },
+    "streetAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "isPrimary": {
+          "type": "boolean"
+        },
+        "lastChanged": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "streetAddresses": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-employee-collect",
+  "type": "object"
+}

@@ -1,0 +1,153 @@
+{
+  "$id": "/api/pipes/xxxxxx-supplier-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "contactGroups": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "contactPersonId": {
+      "type": "integer"
+    },
+    "createdDate": {
+      "type": "string"
+    },
+    "currencyCode": {
+      "type": "string"
+    },
+    "emailAddress": {
+      "type": "string"
+    },
+    "externalCode": {
+      "type": "integer"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "isArchived": {
+      "type": "boolean"
+    },
+    "isPerson": {
+      "type": "boolean"
+    },
+    "lastChanged": {
+      "type": "string"
+    },
+    "legalName": {
+      "type": "string"
+    },
+    "mailAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "isPrimary": {
+          "type": "boolean"
+        },
+        "lastChanged": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "name": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "since": {
+      "type": "string"
+    },
+    "streetAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "address1": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "isPrimary": {
+          "type": "boolean"
+        },
+        "lastChanged": {
+          "type": "string"
+        },
+        "zipCode": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "streetAddresses": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "address1": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "isPrimary": {
+            "type": "boolean"
+          },
+          "lastChanged": {
+            "type": "string"
+          },
+          "zipCode": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "supplierCreatedDate": {
+      "type": "string"
+    },
+    "vatNumber": {
+      "type": "string"
+    },
+    "websiteUrl": {
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-supplier-collect",
+  "type": "object"
+}

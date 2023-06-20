@@ -1,0 +1,66 @@
+{
+  "$id": "/api/pipes/xxxxxx-contactperson-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "address1": {
+      "type": "string"
+    },
+    "citizenship": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    },
+    "city": {
+      "type": "string"
+    },
+    "emailAddress": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "integer"
+    },
+    "hasNorwegianSSN": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "isPep": {
+      "type": "boolean"
+    },
+    "isRca": {
+      "type": "boolean"
+    },
+    "lastChanged": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "partyCustomerCode": {
+      "type": "integer"
+    },
+    "partyId": {
+      "type": "integer"
+    },
+    "partySupplierCode": {
+      "type": "integer"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "residenceCountryCode": {
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-contactperson-collect",
+  "type": "object"
+}

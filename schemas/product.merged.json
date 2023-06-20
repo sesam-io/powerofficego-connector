@@ -1,0 +1,54 @@
+{
+  "$id": "/api/pipes/xxxxxx-product-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "costPrice": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "lastChanged": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "productGroupId": {
+      "type": "integer"
+    },
+    "salesAccount": {
+      "type": "integer"
+    },
+    "salesPrice": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "integer"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "unitOfMeasureCode": {
+      "type": "integer"
+    },
+    "vatCode": {
+      "type": "string"
+    },
+    "vatExemptSalesAccount": {
+      "type": "integer"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-product-collect",
+  "type": "object"
+}
