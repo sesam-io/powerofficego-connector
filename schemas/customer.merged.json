@@ -19,24 +19,30 @@
       "type": "string"
     },
     "createdFromImportJournalId": {
+      "description": "Gets the if of the Import that created this party.",
       "type": "string (GUID)"
     },
     "currencyCode": {
+      "description": "Gets or sets the currency code.",
       "type": "string"
     },
     "customerCreatedDate": {
       "type": "string"
     },
     "dateOfBirth": {
+      "description": "Gets or sets the date of birth.",
       "type": "date"
     },
     "deliveryTerm": {
+      "description": "Gets or sets the delivery term.",
       "type": "string"
     },
     "departmentCode": {
+      "description": "Gets or sets the code of the Department this customer belongs to.",
       "type": "string"
     },
     "discountPercent": {
+      "description": "Gets or sets the fixed discount percent for this customer, this value should be between 0 and 100. Can also be used to add a premium in percent of the sales price (usually markup) by having negative number. Negative numbers can be between -1000 and 0.",
       "type": "number"
     },
     "doNotAddLatePaymentFees": {
@@ -52,28 +58,34 @@
       "type": "integer"
     },
     "externalImportReference": {
+      "description": "Gets or sets an external import reference that is unique within the account type (Customer, Supplier, Employee). It can be edited by any integration - at any time. Max length is 50 characters.",
       "type": "string"
     },
     "firstName": {
+      "description": "Gets or sets the first name.",
       "type": "string"
     },
     "hourlyRate": {
+      "description": "Gets or sets the hourly rate to use when billing time to the Customer.",
       "type": "number"
     },
     "id": {
       "type": "integer"
     },
     "internationalIdCountryCode": {
+      "description": "Gets or sets the international ID country code. Country code is given in ISO 3166-1 alfa-2 standard (Two characters).",
       "type": "string"
     },
     "internationalIdNumber": {
+      "description": "Gets or sets the international ID number. For privacy reasons queries returns 'hidden' if this field has a value and null if it's empty.",
       "type": "string"
     },
     "internationalIdType": {
-      "description": "Not well documented. See https://api.poweroffice.net/Web/docs/index.html#Reference/Rest/Type_Customer.md",
+      "description": "Gets or sets the international ID type. The type is not well documented. See https://api.poweroffice.net/Web/docs/index.html#Reference/Rest/Type_Customer.md",
       "type": "string"
     },
     "invoiceBrandingThemeCode": {
+      "description": "Gets or sets the code of the BrandingTheme used when sending invoices to this customer. If NULL, the clients default branding theme will be used.",
       "type": "string"
     },
     "invoiceDeliveryType": {
@@ -101,6 +113,7 @@
       "type": "string"
     },
     "lastName": {
+      "description": "Gets or sets the last name.",
       "type": "string"
     },
     "legalName": {
@@ -108,14 +121,24 @@
     },
     "mailAddress": {
       "additionalProperties": true,
+      "description": "Gets or sets the mail/postal address.",
       "properties": {
         "address1": {
+          "type": "string"
+        },
+        "address2": {
+          "type": "string"
+        },
+        "address3": {
           "type": "string"
         },
         "city": {
           "type": "string"
         },
         "countryCode": {
+          "type": "string"
+        },
+        "externalCode": {
           "type": "string"
         },
         "id": {
@@ -137,24 +160,29 @@
       "type": "string"
     },
     "noticeOfDebtCollectionDeliveryType": {
+      "description": "Gets or sets how notice of debt collection should be delivered to the customer.",
       "type": "integer"
     },
     "ourReferenceEmployeeCode": {
+      "description": "Gets or sets the code of the Employee of the sales person handling this customer (Our reference).",
       "type": "number"
     },
     "paymentTerms": {
+      "description": "Gets or sets the payment terms. This is the default number of days after an invoice sent to this customer is due.",
       "type": "number"
     },
     "phoneNumber": {
       "type": "string"
     },
     "reminderDeliveryType": {
+      "description": "Gets or sets the how reminders should be delivered to the customer.",
       "type": "integer"
     },
     "reminderEmailAddress": {
       "type": "string"
     },
     "reportInternationalId": {
+      "description": "Gets or sets a value indicating whether International ID should be reported to Altinn.",
       "type": "boolean"
     },
     "sendReminders": {
@@ -164,6 +192,7 @@
       "type": "string"
     },
     "socialSecurityNumber": {
+      "description": "Sets the social security number. For privacy reasons queries returns 'hidden' if this field has a value and null if it's empty.",
       "type": "string"
     },
     "streetAddress": {
@@ -224,6 +253,7 @@
       "type": "array"
     },
     "subledgerNumberSeriesId": {
+      "description": "Sets the id to the SubledgerNumberSeries the party should be applied to when creating it.",
       "type": "string (GUID)"
     },
     "transferToDebtCollectionAgency": {
