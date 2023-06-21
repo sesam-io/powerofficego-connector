@@ -2,7 +2,72 @@
   "$id": "/api/pipes/xxxxxx-customer-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "createdFromImportJournalId": {
+      "type": "string (GUID)"
+    },
+    "currencyCode": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "deliveryTerm": {
+      "type": "string"
+    },
+    "departmentCode": {
+      "type": "string"
+    },
+    "discountPercent": {
+      "type": "number"
+    },
+    "externalImportReference": {
+      "type": "string"
+    },
+    "firstName":{
+      "type":"string"
+    },
+    "hourlyRate": {
+      "type": "number"
+    },
+    "internationalIdCountryCode": {
+      "type": "string"
+    },
+    "internationalIdNumber": {
+      "type": "string"
+    },
+    "internationalIdType": {
+      "type": "string",
+      "description": "Not well documented. See https://api.poweroffice.net/Web/docs/index.html#Reference/Rest/Type_Customer.md"
+    },
+    "invoiceBrandingThemeCode": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "noticeOfDebtCollectionDeliveryType": {
+      "type": "integer"
+    },
+    "ourReferenceEmployeeCode": {
+      "type": "number"
+    },
+    "paymentTerms": {
+      "type": "number"
+    },
+    "reminderDeliveryType": {
+      "type": "integer"
+    },
+    "reportInternationalId": {
+      "type": "boolean"
+    },
+    "socialSecurityNumber": {
+      "type": "string"
+    },
+    "subledgerNumberSeriesId": {
+      "type": "string (GUID)"
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-customer-collect",
   "type": "object"
 }

@@ -18,8 +18,26 @@
     "createdDate": {
       "type": "string"
     },
+    "createdFromImportJournalId": {
+      "type": "string (GUID)"
+    },
+    "currencyCode": {
+      "type": "string"
+    },
     "customerCreatedDate": {
       "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "deliveryTerm": {
+      "type": "string"
+    },
+    "departmentCode": {
+      "type": "string"
+    },
+    "discountPercent": {
+      "type": "number"
     },
     "doNotAddLatePaymentFees": {
       "type": "boolean"
@@ -33,8 +51,30 @@
     "externalCode": {
       "type": "integer"
     },
+    "externalImportReference": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "hourlyRate": {
+      "type": "number"
+    },
     "id": {
       "type": "integer"
+    },
+    "internationalIdCountryCode": {
+      "type": "string"
+    },
+    "internationalIdNumber": {
+      "type": "string"
+    },
+    "internationalIdType": {
+      "description": "Not well documented. See https://api.poweroffice.net/Web/docs/index.html#Reference/Rest/Type_Customer.md",
+      "type": "string"
+    },
+    "invoiceBrandingThemeCode": {
+      "type": "string"
     },
     "invoiceDeliveryType": {
       "type": "integer"
@@ -58,6 +98,9 @@
       "type": "boolean"
     },
     "lastChanged": {
+      "type": "string"
+    },
+    "lastName": {
       "type": "string"
     },
     "legalName": {
@@ -93,16 +136,34 @@
     "name": {
       "type": "string"
     },
+    "noticeOfDebtCollectionDeliveryType": {
+      "type": "integer"
+    },
+    "ourReferenceEmployeeCode": {
+      "type": "number"
+    },
+    "paymentTerms": {
+      "type": "number"
+    },
     "phoneNumber": {
       "type": "string"
     },
+    "reminderDeliveryType": {
+      "type": "integer"
+    },
     "reminderEmailAddress": {
       "type": "string"
+    },
+    "reportInternationalId": {
+      "type": "boolean"
     },
     "sendReminders": {
       "type": "boolean"
     },
     "since": {
+      "type": "string"
+    },
+    "socialSecurityNumber": {
       "type": "string"
     },
     "streetAddress": {
@@ -161,6 +222,9 @@
         "type": "object"
       },
       "type": "array"
+    },
+    "subledgerNumberSeriesId": {
+      "type": "string (GUID)"
     },
     "transferToDebtCollectionAgency": {
       "type": "boolean"
