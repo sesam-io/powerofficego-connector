@@ -63,34 +63,44 @@
       "additionalProperties": true,
       "properties": {
         "address1": {
-          "type": "string"
+          "type": "string",
+          "description": "Gets or sets the first address line. This is usually used for street name or postal box."
         },
         "address2": {
-          "type": "string"
+          "type": "string",
+          "description": "Gets or sets the second address line. Used for additional specifications of the address."
         },
         "address3": {
-          "type": "string"
+          "type": "string",
+          "description": "OBSOLETE - Gets or sets the third address line. This property is no longer in use and will be removed on a later date."
         },
         "city": {
-          "type": "string"
+          "type": "string",
+          "description": "Gets or sets the city."
         },
         "countryCode": {
-          "type": "string"
+          "type": "string",
+          "description": "Gets or sets the ISO 3166-1 alfa-2 country code (Two characters)"
         },
         "externalCode": {
-          "type": "string"
+          "type": "string",
+          "description": "Get or sets the external code - can be used to reference the address in the external system"
         },
         "id": {
-          "type": "integer"
+          "type": "integer",
+          "description": "Gets or sets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
         },
         "isPrimary": {
-          "type": "boolean"
+          "type": "boolean",
+          "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
         },
         "lastChanged": {
-          "type": "string"
+          "type": "string",
+          "description": "Gets or sets the last changed date (DateTimeOffset)."
         },
         "zipCode": {
-          "type": "string"
+          "type": "string",
+          "description": "Gets or sets the zip code (postal code)."
         }
       },
       "type": "object",
@@ -123,6 +133,216 @@
     "subledgerNumberSeriesId": {
       "type": "string (GUID)",
       "description": "Sets the id to the SubledgerNumberSeries the party should be applied to when creating it."
+    },
+    "code": {
+      "type": "integer",
+      "description":"Gets or sets the code."
+    },
+    "contactGroups": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array",
+      "description": "Gets or sets the contact groups. This collection will contain the names of all the ContactGroup the party is associated with. If the collection is provided a contact group that does not exist, the contact group will be created when saving. The type is 'string' in the docs."
+    },
+    "createdDate": {
+      "type": "string",
+      "description": "Gets the creation date."
+    },
+    "customerCreatedDate": {
+      "type": "string",
+      "description": "Gets date when contact first became a customer"
+    },
+    "doNotAddLatePaymentFees": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether or not to add late payment fees when sending reminders to this customer."
+    },
+    "doNotAddLatePaymentInterest": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether or not to add late payment interest when sending reminders to this customer."
+    },
+    "emailAddress": {
+      "type": "string",
+      "description": "Gets or sets the email address."
+    },
+    "externalCode": {
+      "type": "integer",
+      "description": "Gets or sets the external code. If this entity is imported with a number outside the number range for this type of party, this field will contain the imported original number. This number has precedence over GoApi.Party.Party.Code when choosing which entity to use when importing files through the import service. I.e. when importing OutgoingInvoices on the import service on a customer with Code 10000 - the import will choose the customer with ExternalCode 10000 over the customer with Code 10000."
+    },
+    "id": {
+      "type": "integer",
+      "description": "Gets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
+    },
+    "invoiceDeliveryType": {
+      "type": "integer",
+      "description": "Gets or sets how invoices should be delivered to the customer."
+    },
+    "invoiceEmailAddress": {
+      "type": "string",
+      "description": "Gets or sets the invoice email address."
+    },
+    "invoiceEmailAddressCC": {
+      "type": "string",
+      "description": "Gets or sets the invoice email CC address."
+    },
+    "isActive": {
+      "type": "boolean",
+      "description": "Gets IsActive on Customer and Supplier. This property reflects if an entity is currently a Customer and/or Supplier, depending on the endpoint queried."
+    },
+    "isArchived": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether this party is archived (is inactive)"
+    },
+    "isPerson": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether this party is a private person."
+    },
+    "isVatFree": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether this customer is vat free. Sales against the customer will use the alternative sales account on the product or product group when posting the revenue if this is set to true."
+    },
+    "lastChanged": {
+      "type": "string",
+      "description": "Gets the last changed date."
+    },
+    "legalName": {
+      "type": "string",
+      "description": "Gets or sets the legal name."
+    },
+    "name": {
+      "type": "string",
+      "description": "Gets or sets the name."
+    },
+    "phoneNumber": {
+      "type": "string",
+      "description": "Gets or sets the phone number."
+    },
+    "reminderEmailAddress": {
+      "type": "string",
+      "description": "Gets or sets the reminder email address. Used if ReminderDeliveryType and/or NoticeOfDebtCollectionDeliveryType uses email."
+    },
+    "sendReminders": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether to send reminders for this customer or not."
+    },
+    "since": {
+      "type": "string",
+      "description": "Gets or sets when the customer or supplier first became a contact."
+    },
+    "streetAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "address1": {
+          "type": "string",
+          "description": "Gets or sets the first address line. This is usually used for street name or postal box."
+        },
+        "address2": {
+          "type": "string",
+          "description": "Gets or sets the second address line. Used for additional specifications of the address."
+        },
+        "address3": {
+          "type": "string",
+          "description": "OBSOLETE - Gets or sets the third address line. This property is no longer in use and will be removed on a later date."
+        },
+        "city": {
+          "type": "string",
+          "description": "Gets or sets the city."
+        },
+        "countryCode": {
+          "type": "string",
+          "description": "Gets or sets the ISO 3166-1 alfa-2 country code (Two characters)"
+        },
+        "externalCode": {
+          "type": "string",
+          "description": "Get or sets the external code - can be used to reference the address in the external system"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Gets or sets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
+        },
+        "isPrimary": {
+          "type": "boolean",
+          "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
+        },
+        "lastChanged": {
+          "type": "date",
+          "description": "Gets or sets the last changed date (DateTimeOffset)."
+        },
+        "zipCode": {
+          "type": "string",
+          "description": "Gets or sets the zip code (postal code)."
+        }
+      },
+      "type": "object"
+    },
+    "streetAddresses": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "address1": {
+            "type": "string",
+            "description": "Gets or sets the first address line. This is usually used for street name or postal box."
+          },
+          "address2": {
+            "type": "string",
+            "description": "Gets or sets the second address line. Used for additional specifications of the address."
+          },
+          "address3": {
+            "type": "string",
+            "description": "OBSOLETE - Gets or sets the third address line. This property is no longer in use and will be removed on a later date."
+          },
+          "city": {
+            "type": "string",
+            "description": "Gets or sets the city."
+          },
+          "countryCode": {
+            "type": "string",
+            "description": "Gets or sets the ISO 3166-1 alfa-2 country code (Two characters)"
+          },
+          "externalCode": {
+            "type": "string",
+            "description": "Get or sets the external code - can be used to reference the address in the external system"
+          },
+          "id": {
+            "type": "integer",
+            "description": "Gets or sets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
+          },
+          "isPrimary": {
+            "type": "boolean",
+            "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
+          },
+          "lastChanged": {
+            "type": "string",
+            "description": "Gets or sets the last changed date (DateTimeOffset)."
+          },
+          "zipCode": {
+            "type": "string",
+            "description": "Gets or sets the zip code (postal code)."
+          }
+        },
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "transferToDebtCollectionAgency": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether invoices to this customers should be transferred to a debt collection agency after it's due."
+    },
+    "useFactoring": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether it's specified that invoices to this customer should use factoring."
+    },
+    "useInvoiceFee": {
+      "type": "boolean",
+      "description": "Gets or sets whether invoice fee will be used when invoicing the customer. Relevant only if the client use invoice fee."
+    },
+    "vatNumber": {
+      "type": "string",
+      "description": "Gets or sets the vat number (Organization number)."
+    },
+    "websiteUrl": {
+      "type": "string",
+      "description": "Gets or sets the website URL."
     }
   },
   "title": "Pipe sink entity type: xxxxxx-customer-collect",
