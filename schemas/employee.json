@@ -2,7 +2,329 @@
   "$id": "/api/pipes/xxxxxx-employee-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "CreatedFromImportJournalId": {
+      "type": "string (GUID)",
+      "description": "Gets the if of the Import that created this party."
+    },
+    "DepartmentCode": {
+      "type": "string",
+      "description": "Gets or sets the code of the Department this employee belongs to."
+    },
+    "EndDate": {
+      "type": "date",
+      "description": "Gets or sets the end date."
+    },
+    "ExpenseBankAccountCode": {
+      "type": "string",
+      "description": "Gets or sets the expense bank account code Saving the employee entity will fail if the PartyBankAccount with given code does not exist on the employee."
+    },
+    "ExternalCode": {
+      "type": "number",
+      "description": "Gets or sets the external code. If this entity is imported with a number outside the number range for this type of party, this field will contain the imported original number. This number has precedence over GoApi.Party.Party.Code when choosing which entity to use when importing files through the import service. I.e. when importing OutgoingInvoices on the import service on a customer with Code 10000 - the import will choose the customer with ExternalCode 10000 over the customer with Code 10000."
+    },
+    "ExternalImportReference": {
+      "type": "string",
+      "description": "Gets or sets an external import reference that is unique within the account type (Customer, Supplier, Employee). It can be edited by any integration - at any time. Max length is 50 characters."
+    },
+    "HiredDate": {
+      "type": "date",
+      "description": "Gets or sets the hired date."
+    },
+    "HourlyCost": {
+      "type": "number",
+      "description": "OBSOLETE - Gets or sets the hourly cost as used by the time tracking system. Use HourlyRates collection to add, update and delete."
+    },
+    "InternationalIdCountryCode": {
+      "type": "string",
+      "description": "Gets or sets the international ID country code. Country code is given in ISO 3166-1 alfa-2 standard (Two characters)."
+    },
+    "InternationalIdNumber": {
+      "type": "string",
+      "description": "Gets or sets the international ID number. For privacy reasons queries returns 'hidden' if this field has a value and null if it's empty."
+    },
+    "JobTitle": {
+      "type": "string",
+      "description": "Gets or sets the job title."
+    },
+    "LocationCode": {
+      "type": "string",
+      "description":"Gets or sets the code of the Location this employee works at."
+    },
+    "ManagerEmployeeCode": {
+      "type": "number",
+      "description": "Gets or sets the code of the Employee that is the manager of this employee."
+    },
+    "NationalityCountryCode": {
+      "type": "string",
+      "description": "Gets or sets the nationality country code."
+    },
+    "PayrollBankAccountCode": {
+      "type": "string",
+      "description": "Gets or sets the payroll bank account code. Saving the employee entity will fail if the PartyBankAccount with given code does not exist on the employee."
+    },
+    "StartDate": {
+      "type": "date",
+      "description": "Gets or sets the start date."
+    },
+    "SubledgerNumberSeriesId": {
+      "type": "string (GUID)",
+      "description": "Sets the id to the SubledgerNumberSeries the party should be applied to when creating it."
+    },
+    "code": {
+      "type": "integer",
+      "description": "Gets or sets the code."
+    },
+    "contactGroups": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array",
+      "description": "Gets or sets the contact groups. This collection will contain the names of all the ContactGroup the party is associated with. If the collection is provided a contact group that does not exist, the contact group will be created when saving. The property type is defined as string in the docs. check https://api.poweroffice.net/Web/docs/index.html#Reference/Rest/Type_Employee.md"
+    },
+    "createdDate": {
+      "type": "string",
+      "description": "Gets the creation date."
+    },
+    "dateOfBirth": {
+      "type": "string",
+      "description": "Gets or sets the date of birth."
+    },
+    "emailAddress": {
+      "type": "string",
+      "description": "Gets or sets the email address."
+    },
+    "employeeCreatedDate": {
+      "type": "string",
+      "description": "Gets date when contact first became a employee"
+    },
+    "firstName": {
+      "type": "string",
+      "description": "Gets or sets the first name."
+    },
+    "gender": {
+      "type": "integer",
+      "description": "Gets or sets the gender of the employee. Valid inputs; 0, (Unspecified) 1, (Male) and 2 (Female). Requires Social Security Number privilege to retreive, and will return 'hidden' (-1) if queried without this privilege. The privilege must be granted by the API team."
+    },
+    "hourlyRate": {
+      "type": "number",
+      "description": "OBSOLETE - Gets or sets the hourly rate on this employee to use when billing time. Use HourlyRates collection to add, update and delete."
+    },
+    "hourlyRates": {
+      "items": {
+          "additionalProperties": true,
+          "properties": {
+            "hourlyCost": {
+              "type": "number",
+              "description": "Gets or sets the hourly cost."
+            },
+            "hourlyRate": {
+              "type": "number",
+              "description": "Gets or sets the hourly rate."
+            },
+            "id": {
+              "type": "number",
+              "description": "Gets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
+            },
+            "isDeleted": {
+              "type": "boolean",
+              "description": "Sets the deleted state. When saving, this entity will be deleted if this property is set to true and the Id is valid."
+            },
+            "validFrom": {
+              "type": "date",
+              "description": "Gets or sets the date from which this rate is to be used from."
+            },
+            "validTo": {
+              "type": "date",
+              "description": "Gets the date from which this rate is no longer in use."
+            }
+          },
+          "type": "object"
+      },
+      "type": "array",
+      "description": "Contains a collection of EmployeeTimeHourlyRates . To add a new hourlyRate, create and add a new EmployeeTimeHourlyRates with wanted values without setting the Id. To update an hourlyRate, add an EmployeeTimeHourlyRates with a valid Id and set the new values. To delete an hourlyRate, add an EmployeeTimeHourlyRates with a valid Id and set IsDeleted=true."
+    },
+    "id": {
+      "type": "integer",
+      "description": "Gets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
+    },
+    "internationalIdType": {
+      "type": "integer",
+      "description": "Gets or sets the international ID type. The property type is defined as InternationalIdType in the docs. check https://api.poweroffice.net/Web/docs/index.html#reference/rest/Type_InternationalIdType.md"
+    },
+    "isArchived": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether this party is archived (is inactive)"
+    },
+    "lastChanged": {
+      "type": "string",
+      "description": "Gets the last changed date."
+    },
+    "lastName": {
+      "type": "string",
+      "description": "Gets or sets the last name."
+    },
+    "mailAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "address1": {
+          "type": "string",
+          "description": "Gets or sets the first address line. This is usually used for street name or postal box."
+        },
+        "address2": {
+          "type": "string",
+          "description": "Gets or sets the second address line. Used for additional specifications of the address."
+        },
+        "address3": {
+          "type": "string",
+          "description": "OBSOLETE - Gets or sets the third address line. This property is no longer in use and will be removed on a later date."
+        },
+        "city": {
+          "type": "string",
+          "description": "Gets or sets the city."
+        },
+        "countryCode": {
+          "type": "string",
+          "description": "Gets or sets the ISO 3166-1 alfa-2 country code (Two characters)"
+        },
+        "externalCode": {
+          "type": "string",
+          "description": "Get or sets the external code - can be used to reference the address in the external system"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Gets or sets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
+        },
+        "isPrimary": {
+          "type": "boolean",
+          "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
+        },
+        "lastChanged": {
+          "type": "string",
+          "description":"Gets or sets the last changed date (DateTimeOffset)."
+        },
+        "zipCode": {
+          "type": "string",
+          "description": "Gets or sets the zip code (postal code)."
+        }
+      },
+      "type": "object",
+      "description": "Gets or sets the mail/postal address."
+    },
+    "payrollEmailAddress": {
+      "type": "string",
+      "description": "Gets or sets the payroll e-mail address used for delivery of the payslip."
+    },
+    "phoneNumber": {
+      "type": "string",
+      "description": "Gets or sets the phone number."
+    },
+    "reportInternationalId": {
+      "type": "boolean",
+      "description": "Gets or sets a value indicating whether International ID should be reported to Altinn."
+    },
+    "socialSecurityNumber": {
+      "type": "string",
+      "description": "Sets the social security number. For privacy reasons queries returns 'hidden' if this field has a value and null if it's empty."
+    },
+    "streetAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "address1": {
+          "type": "string",
+          "description": "Gets or sets the first address line. This is usually used for street name or postal box."
+        },
+        "address2": {
+          "type": "string",
+          "description": "Gets or sets the second address line. Used for additional specifications of the address."
+        },
+        "address3": {
+          "type": "string",
+          "description": "OBSOLETE - Gets or sets the third address line. This property is no longer in use and will be removed on a later date."
+        },
+        "city": {
+          "type": "string",
+          "description": "Gets or sets the city."
+        },
+        "countryCode": {
+          "type": "string",
+          "description": "Gets or sets the ISO 3166-1 alfa-2 country code (Two characters)"
+        },
+        "externalCode": {
+          "type": "string",
+          "description": "Get or sets the external code - can be used to reference the address in the external system"
+        },
+        "id": {
+          "type": "integer",
+          "description": "Gets or sets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
+        },
+        "isPrimary": {
+          "type": "boolean",
+          "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
+        },
+        "lastChanged": {
+          "type": "string",
+          "description": "Gets or sets the last changed date (DateTimeOffset)."
+        },
+        "zipCode": {
+          "type": "string",
+          "description": "Gets or sets the zip code (postal code)."
+        }
+      },
+      "type": "object",
+      "description": "OBSOLETE - Gets or sets the street address. This field is Obsolete but still exists due to backward compability. Use StreetAddresses instead. If this entity does not have any street addresses, but has a mail address. This property will contain the GoApi.Party.Party.MailAddress . and GoApi.Party.Party.StreetAddresses will be an empty collection."
+    },
+    "streetAddresses": {
+      "items": {
+          "additionalProperties": true,
+          "properties": {
+            "address1": {
+              "type": "string",
+              "description":"Gets or sets the first address line. This is usually used for street name or postal box."
+            },
+            "address2": {
+              "type": "string",
+              "description": "Gets or sets the second address line. Used for additional specifications of the address."
+            },
+            "address3": {
+              "type": "string",
+              "description": "OBSOLETE - Gets or sets the third address line. This property is no longer in use and will be removed on a later date."
+            },
+            "city": {
+              "type": "string",
+              "description": "Gets or sets the city."
+            },
+            "countryCode": {
+              "type": "string",
+              "description":"Gets or sets the ISO 3166-1 alfa-2 country code (Two characters)"
+            },
+            "externalCode": {
+              "type": "string",
+              "description": "Get or sets the external code - can be used to reference the address in the external system"
+            },
+            "id": {
+              "type": "integer",
+              "description": "Gets or sets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
+            },
+            "isPrimary": {
+              "type": "boolean",
+              "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
+            },
+            "lastChanged": {
+              "type": "string",
+              "description": "Gets or sets the last changed date (DateTimeOffset)."
+            },
+            "zipCode": {
+              "type": "string",
+              "description": "Gets or sets the zip code (postal code)."
+            }
+          },
+          "type": "object"
+      },
+      "type": "array",
+      "description": "Gets or sets the street addresses. Take note here that the full collection of street addresses must exist when updating this property. For instance if the supplier has two addresses in PowerOffice Go, and the API only provides one of them in this property, the other one will be deleted."
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-employee-collect",
   "type": "object"
 }
