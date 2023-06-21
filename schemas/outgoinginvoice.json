@@ -2,7 +2,380 @@
   "$id": "/api/pipes/xxxxxx-outgoinginvoice-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "balance": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string",
+          "description": "Gets the remaining amount to be paid on this invoice. This field will only have a value on sent or paid invoices and is shown in the client's default currency code."
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "brandingThemeCode": {
+      "type": "string",
+      "description": "Gets or sets the code of the branding theme to be used when sending this invoice."
+    },
+    "cid": {
+      "type": "string",
+      "description": "Gets the cid. This field will only have a value on sent invoices. (Norwegian: KID)"
+    },
+    "contactGroup": {
+      "type": "string",
+      "description": "The contact group name. Will be returned from PowerOffice Go if GoApi.Invoices.OutgoingInvoice.ContactGroupId is set"
+    },
+    "contactGroupId": {
+      "type": "number",
+      "description": "The contact group Id. Is set if the invoice is a group invoice. Set this to a valid ContactGroup identifier if the invoice is a group invoice. It is not possible to set GoApi.Invoices.OutgoingInvoice.CustomerCode and ContactGroupId on the same invoice."
+    },
+    "contractNo": {
+      "type": "string",
+      "description": "Gets or sets the contract no."
+    },
+    "createdDate": {
+      "type": "string",
+      "description": "Gets the date this entity was created."
+    },
+    "currencyCode": {
+      "type": "string",
+      "description": "Gets or sets the currency code of the outgoing invoice."
+    },
+    "currencyExchangeRate": {
+      "type": "integer",
+      "description": "Gets or sets an normalized (always base 1) currency exchange rate."
+    },
+    "customMatchingReference": {
+      "type": "string",
+      "description": "Gets or sets the custom matching reference. This value will be matched with the sub ledger entries on vouchers with same CustomMatchingReference after posting."
+    },
+    "customerCode": {
+      "type": "integer",
+      "description": "Gets or sets the code of the Customer that this invoice should be delivered to. It is not possible to set GoApi.Invoices.OutgoingInvoice.ContactGroupId and CustomerCode on the same invoice."
+    },
+    "customerEmail": {
+      "type": "string",
+      "description": "Gets the customer email address. On sent invoices this field will contain the email the invoice was delivered to if the delivery type was GoApi.Common.InvoiceDeliveryType.PdfByEmail ."
+    },
+    "customerReference": {
+      "type": "string",
+      "description": "Gets or sets the customer reference."
+    },
+    "customerReferenceContactPersonId": {
+      "type": "integer",
+      "description": "Gets or sets the customer reference contact person id. This property will be used instead of CustomerReference if provided. The customer must have a contact person with this ID created to use this property."
+    },
+    "debtCollectionCaseStatus": {
+      "type": "number",
+      "description": "Gets the external DebtCollectionCase status associated with this invoice."
+    },
+    "debtCollectionCode": {
+      "type": "string",
+      "description": "Gets the external DebtCollectionCase code."
+    },
+    "deliveryAddress1": {
+      "type": "string",
+      "description": "Gets the delivery address' Address1 that was set on the invoice when it was sent. Will only have a value on invoices with GoApi.Invoices.OutgoingInvoiceStatus.Sent , GoApi.Invoices.OutgoingInvoiceStatus.Paid and GoApi.Invoices.OutgoingInvoiceStatus.Archived ."
+    },
+    "deliveryAddress2": {
+      "type": "string",
+      "description": "Gets the delivery address Address2 that was set on the invoice when it was sent. Will only have a value on invoices with GoApi.Invoices.OutgoingInvoiceStatus.Sent , GoApi.Invoices.OutgoingInvoiceStatus.Paid and GoApi.Invoices.OutgoingInvoiceStatus.Archived ."
+    },
+    "deliveryAddressCity": {
+      "type": "string",
+      "description": "Gets the delivery address City that was set on the invoice when it was sent. Will only have a value on invoices with GoApi.Invoices.OutgoingInvoiceStatus.Sent , GoApi.Invoices.OutgoingInvoiceStatus.Paid and GoApi.Invoices.OutgoingInvoiceStatus.Archived ."
+    },
+    "deliveryAddressCountryCode": {
+      "type": "string",
+      "description": "Gets the delivery address CountryCode that was set on the invoice when it was sent. Will only have a value on invoices with GoApi.Invoices.OutgoingInvoiceStatus.Sent , GoApi.Invoices.OutgoingInvoiceStatus.Paid and GoApi.Invoices.OutgoingInvoiceStatus.Archived ."
+    },
+    "deliveryAddressId": {
+      "type": "integer",
+      "description": "Gets or sets the delivery address identifier."
+    },
+    "deliveryAddressZipCode": {
+      "type": "string",
+      "description": "Gets the delivery address ZipCode that was set on the invoice when it was sent. Will only have a value on invoices with GoApi.Invoices.OutgoingInvoiceStatus.Sent , GoApi.Invoices.OutgoingInvoiceStatus.Paid and GoApi.Invoices.OutgoingInvoiceStatus.Archived ."
+    },
+    "deliveryDate": {
+      "type": "string",
+      "description": "Gets or sets the delivery date."
+    },
+    "deliveryTerm": {
+      "type": "string",
+      "description": "Gets or set the terms of delivery of the invoice."
+    },
+    "departmentCode": {
+      "type": "string",
+      "description": "Gets or sets code of the Department this invoice is for. This code will be inherited on all OutgoingInvoiceLines unless '-1' (no department) is specified."
+    },
+    "dim1Code": {
+      "type": "string",
+      "description": "Gets the code of the CustomDimensionValue 1 this invoice is for."
+    },
+    "dim2Code": {
+      "type": "string",
+      "description": "Gets the code of the CustomDimensionValue 2 this invoice is for."
+    },
+    "dim3Code": {
+      "type": "string",
+      "description": "Gets the code of the CustomDimensionValue 3 this invoice is for."
+    },
+    "documentNo": {
+      "type": "string",
+      "description": "Gets the document no (invoice number). This field will only have a value on sent invoices."
+    },
+    "dueDate": {
+      "type": "string",
+      "description": "Gets the due date. This is the due date on the invoice that was sent from PowerOffice Go and will only have a value on sent invoices."
+    },
+    "expectedDueDate": {
+      "type": "string",
+      "description": "Gets the expected due date. This is the date when the invoice is expected to be paid by a customer. In essence this is an override of GoApi.Invoices.OutgoingInvoice.DueDate , that is set by a user in PowerOffice Go after the invoice has been delivered. This field will only have a value on sent invoices."
+    },
+    "externalImportReference": {
+      "type": "string",
+      "description": "Gets or sets an external import reference. Can be used to correlate/duplicate check invoices. Must be a unique value for a given client, exception will be thrown if an OutgoingInvoice with equal import reference exists. Max length is 50 characters."
+    },
+    "id": {
+      "type": "string (GUID)",
+      "description": "Gets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity."
+    },
+    "importedOrderNo": {
+      "type": "string",
+      "description": "Gets or sets the imported order no. This should be set as the order number in the external system."
+    },
+    "invoiceDebtCollectionStatus": {
+      "type": "integer",
+      "description": "Gets the internal debt collection status associated with this invoice."
+    },
+    "invoiceDeliveryType": {
+      "type": "integer",
+      "description": "Gets the type of the invoice delivery. This is the means of delivery that was used when the invoice was delivered by PowerOffice Go."
+    },
+    "invoiceNo": {
+      "type": "integer",
+      "description": "Gets the invoice number in number format. Available only for sent and posted invoices."
+    },
+    "isInvoiceBeingProcessed": {
+      "type": "boolean",
+      "description": "Get current delivery invoice status. When true the invoice is under delivery."
+    },
+    "lastChanged": {
+      "type": "string",
+      "description": "Gets the last changed date."
+    },
+    "lastErrorMessage": {
+      "type": "string",
+      "description": "If invoice delivery fails this property will contain the last error message."
+    },
+    "locationCode": {
+      "type": "string",
+      "description": "Gets the code of the Location this invoice is for."
+    },
+    "netAmount": {
+      "type": "integer",
+      "description": "Gets the net amount of the invoice. This is calculated from the GoApi.Invoices.OutgoingInvoice.OutgoingInvoiceLines ."
+    },
+    "orderDate": {
+      "type": "string",
+      "description": "Gets or sets the order date."
+    },
+    "orderNo": {
+      "type": "integer",
+      "description": "Gets the order no. This value is auto generated when saving a new OutgoingInvoice."
+    },
+    "ourReferenceEmployeeCode": {
+      "type": "integer",
+      "description": "Gets or sets code of the Employee that is the sales person on this outgoing invoice."
+    },
+    "outgoingInvoiceLines": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "departmentCode": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "discountPercent": {
+            "anyOf": [
+              {
+                "subtype": "decimal",
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "exemptVat": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "lineType": {
+            "type": "integer"
+          },
+          "netAmount": {
+            "type": "integer"
+          },
+          "productCode": {
+            "type": "string"
+          },
+          "projectCode": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "integer"
+          },
+          "salesAccount": {
+            "type": "integer"
+          },
+          "salesPersonEmployeeCode": {
+            "type": "integer"
+          },
+          "sortOrder": {
+            "type": "integer"
+          },
+          "totalAmount": {
+            "anyOf": [
+              {
+                "subtype": "decimal",
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "unitCost": {
+            "type": "integer"
+          },
+          "unitOfMeasure": {
+            "type": "string"
+          },
+          "unitOfMeasureCode": {
+            "type": "integer"
+          },
+          "unitPrice": {
+            "type": "integer"
+          },
+          "vatCode": {
+            "type": "string"
+          },
+          "vatExemptSalesAccount": {
+            "type": "integer"
+          },
+          "vatRate": {
+            "anyOf": [
+              {
+                "subtype": "decimal",
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "vatReturnSpecification": {
+            "type": "integer"
+          },
+          "Accrual": {
+            "additionalProperties": true,
+            "properties": {
+              "BalanceAccountCode": {
+                "type": "number",
+                "description": "The code of the GeneralLedgerAccount used for keeping accrual balance. (Norwegian: Balansekonto)"
+              },
+              "FromDate": {
+                "type": "Date",
+                "description": "Start date of accrual. If the invoice is a RecurringInvoice , NumOfMonths should be used instead."
+              },
+              "IsActive": {
+                "type": "boolean",
+                "description": "States if accrual is active or not."
+              },
+              "NumOfMonths": {
+                "type": "number",
+                "description": "Used by recurring invoice to specify the number of months the invoice should be accrued over. This property will only be used if the accrual is on a line that is on a RecurringInvoice"
+              },
+              "ResultAccountCode": {
+                "type": "number",
+                "description": "The code of the GeneralLedgerAccount used for posting the result. (Norwegian: Resultatkonto)"
+              },
+              "ToDate": {
+                "type": "Date",
+                "description": "End date of accrual. If the invoice is a RecurringInvoice , NumOfMonths should be used instead."
+              }
+            },
+            "type": "object",
+            "description": "Gets or sets if GoApi.Invoices.OutgoingInvoiceLine.Accrual is used to enable accrual of the invoice. (Norwegian: Periodisering)"
+            },
+          "ExternalImportLineReference": {
+            "type": "string",
+            "description":"Gets or sets an external import line reference. Can be used to correlate/duplicate check invoice lines. Must be a unique value for a given client, exception will be thrown if an OutgoingInvoiceLine with equal import reference exists for the same invoice. Max length is 50 characters."
+          },
+          "IsDeleted": {
+            "type": "boolean",
+            "description":"Flag indicating if a line should be deleted from the invoice when calling the save method. This property should be used when deleting lines."
+          },
+          "LocationCode": {
+            "type": "string",
+            "description":"Gets the code of the Location this line is for."
+          }
+        },
+        "type": "object"
+      },
+      "type": "array",
+      "description": "Gets the outgoing invoice lines ( OutgoingInvoiceLine . Trying to add more then 10000 lines to an OutgoingInvoice will throw an exception when saving."
+    },
+    "paymentTerms": {
+      "type": "integer",
+      "description": ""
+    },
+    "projectCode": {
+      "type": "string",
+      "description": ""
+    },
+    "purchaseOrderNo": {
+      "type": "string",
+      "description": ""
+    },
+    "relatedDocumentNo": {
+      "type": "string",
+      "description": ""
+    },
+    "sentDate": {
+      "type": "string",
+      "description": ""
+    },
+    "status": {
+      "type": "integer",
+      "description": ""
+    },
+    "totalAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "voucherDate": {
+      "type": "string"
+    },
+    "voucherNo": {
+      "type": "integer"
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-outgoinginvoice-collect",
   "type": "object"
 }
