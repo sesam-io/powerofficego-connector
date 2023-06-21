@@ -145,6 +145,10 @@
       "type": "array",
       "description": "Gets or sets the contact groups. This collection will contain the names of all the ContactGroup the party is associated with. If the collection is provided a contact group that does not exist, the contact group will be created when saving. The type is 'string' in the docs."
     },
+    "contactPersonId": {
+      "type": "integer",
+      "description": "Gets or sets id of the primary ContactPerson on the party."
+    },
     "createdDate": {
       "type": "string",
       "description": "Gets the creation date."

@@ -15,6 +15,7 @@
       "type": "array"
     },
     "contactPersonId": {
+      "description": "Gets or sets id of the primary ContactPerson on the party.",
       "type": "integer"
     },
     "createdDate": {
