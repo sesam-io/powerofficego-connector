@@ -3,71 +3,71 @@
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
   "properties": {
-    "CreatedFromImportJournalId": {
+    "createdFromImportJournalId": {
       "type": "string (GUID)",
       "description": "Gets the if of the Import that created this party."
     },
-    "DepartmentCode": {
+    "departmentCode": {
       "type": "string",
       "description": "Gets or sets the code of the Department this employee belongs to."
     },
-    "EndDate": {
+    "endDate": {
       "type": "date",
       "description": "Gets or sets the end date."
     },
-    "ExpenseBankAccountCode": {
+    "expenseBankAccountCode": {
       "type": "string",
       "description": "Gets or sets the expense bank account code Saving the employee entity will fail if the PartyBankAccount with given code does not exist on the employee."
     },
-    "ExternalCode": {
+    "externalCode": {
       "type": "number",
       "description": "Gets or sets the external code. If this entity is imported with a number outside the number range for this type of party, this field will contain the imported original number. This number has precedence over GoApi.Party.Party.Code when choosing which entity to use when importing files through the import service. I.e. when importing OutgoingInvoices on the import service on a customer with Code 10000 - the import will choose the customer with ExternalCode 10000 over the customer with Code 10000."
     },
-    "ExternalImportReference": {
+    "externalImportReference": {
       "type": "string",
       "description": "Gets or sets an external import reference that is unique within the account type (Customer, Supplier, Employee). It can be edited by any integration - at any time. Max length is 50 characters."
     },
-    "HiredDate": {
+    "hiredDate": {
       "type": "date",
       "description": "Gets or sets the hired date."
     },
-    "HourlyCost": {
+    "hourlyCost": {
       "type": "number",
       "description": "OBSOLETE - Gets or sets the hourly cost as used by the time tracking system. Use HourlyRates collection to add, update and delete."
     },
-    "InternationalIdCountryCode": {
+    "internationalIdCountryCode": {
       "type": "string",
       "description": "Gets or sets the international ID country code. Country code is given in ISO 3166-1 alfa-2 standard (Two characters)."
     },
-    "InternationalIdNumber": {
+    "internationalIdNumber": {
       "type": "string",
       "description": "Gets or sets the international ID number. For privacy reasons queries returns 'hidden' if this field has a value and null if it's empty."
     },
-    "JobTitle": {
+    "jobTitle": {
       "type": "string",
       "description": "Gets or sets the job title."
     },
-    "LocationCode": {
+    "locationCode": {
       "type": "string",
       "description":"Gets or sets the code of the Location this employee works at."
     },
-    "ManagerEmployeeCode": {
+    "managerEmployeeCode": {
       "type": "number",
       "description": "Gets or sets the code of the Employee that is the manager of this employee."
     },
-    "NationalityCountryCode": {
+    "nationalityCountryCode": {
       "type": "string",
       "description": "Gets or sets the nationality country code."
     },
-    "PayrollBankAccountCode": {
+    "payrollBankAccountCode": {
       "type": "string",
       "description": "Gets or sets the payroll bank account code. Saving the employee entity will fail if the PartyBankAccount with given code does not exist on the employee."
     },
-    "StartDate": {
+    "startDate": {
       "type": "date",
       "description": "Gets or sets the start date."
     },
-    "SubledgerNumberSeriesId": {
+    "subledgerNumberSeriesId": {
       "type": "string (GUID)",
       "description": "Sets the id to the SubledgerNumberSeries the party should be applied to when creating it."
     },
