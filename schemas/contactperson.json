@@ -2,7 +2,26 @@
   "$id": "/api/pipes/xxxxxx-contactperson-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "address2": {
+      "type": "string"
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "externalCode": {
+      "type": "string"
+    },
+    "placeOfBirth": {
+      "type": "string"
+    },
+    "socialSecurityNumber": {
+      "type": "string"
+    },
+    "zipCode": {
+      "type": "string"
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-contactperson-collect",
   "type": "object"
 }

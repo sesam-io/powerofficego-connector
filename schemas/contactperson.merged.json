@@ -6,6 +6,9 @@
     "address1": {
       "type": "string"
     },
+    "address2": {
+      "type": "string"
+    },
     "citizenship": {
       "items": {
         "anyOf": []
@@ -15,7 +18,13 @@
     "city": {
       "type": "string"
     },
+    "dateOfBirth": {
+      "type": "date"
+    },
     "emailAddress": {
+      "type": "string"
+    },
+    "externalCode": {
       "type": "string"
     },
     "firstName": {
@@ -57,7 +66,16 @@
     "phoneNumber": {
       "type": "string"
     },
+    "placeOfBirth": {
+      "type": "string"
+    },
     "residenceCountryCode": {
+      "type": "string"
+    },
+    "socialSecurityNumber": {
+      "type": "string"
+    },
+    "zipCode": {
       "type": "string"
     }
   },
