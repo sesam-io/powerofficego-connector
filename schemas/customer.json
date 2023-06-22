@@ -12,7 +12,7 @@
       "description":"Gets or sets the currency code."
     },
     "dateOfBirth": {
-      "type": "date",
+      "type": "string (date)",
       "description": "Gets or sets the date of birth."
     },
     "deliveryTerm": {
@@ -95,7 +95,7 @@
           "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
         },
         "lastChanged": {
-          "type": "string",
+          "type": "string (date)",
           "description": "Gets or sets the last changed date (DateTimeOffset)."
         },
         "zipCode": {
@@ -150,11 +150,11 @@
       "description": "Gets or sets id of the primary ContactPerson on the party."
     },
     "createdDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the creation date."
     },
     "customerCreatedDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets date when contact first became a customer"
     },
     "doNotAddLatePaymentFees": {
@@ -206,7 +206,7 @@
       "description": "Gets or sets a value indicating whether this customer is vat free. Sales against the customer will use the alternative sales account on the product or product group when posting the revenue if this is set to true."
     },
     "lastChanged": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the last changed date."
     },
     "legalName": {
@@ -230,7 +230,7 @@
       "description": "Gets or sets a value indicating whether to send reminders for this customer or not."
     },
     "since": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets or sets when the customer or supplier first became a contact."
     },
     "streetAddress": {
@@ -269,7 +269,7 @@
           "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
         },
         "lastChanged": {
-          "type": "date",
+          "type": "string (date)",
           "description": "Gets or sets the last changed date (DateTimeOffset)."
         },
         "zipCode": {
@@ -316,7 +316,7 @@
             "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
           },
           "lastChanged": {
-            "type": "string",
+            "type": "string (date)",
             "description": "Gets or sets the last changed date (DateTimeOffset)."
           },
           "zipCode": {

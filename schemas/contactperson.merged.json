@@ -24,7 +24,7 @@
     },
     "dateOfBirth": {
       "description": "Gets or sets the date of birth of this contact person.",
-      "type": "date"
+      "type": "string (date)"
     },
     "emailAddress": {
       "description": "Gets or sets the email address.",
@@ -64,7 +64,7 @@
     },
     "lastChanged": {
       "description": "Gets the last changed date.",
-      "type": "string"
+      "type": "string (date)"
     },
     "lastName": {
       "description": "Gets or sets the last name.",

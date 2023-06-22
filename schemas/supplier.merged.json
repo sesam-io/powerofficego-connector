@@ -20,7 +20,7 @@
     },
     "createdDate": {
       "description": "Gets the creation date.",
-      "type": "string"
+      "type": "string (date)"
     },
     "createdFromImportJournalId": {
       "description": "Gets the if of the Import that created this party.",
@@ -32,7 +32,7 @@
     },
     "dateOfBirth": {
       "description": "Gets or sets the date of birth.",
-      "type": "Date"
+      "type": "string (date)"
     },
     "emailAddress": {
       "description": "Gets or sets the email address.",
@@ -80,7 +80,7 @@
     },
     "lastChanged": {
       "description": "Gets the last changed date.",
-      "type": "string"
+      "type": "string (date)"
     },
     "lastName": {
       "description": "Gets or sets the last name.",
@@ -128,7 +128,7 @@
         },
         "lastChanged": {
           "description": "Gets or sets the last changed date (DateTimeOffset).",
-          "type": "string"
+          "type": "string (date)"
         },
         "zipCode": {
           "description": "Gets or sets the zip code (postal code).",
@@ -151,7 +151,7 @@
     },
     "since": {
       "description": "Gets or sets when the customer or supplier first became a contact.",
-      "type": "string"
+      "type": "string (date)"
     },
     "socialSecurityNumber": {
       "description": "Sets the social security number. For privacy reasons queries returns 'hidden' if this field has a value and null if it's empty.",
@@ -199,7 +199,7 @@
         },
         "lastChanged": {
           "description": "Gets or sets the last changed date (DateTimeOffset).",
-          "type": "string"
+          "type": "string (date)"
         },
         "zipCode": {
           "description": "Gets or sets the zip code (postal code).",
@@ -247,7 +247,7 @@
           },
           "lastChanged": {
             "description": "Gets or sets the last changed date (DateTimeOffset).",
-            "type": "string"
+            "type": "string (date)"
           },
           "zipCode": {
             "description": "Gets or sets the zip code (postal code).",
@@ -264,7 +264,7 @@
     },
     "supplierCreatedDate": {
       "description": "Gets date when contact first became a supplier",
-      "type": "string"
+      "type": "string (date)"
     },
     "vatNumber": {
       "description": "Gets or sets the vat number (Organization number).",

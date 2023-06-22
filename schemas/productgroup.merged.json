@@ -25,7 +25,7 @@
     },
     "lastChanged": {
       "description": "Gets the last changed date.",
-      "type": "string"
+      "type": "string (date)"
     },
     "name": {
       "description": "Gets or sets the product group name.",

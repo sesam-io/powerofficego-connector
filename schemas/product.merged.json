@@ -37,7 +37,7 @@
     },
     "lastChanged": {
       "description": "Gets the last changed date.",
-      "type": "string"
+      "type": "string (date)"
     },
     "name": {
       "description": "Gets or sets the name of the product.",
@@ -53,7 +53,7 @@
     },
     "productsOnHandLastChanged": {
       "description": "Gets the last products on hand changed date.",
-      "type": "Date"
+      "type": "string (date)"
     },
     "salesAccount": {
       "description": "Gets or sets the code of the GeneralLedgerAccount that is used as sales account when invoicing this product.",

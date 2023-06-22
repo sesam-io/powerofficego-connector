@@ -37,7 +37,7 @@
     },
     "createdDate": {
       "description": "Gets the date this entity was created.",
-      "type": "string"
+      "type": "string (date)"
     },
     "currencyCode": {
       "description": "Gets or sets the currency code of the outgoing invoice.",
@@ -101,7 +101,7 @@
     },
     "deliveryDate": {
       "description": "Gets or sets the delivery date.",
-      "type": "string"
+      "type": "string (date)"
     },
     "deliveryTerm": {
       "description": "Gets or set the terms of delivery of the invoice.",
@@ -129,11 +129,11 @@
     },
     "dueDate": {
       "description": "Gets the due date. This is the due date on the invoice that was sent from PowerOffice Go and will only have a value on sent invoices.",
-      "type": "string"
+      "type": "string (date)"
     },
     "expectedDueDate": {
       "description": "Gets the expected due date. This is the date when the invoice is expected to be paid by a customer. In essence this is an override of GoApi.Invoices.OutgoingInvoice.DueDate , that is set by a user in PowerOffice Go after the invoice has been delivered. This field will only have a value on sent invoices.",
-      "type": "string"
+      "type": "string (date)"
     },
     "externalImportReference": {
       "description": "Gets or sets an external import reference. Can be used to correlate/duplicate check invoices. Must be a unique value for a given client, exception will be thrown if an OutgoingInvoice with equal import reference exists. Max length is 50 characters.",
@@ -165,7 +165,7 @@
     },
     "lastChanged": {
       "description": "Gets the last changed date.",
-      "type": "string"
+      "type": "string (date)"
     },
     "lastErrorMessage": {
       "description": "If invoice delivery fails this property will contain the last error message.",
@@ -181,7 +181,7 @@
     },
     "orderDate": {
       "description": "Gets or sets the order date.",
-      "type": "string"
+      "type": "string (date)"
     },
     "orderNo": {
       "description": "Gets the order no. This value is auto generated when saving a new OutgoingInvoice.",
@@ -205,7 +205,7 @@
             },
             "FromDate": {
               "description": "Start date of accrual. If the invoice is a RecurringInvoice , NumOfMonths should be used instead.",
-              "type": "Date"
+              "type": "string (date)"
             },
             "IsActive": {
               "description": "States if accrual is active or not.",
@@ -221,7 +221,7 @@
             },
             "ToDate": {
               "description": "End date of accrual. If the invoice is a RecurringInvoice , NumOfMonths should be used instead.",
-              "type": "Date"
+              "type": "string (date)"
             }
           },
           "type": "object"
@@ -370,7 +370,7 @@
     },
     "sentDate": {
       "description": "Gets the date the invoice was sent in Go. Only available for invoices sent from Go. Blank if the invoice was posted to Go using an import of the voucher.",
-      "type": "string"
+      "type": "string (date)"
     },
     "status": {
       "description": "Gets or sets the status. Invoices can only be set to status GoApi.Invoices.OutgoingInvoiceStatus.Draft or GoApi.Invoices.OutgoingInvoiceStatus.Approved . Defaults to GoApi.Invoices.OutgoingInvoiceStatus.Draft .",
@@ -390,7 +390,7 @@
     },
     "voucherDate": {
       "description": "Gets the voucher date. This is the date when the invoice was sent from PowerOffice Go and will only have a value on sent invoices.",
-      "type": "string"
+      "type": "string (date)"
     },
     "voucherNo": {
       "description": "Gets the voucher number the invoice have. Only avaialble for sent invoices.",

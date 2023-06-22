@@ -12,7 +12,7 @@
       "description": "Gets or sets the code of the Department this employee belongs to."
     },
     "endDate": {
-      "type": "date",
+      "type": "string (date)",
       "description": "Gets or sets the end date."
     },
     "expenseBankAccountCode": {
@@ -28,7 +28,7 @@
       "description": "Gets or sets an external import reference that is unique within the account type (Customer, Supplier, Employee). It can be edited by any integration - at any time. Max length is 50 characters."
     },
     "hiredDate": {
-      "type": "date",
+      "type": "string (date)",
       "description": "Gets or sets the hired date."
     },
     "hourlyCost": {
@@ -64,7 +64,7 @@
       "description": "Gets or sets the payroll bank account code. Saving the employee entity will fail if the PartyBankAccount with given code does not exist on the employee."
     },
     "startDate": {
-      "type": "date",
+      "type": "string (date)",
       "description": "Gets or sets the start date."
     },
     "subledgerNumberSeriesId": {
@@ -83,11 +83,11 @@
       "description": "Gets or sets the contact groups. This collection will contain the names of all the ContactGroup the party is associated with. If the collection is provided a contact group that does not exist, the contact group will be created when saving. The property type is defined as string in the docs. check https://api.poweroffice.net/Web/docs/index.html#Reference/Rest/Type_Employee.md"
     },
     "createdDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the creation date."
     },
     "dateOfBirth": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets or sets the date of birth."
     },
     "emailAddress": {
@@ -95,7 +95,7 @@
       "description": "Gets or sets the email address."
     },
     "employeeCreatedDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets date when contact first became a employee"
     },
     "firstName": {
@@ -131,11 +131,11 @@
               "description": "Sets the deleted state. When saving, this entity will be deleted if this property is set to true and the Id is valid."
             },
             "validFrom": {
-              "type": "date",
+              "type": "string (date)",
               "description": "Gets or sets the date from which this rate is to be used from."
             },
             "validTo": {
-              "type": "date",
+              "type": "string (date)",
               "description": "Gets the date from which this rate is no longer in use."
             }
           },
@@ -157,7 +157,7 @@
       "description": "Gets or sets a value indicating whether this party is archived (is inactive)"
     },
     "lastChanged": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the last changed date."
     },
     "lastName": {
@@ -200,7 +200,7 @@
           "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
         },
         "lastChanged": {
-          "type": "string",
+          "type": "string (date)",
           "description":"Gets or sets the last changed date (DateTimeOffset)."
         },
         "zipCode": {
@@ -263,7 +263,7 @@
           "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
         },
         "lastChanged": {
-          "type": "string",
+          "type": "string (date)",
           "description": "Gets or sets the last changed date (DateTimeOffset)."
         },
         "zipCode": {
@@ -311,7 +311,7 @@
               "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
             },
             "lastChanged": {
-              "type": "string",
+              "type": "string (date)",
               "description": "Gets or sets the last changed date (DateTimeOffset)."
             },
             "zipCode": {

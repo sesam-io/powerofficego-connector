@@ -20,7 +20,7 @@
       "description": "Gets or sets the number of products on hand (total currently in stock)."
     },
     "productsOnHandLastChanged": {
-      "type": "Date",
+      "type": "string (date)",
       "description": "Gets the last products on hand changed date."
     },
     "code": {
@@ -44,7 +44,7 @@
       "description": "Gets or sets a value indicating whether this product is active."
     },
     "lastChanged": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the last changed date."
     },
     "name": {

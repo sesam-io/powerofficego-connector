@@ -23,7 +23,7 @@
       "description": "Gets or sets the address city."
     },
     "dateOfBirth": {
-      "type": "date",
+      "type": "string (date)",
       "description": "Gets or sets the date of birth of this contact person."
     },
     "emailAddress": {
@@ -63,7 +63,7 @@
       "description": "Gets or sets if the contact person has relatives or close associates of PEP (RCA)"
     },
     "lastChanged": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the last changed date."
     },
     "lastName": {

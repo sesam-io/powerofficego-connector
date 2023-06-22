@@ -19,7 +19,7 @@
       "description": "Gets or sets id of the primary ContactPerson on the party."
     },
     "createdDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the creation date."
     },
     "createdFromImportJournalId": {
@@ -31,7 +31,7 @@
       "description": "Gets or sets the currency code."
     },
     "dateOfBirth": {
-      "type": "Date",
+      "type": "string (date)",
       "description": "Gets or sets the date of birth."
     },
     "emailAddress": {
@@ -79,7 +79,7 @@
       "description": "Gets or sets a value indicating whether this party is a private person."
     },
     "lastChanged": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the last changed date."
     },
     "lastName": {
@@ -126,7 +126,7 @@
           "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
         },
         "lastChanged": {
-          "type": "string",
+          "type": "string (date)",
           "description":"Gets or sets the last changed date (DateTimeOffset)."
         },
         "zipCode": {
@@ -150,7 +150,7 @@
       "description": "Gets or sets a value indicating whether International ID should be reported to Altinn."
     },
     "since": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets or sets when the customer or supplier first became a contact."
     },
     "socialSecurityNumber": {
@@ -197,7 +197,7 @@
           "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
         },
         "lastChanged": {
-          "type": "string",
+          "type": "string (date)",
           "description": "Gets or sets the last changed date (DateTimeOffset)."
         },
         "zipCode": {
@@ -245,7 +245,7 @@
               "description": "Flag indicating whether or not this address is the primary delivery address. Primary delivery address will be suggested as the delivery address when creating new invoices."
             },
             "lastChanged": {
-              "type": "string",
+              "type": "string (date)",
               "description": "Gets or sets the last changed date (DateTimeOffset)."
             },
             "zipCode": {
@@ -263,7 +263,7 @@
       "description": "Sets the id to the SubledgerNumberSeries the party should be applied to when creating it."
     },
     "supplierCreatedDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets date when contact first became a supplier"
     },
     "vatNumber": {

@@ -36,7 +36,7 @@
       "description": "Gets or sets the contract no."
     },
     "createdDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the date this entity was created."
     },
     "currencyCode": {
@@ -100,7 +100,7 @@
       "description": "Gets the delivery address ZipCode that was set on the invoice when it was sent. Will only have a value on invoices with GoApi.Invoices.OutgoingInvoiceStatus.Sent , GoApi.Invoices.OutgoingInvoiceStatus.Paid and GoApi.Invoices.OutgoingInvoiceStatus.Archived ."
     },
     "deliveryDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets or sets the delivery date."
     },
     "deliveryTerm": {
@@ -128,11 +128,11 @@
       "description": "Gets the document no (invoice number). This field will only have a value on sent invoices."
     },
     "dueDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the due date. This is the due date on the invoice that was sent from PowerOffice Go and will only have a value on sent invoices."
     },
     "expectedDueDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the expected due date. This is the date when the invoice is expected to be paid by a customer. In essence this is an override of GoApi.Invoices.OutgoingInvoice.DueDate , that is set by a user in PowerOffice Go after the invoice has been delivered. This field will only have a value on sent invoices."
     },
     "externalImportReference": {
@@ -164,7 +164,7 @@
       "description": "Get current delivery invoice status. When true the invoice is under delivery."
     },
     "lastChanged": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the last changed date."
     },
     "lastErrorMessage": {
@@ -180,7 +180,7 @@
       "description": "Gets the net amount of the invoice. This is calculated from the GoApi.Invoices.OutgoingInvoice.OutgoingInvoiceLines ."
     },
     "orderDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets or sets the order date."
     },
     "orderNo": {
@@ -313,7 +313,7 @@
                 "description": "The code of the GeneralLedgerAccount used for keeping accrual balance. (Norwegian: Balansekonto)"
               },
               "FromDate": {
-                "type": "Date",
+                "type": "string (date)",
                 "description": "Start date of accrual. If the invoice is a RecurringInvoice , NumOfMonths should be used instead."
               },
               "IsActive": {
@@ -329,7 +329,7 @@
                 "description": "The code of the GeneralLedgerAccount used for posting the result. (Norwegian: Resultatkonto)"
               },
               "ToDate": {
-                "type": "Date",
+                "type": "string (date)",
                 "description": "End date of accrual. If the invoice is a RecurringInvoice , NumOfMonths should be used instead."
               }
             },
@@ -369,7 +369,7 @@
       "description": "Gets or sets the related DocumentNo linking the original invoice. Can be used when creating credit notes. If set on a credit note, this credit note will be matched with an invoice with the provided InvoiceNo / DocumentNo when the credit note is posted."
     },
     "sentDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the date the invoice was sent in Go. Only available for invoices sent from Go. Blank if the invoice was posted to Go using an import of the voucher."
     },
     "status": {
@@ -389,7 +389,7 @@
       ]
     },
     "voucherDate": {
-      "type": "string",
+      "type": "string (date)",
       "description": "Gets the voucher date. This is the date when the invoice was sent from PowerOffice Go and will only have a value on sent invoices."
     },
     "voucherNo": {
