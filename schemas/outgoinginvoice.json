@@ -192,20 +192,22 @@
       "description": "Gets or sets code of the Employee that is the sales person on this outgoing invoice."
     },
     "outgoingInvoiceLines": {
-      "items": {
         "additionalProperties": true,
         "properties": {
           "departmentCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Gets or sets code of the Department this line is for. By default the DepartmentCode in the head (OutgoingInvoice) will be inherited and used when this is null. Use '-1' to set 'No department'."
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "description": "Gets or sets the description."
           },
           "discountPercent": {
             "anyOf": [
               {
                 "subtype": "decimal",
-                "type": "string"
+                "type": "string",
+                "description": "Gets or sets the discount. The value must be between 0 and 1. I.e. 0.5 = 50% discount. Can also be used to add a premium in percent of the sales price (usually markup) by having negative number. Negative numbers can be between -10 and 0."
               },
               {
                 "type": "integer"
@@ -216,37 +218,47 @@
             "type": "boolean"
           },
           "id": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity. Important notice: When the OutgoingInvoice status goes from Draft or Approved to a posted invoice (status Sent, Paid or Archived). The draft invoice is copied over to a posted invoice, causing the Id to change."
           },
           "lineType": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets or sets the type of the line. When adding invoice lines to the OutgoingInvoice , the types supported are GoApi.Common.VoucherLineType.Normal , GoApi.Common.VoucherLineType.Summary and GoApi.Common.VoucherLineType.Text ."
           },
           "netAmount": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets the net amount. This is calculated by PowerOffice Go using the quantity, product price (or overridden unit price) and discount, not including value added tax (VAT)."
           },
           "productCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Gets or sets the code of the Product . Must be provided on lines that affects the result (lines that are of GoApi.Common.VoucherLineType.Normal )."
           },
           "projectCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Gets or sets the code of the Project this line is for. By default the ProjectCode in the head (OutgoingInvoice) will be inherited and used when this is null. Use '-1' to set 'No project'."
           },
           "quantity": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets or sets the quantity."
           },
           "salesAccount": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets the code of the GeneralLedgerAccount that will be used for posting the revenue from the product when the invoice is sent if the customer is exempt VAT, or the line has ExemptVat set to true. The usual application in Go is that the alternative sales account is used for vat free sales with code 5. The alternative sales account can, however, be used with an account with vat in order to alternate between different vat codes on the product. This applies to all outgoing invoices with OutgoingInvoiceStatus GoApi.Invoices.OutgoingInvoiceStatus.Draft or GoApi.Invoices.OutgoingInvoiceStatus.Approved . Lines on invoices that are posted (has OutgoingInvoiceStatus GoApi.Invoices.OutgoingInvoiceStatus.Sent or GoApi.Invoices.OutgoingInvoiceStatus.Paid .), this property will contain the actual account that was used to post the revenue."
           },
           "salesPersonEmployeeCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets or sets code of the Employee that is the sales person on this line."
           },
           "sortOrder": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets or sets the sort order. Can be used to specify the order of the lines on the invoice."
           },
           "totalAmount": {
             "anyOf": [
               {
                 "subtype": "decimal",
-                "type": "string"
+                "type": "string",
+                "description": "Gets the total amount. This is calculated by PowerOffice Go using the quantity, product price (or overridden unit price) and discount, including value added tax (VAT)."
               },
               {
                 "type": "integer"
@@ -254,28 +266,35 @@
             ]
           },
           "unitCost": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets or sets the overridden unit cost price for this Product . If this is not provided, the unit cost price on the product will be set."
           },
           "unitOfMeasure": {
-            "type": "string"
+            "type": "string",
+            "description": "OBSOLETE - Gets or sets the unit of measure. This is an Oasis compatible unit-of-measure code. This property is deprecated. Use GoApi.Invoices.OutgoingInvoiceLine.UnitOfMeasureCode . If both GoApi.Invoices.OutgoingInvoiceLine.UnitOfMeasure and GoApi.Invoices.OutgoingInvoiceLine.UnitOfMeasureCode is set, GoApi.Invoices.OutgoingInvoiceLine.UnitOfMeasureCode will be used."
           },
           "unitOfMeasureCode": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets or sets the unit of measure. This is an Oasis compatible unit-of-measure code."
           },
           "unitPrice": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets or sets the overridden unit price for this Product before discount. If this is not provided, the unit price on the product will be set."
           },
           "vatCode": {
-            "type": "string"
+            "type": "string",
+            "description": "Gets the code of the VatCode . (Norwegian: MVA-kode)"
           },
           "vatExemptSalesAccount": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets the code of the GeneralLedgerAccount that will be used for posting the revenue from the product when the invoice is sent if the customer is exempt VAT. This applies to all outgoing invoices with OutgoingInvoiceStatus GoApi.Invoices.OutgoingInvoiceStatus.Draft or GoApi.Invoices.OutgoingInvoiceStatus.Approved . Lines on invoices that are posted (has OutgoingInvoiceStatus GoApi.Invoices.OutgoingInvoiceStatus.Sent or GoApi.Invoices.OutgoingInvoiceStatus.Paid .), this property will contain the actual account that was used to post the revenue."
           },
           "vatRate": {
             "anyOf": [
               {
                 "subtype": "decimal",
-                "type": "string"
+                "type": "string",
+                "description": "Gets the rate of the VatCode ."
               },
               {
                 "type": "integer"
@@ -283,7 +302,8 @@
             ]
           },
           "vatReturnSpecification": {
-            "type": "integer"
+            "type": "integer",
+            "description": "Gets or sets the VatReturnSpecification . Entries that are vat reportable might report vat return specifications from 2022. If not provided, the line will use the vat returns specification that is default on the account of the product if there is any, otherwise GoApi.Common.VatReturnSpecification.None ."
           },
           "Accrual": {
             "additionalProperties": true,
@@ -329,40 +349,39 @@
             "description":"Gets the code of the Location this line is for."
           }
         },
-        "type": "object"
-      },
-      "type": "array",
-      "description": "Gets the outgoing invoice lines ( OutgoingInvoiceLine . Trying to add more then 10000 lines to an OutgoingInvoice will throw an exception when saving."
+        "type": "object",
+        "description": "Gets the outgoing invoice lines ( OutgoingInvoiceLine . Trying to add more then 10000 lines to an OutgoingInvoice will throw an exception when saving."
     },
     "paymentTerms": {
       "type": "integer",
-      "description": ""
+      "description": "Gets or sets the payment terms. This is the number of days until the invoice is due after sending."
     },
     "projectCode": {
       "type": "string",
-      "description": ""
+      "description": "Gets or sets the code of the Project this invoice is for. This code will be inherited on all OutgoingInvoiceLines unless '-1' (no project) is specified."
     },
     "purchaseOrderNo": {
       "type": "string",
-      "description": ""
+      "description": "Gets or sets the purchase order no."
     },
     "relatedDocumentNo": {
       "type": "string",
-      "description": ""
+      "description": "Gets or sets the related DocumentNo linking the original invoice. Can be used when creating credit notes. If set on a credit note, this credit note will be matched with an invoice with the provided InvoiceNo / DocumentNo when the credit note is posted."
     },
     "sentDate": {
       "type": "string",
-      "description": ""
+      "description": "Gets the date the invoice was sent in Go. Only available for invoices sent from Go. Blank if the invoice was posted to Go using an import of the voucher."
     },
     "status": {
       "type": "integer",
-      "description": ""
+      "description": "Gets or sets the status. Invoices can only be set to status GoApi.Invoices.OutgoingInvoiceStatus.Draft or GoApi.Invoices.OutgoingInvoiceStatus.Approved . Defaults to GoApi.Invoices.OutgoingInvoiceStatus.Draft ."
     },
     "totalAmount": {
       "anyOf": [
         {
           "subtype": "decimal",
-          "type": "string"
+          "type": "string",
+          "description":"Gets the total amount of the invoice. This is calculated from the GoApi.Invoices.OutgoingInvoice.OutgoingInvoiceLines"
         },
         {
           "type": "integer"
@@ -370,10 +389,12 @@
       ]
     },
     "voucherDate": {
-      "type": "string"
+      "type": "string",
+      "description": "Gets the voucher date. This is the date when the invoice was sent from PowerOffice Go and will only have a value on sent invoices."
     },
     "voucherNo": {
-      "type": "integer"
+      "type": "integer",
+      "description": "Gets the voucher number the invoice have. Only avaialble for sent invoices."
     }
   },
   "title": "Pipe sink entity type: xxxxxx-outgoinginvoice-collect",
