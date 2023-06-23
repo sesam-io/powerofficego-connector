@@ -27,5 +27,6 @@
       "template": "templates/customer.json"
     }
   },
+  "system": "poweroffice",
   "system-template": "templates/system.json"
 }

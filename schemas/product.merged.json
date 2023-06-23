@@ -1,0 +1,89 @@
+{
+  "$id": "/api/pipes/xxxxxx-product-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "availableStock": {
+      "description": "Gets the number of products available. This is the GoApi.Products.Product.ProductsOnHand reduced by the amount of products added to order lines that is yet to be billed.",
+      "type": "number"
+    },
+    "code": {
+      "description": "Gets or sets the code. This code is an unique identification of the product.",
+      "type": "string"
+    },
+    "costPrice": {
+      "description": "Gets or sets the cost price of the product.",
+      "type": "integer"
+    },
+    "createdFromImportJournalId": {
+      "description": "Gets the identifier of the Import that created this product.",
+      "type": "string (GUID)"
+    },
+    "description": {
+      "description": "Gets or sets the description.",
+      "type": "string"
+    },
+    "gtin": {
+      "description": "Gets or sets the GTIN (Global trade item number).",
+      "type": "string"
+    },
+    "id": {
+      "description": "Gets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity.",
+      "type": "integer"
+    },
+    "isActive": {
+      "description": "Gets or sets a value indicating whether this product is active.",
+      "type": "boolean"
+    },
+    "lastChanged": {
+      "description": "Gets the last changed date.",
+      "type": "string (date)"
+    },
+    "name": {
+      "description": "Gets or sets the name of the product.",
+      "type": "string"
+    },
+    "productGroupId": {
+      "description": "Gets or sets the identifier of the ProductGroup that this product belongs in.",
+      "type": "integer"
+    },
+    "productsOnHand": {
+      "description": "Gets or sets the number of products on hand (total currently in stock).",
+      "type": "number"
+    },
+    "productsOnHandLastChanged": {
+      "description": "Gets the last products on hand changed date.",
+      "type": "string (date)"
+    },
+    "salesAccount": {
+      "description": "Gets or sets the code of the GeneralLedgerAccount that is used as sales account when invoicing this product.",
+      "type": "integer"
+    },
+    "salesPrice": {
+      "description": "Gets or sets the sales price of the product exclusive Value Added Tax (VAT).",
+      "type": "integer"
+    },
+    "type": {
+      "description": "Gets or sets the type of the product. Products can either be a GoApi.Products.ProductType.Product or a GoApi.Products.ProductType.Service",
+      "type": "integer"
+    },
+    "unit": {
+      "description": "OBSOLETE - Gets or sets the Oasis compatible unit-of-measure code. This property is marked obsolete. Use GoApi.Products.Product.UnitOfMeasureCode instead when creating or updating a product.",
+      "type": "string"
+    },
+    "unitOfMeasureCode": {
+      "description": "Gets or sets the unit of measure ( UnitOfMeasureCode ). This is an Oasis compatible unit-of-measure code. If the unit of measure was saved using GoApi.Products.Product.Unit , and the value is not compatible with this enum, this property will be NULL and the original unit string will be present in GoApi.Products.Product.Unit .",
+      "type": "integer"
+    },
+    "vatCode": {
+      "description": "Gets the code of the VatCode used when billing the product. If not present, get the from the product group this product is in.",
+      "type": "string"
+    },
+    "vatExemptSalesAccount": {
+      "description": "Gets or sets the code of the GeneralLedgerAccount that will be used for posting the revenue from the product when the invoice is sent if the customer is exempt VAT (Value added tax), or the invoice line on the invoice with the product has ExemptVat set to true. The alternative sales account will be used for posting the revenue from the product when the invoice is sent if the customer is exempt vat, or the line has ExemptVat set to true. The usual application in Go is that the alternative sales account is used for vat free sales with code 5. The alternative sales account can, however, be used with an account with vat in order to alternate between different vat codes on the product. ///",
+      "type": "integer"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-product-collect",
+  "type": "object"
+}
