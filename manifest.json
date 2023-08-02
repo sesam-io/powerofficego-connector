@@ -1,8 +1,7 @@
 {
   "additional_parameters": {
     "application_key": {},
-    "base_url": {},
-    "subscription_key": {}
+    "base_url": {}
   },
   "auth": "api_key",
   "datatypes": {
@@ -14,9 +13,6 @@
     },
     "employee": {
       "template": "templates/employee.json"
-    },
-    "order": {
-      "template": "templates/order.json"
     },
     "outgoinginvoice": {
       "template": "templates/outgoinginvoice.json"

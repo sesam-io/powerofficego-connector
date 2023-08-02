@@ -1,98 +1,71 @@
-[
-  {
-    "_id": "{{@ system @}}",
-    "oauth2": {
-      "client_id": "{{@ application_key @}}",
-      "client_secret": "$SECRET(api_key)",
-      "token_url": "{{@ base_url @}}/OAuth/Token"
-    },
-    "operations": {
-      "alternate_list": {
-        "method": "GET",
-        "params": {
-          "$filter": "{% if since is defined and since is not none %}(LastChanged ge datetimeoffset'{{ since }}'){% else %}(LastChanged ge datetimeoffset'1970-01-01'){% endif %}"
-        },
-        "url": "{{ properties.datatype }}"
-      },
-      "contact_insert": {
-        "method": "POST",
-        "payload-type": "json",
-        "payload_property": "data",
-        "url": "{{ properties.parenttype }}/{{ entity['$source']['partyId'] }}/{{ properties.datatype }}"
-      },
-      "contact_lookup": {
-        "method": "GET",
-        "payload_property": "data",
-        "url": "{{ properties.parenttype }}/{{ entity['$source']['partyId'] }}/{{ properties.datatype }}/{{ entity.id }}"
-      },
-      "delete": {
-        "method": "DELETE",
-        "payload_property": "data",
-        "url": "{{ properties.datatype }}/{{ entity.id }}"
-      },
-      "insert": {
-        "method": "POST",
-        "payload-type": "json",
-        "payload_property": "data",
-        "url": "{{ properties.datatype }}"
-      },
-      "list": {
-        "headers": {
-          "X-Sesam-Page": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}1{% endif %}"
-        },
-        "method": "GET",
-        "next_page_link": "{{@ base_url @}}/{{ properties.datatype }}",
-        "next_page_termination_strategy": [
-          "same-next-page-request",
-          "empty-result"
-        ],
-        "params": {
-          "$filter": "{% if since is defined and since is not none %}(LastChanged ge datetimeoffset'{{ since }}'){% else %}(LastChanged ge datetimeoffset'1970-01-01'){% endif %}",
-          "$orderby": "{{ properties.ordering }}",
-          "$skip": "{% if (previous_request_headers['X-Sesam-Page'] is defined) %}{{ properties.top|int*(headers['X-Sesam-Page']|int-1) }}{% else %}0{% endif %}sesam:markjson",
-          "$top": "{{ properties.top }}"
-        },
-        "url": "{{ properties.datatype }}"
-      },
-      "lookup": {
-        "method": "GET",
-        "payload_property": "data",
-        "url": "{{ properties.datatype }}/{{ entity.id }}"
-      },
-      "update": {
-        "method": "POST",
-        "payload-type": "json",
-        "payload_property": "data",
-        "url": "{{ properties.datatype }}"
-      }
-    },
-    "type": "system:rest",
-    "url_pattern": "{{@ base_url @}}/%s",
-    "verify_ssl": true
+{
+  "_id": "{{@ system @}}",
+  "oauth2": {
+    "client_id": "{{@ application_key @}}",
+    "client_secret": "$SECRET(api_key)",
+    "token_url": "{{@ base_url @}}/OAuth/Token"
   },
-  {
-    "_id": "{{@ system @}}-v2",
-    "headers": {
-      "Ocp-Apim-Subscription-Key": "{{@ subscription_key @}}"
-    },
-    "oauth2": {
-      "client_id": "{{@ application_key @}}",
-      "client_secret": "$SECRET(api_key)",
-      "extra": {
-        "headers": {
-          "Ocp-Apim-Subscription-Key": "{{@ subscription_key @}}"
-        }
+  "operations": {
+    "alternate_list": {
+      "method": "GET",
+      "params": {
+        "$filter": "{% if since is defined and since is not none %}(LastChanged ge datetimeoffset'{{ since }}'){% else %}(LastChanged ge datetimeoffset'1970-01-01'){% endif %}"
       },
-      "token_url": "$ENV(base_url-v2)/OAuth/Token"
+      "url": "{{ properties.datatype }}"
     },
-    "operations": {
-      "list": {
-        "method": "GET",
-        "url": "{{ properties.datatype }}"
-      }
+    "contact_insert": {
+      "method": "POST",
+      "payload-type": "json",
+      "payload_property": "data",
+      "url": "{{ properties.parenttype }}/{{ entity['$source']['partyId'] }}/{{ properties.datatype }}"
     },
-    "type": "system:rest",
-    "url_pattern": "$ENV(base_url-v2)/v2/%s",
-    "verify_ssl": true
-  }
-]
+    "contact_lookup": {
+      "method": "GET",
+      "payload_property": "data",
+      "url": "{{ properties.parenttype }}/{{ entity['$source']['partyId'] }}/{{ properties.datatype }}/{{ entity.id }}"
+    },
+    "delete": {
+      "method": "DELETE",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}/{{ entity.id }}"
+    },
+    "insert": {
+      "method": "POST",
+      "payload-type": "json",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}"
+    },
+    "list": {
+      "headers": {
+        "X-Sesam-Page": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}1{% endif %}"
+      },
+      "method": "GET",
+      "next_page_link": "{{@ base_url @}}/{{ properties.datatype }}",
+      "next_page_termination_strategy": [
+        "same-next-page-request",
+        "empty-result"
+      ],
+      "params": {
+        "$filter": "{% if since is defined and since is not none %}(LastChanged ge datetimeoffset'{{ since }}'){% else %}(LastChanged ge datetimeoffset'1970-01-01'){% endif %}",
+        "$orderby": "{{ properties.ordering }}",
+        "$skip": "{% if (previous_request_headers['X-Sesam-Page'] is defined) %}{{ properties.top|int*(headers['X-Sesam-Page']|int-1) }}{% else %}0{% endif %}sesam:markjson",
+        "$top": "{{ properties.top }}"
+      },
+      "url": "{{ properties.datatype }}"
+    },
+    "lookup": {
+      "method": "GET",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}/{{ entity.id }}"
+    },
+    "update": {
+      "method": "POST",
+      "payload-type": "json",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}"
+    }
+  },
+  "type": "system:rest",
+  "url_pattern": "{{@ base_url @}}/%s",
+  "verify_ssl": true
+}
