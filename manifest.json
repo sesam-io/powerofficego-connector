@@ -1,11 +1,40 @@
 {
   "additional_parameters": {
     "application_key": {},
-    "base_url": {},
-    "subscription_key": {}
+    "base_url": {}
   },
   "auth": "api_key",
   "datatypes": {
+    "contactperson": {
+      "template": "templates/contactperson.json"
+    },
+    "currency": {
+      "template": "templates/currency.json"
+    },
+    "customer": {
+      "template": "templates/customer.json"
+    },
+    "employee": {
+      "template": "templates/employee.json"
+    },
+    "outgoinginvoice": {
+      "template": "templates/outgoinginvoice.json"
+    },
+    "product": {
+      "template": "templates/employee.json"
+    },
+    "productgroup": {
+      "template": "templates/employee.json"
+    },
+    "quote": {
+      "template": "templates/quote.json"
+    },
+    "supplier": {
+      "template": "templates/customer.json"
+    },
+    "vatcode": {
+      "template": "templates/vatcode.json"
+    },
     "customers": {
       "template": "templates/customers.json"
     },
