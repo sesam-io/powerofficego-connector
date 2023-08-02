@@ -91,7 +91,7 @@
           "Ocp-Apim-Subscription-Key": "{{@ subscription_key @}}"
         }
       },
-      "token_url": "$ENV(base_url-v2)/OAuth/Token"
+      "url": "{{ properties.datatype }}"
     },
     "operations": {
       "delete": {
@@ -119,7 +119,7 @@
       }
     },
     "type": "system:rest",
-    "url_pattern": "$ENV(base_url-v2)/v2/%s",
+    "url_pattern": "{{@ base_url @}}/%s",
     "verify_ssl": true
   }
 ]
