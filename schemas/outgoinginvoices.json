@@ -1,0 +1,61 @@
+{
+  "$id": "/api/pipes/xxxxxx-outgoinginvoices-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "CustomMatchingReference": {
+      "description": "",
+      "type": null
+    },
+    "DeliveryAddress2": {
+      "description": "",
+      "type": null
+    },
+    "Dim1Code": {
+      "description": "",
+      "type": null
+    },
+    "Dim1Id": {
+      "description": "",
+      "type": null
+    },
+    "Dim2Code": {
+      "description": "",
+      "type": null
+    },
+    "Dim2Id": {
+      "description": "",
+      "type": null
+    },
+    "Dim3Code": {
+      "description": "",
+      "type": null
+    },
+    "Dim3Id": {
+      "description": "",
+      "type": null
+    },
+    "ExternalImportReference": {
+      "description": "",
+      "type": null
+    },
+    "ImportedOrderNo": {
+      "description": "",
+      "type": null
+    },
+    "LocationCode": {
+      "description": "",
+      "type": null
+    },
+    "LocationId": {
+      "description": "",
+      "type": null
+    },
+    "RelatedInvoiceNo": {
+      "description": "",
+      "type": null
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-outgoinginvoices-collect",
+  "type": "object"
+}

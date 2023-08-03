@@ -2,3 +2,4 @@
 .authconfig
 .expanded
 dist/sesam
+test-env.json

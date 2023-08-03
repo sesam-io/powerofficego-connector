@@ -1,0 +1,389 @@
+{
+  "$id": "/api/pipes/xxxxxx-outgoinginvoices-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "Balance": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "BalanceLastChangedDateTimeOffset": {
+      "type": "string"
+    },
+    "BrandingThemeCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "BrandingThemeId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Cid": {
+      "type": "string"
+    },
+    "ContractNo": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "CreatedDateTimeOffset": {
+      "type": "string"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    },
+    "CurrencyExchangeRate": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "CustomMatchingReference": {
+      "description": "",
+      "type": null
+    },
+    "CustomerId": {
+      "type": "integer"
+    },
+    "CustomerNo": {
+      "type": "integer"
+    },
+    "CustomerReference": {
+      "type": "string"
+    },
+    "CustomerReferenceContactPersonId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "DeliveryAddress1": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DeliveryAddress2": {
+      "description": "",
+      "type": null
+    },
+    "DeliveryAddressCity": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DeliveryAddressCountryCode": {
+      "type": "string"
+    },
+    "DeliveryAddressZipCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DeliveryDate": {
+      "type": "string"
+    },
+    "DeliveryTerm": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DeliveryTermId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "DepartmentCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DepartmentId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Dim1Code": {
+      "description": "",
+      "type": null
+    },
+    "Dim1Id": {
+      "description": "",
+      "type": null
+    },
+    "Dim2Code": {
+      "description": "",
+      "type": null
+    },
+    "Dim2Id": {
+      "description": "",
+      "type": null
+    },
+    "Dim3Code": {
+      "description": "",
+      "type": null
+    },
+    "Dim3Id": {
+      "description": "",
+      "type": null
+    },
+    "DueDate": {
+      "type": "string"
+    },
+    "ExternalImportReference": {
+      "description": "",
+      "type": null
+    },
+    "Id": {
+      "type": "string"
+    },
+    "ImportedOrderNo": {
+      "description": "",
+      "type": null
+    },
+    "InvoiceDeliveryType": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "InvoiceNo": {
+      "type": "integer"
+    },
+    "IsCreatedByCurrentIntegration": {
+      "type": "boolean"
+    },
+    "IsReversed": {
+      "type": "boolean"
+    },
+    "LastChangedDateTimeOffset": {
+      "type": "string"
+    },
+    "LocationCode": {
+      "description": "",
+      "type": null
+    },
+    "LocationId": {
+      "description": "",
+      "type": null
+    },
+    "MatchId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "NetAmount": {
+      "type": "integer"
+    },
+    "NetPostedAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "OrderDate": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "OrderNo": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "PaymentTerm": {
+      "type": "integer"
+    },
+    "PaymentTermId": {
+      "type": "integer"
+    },
+    "ProjectCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "ProjectId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "PurchaseOrderReference": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "RelatedInvoiceNo": {
+      "description": "",
+      "type": null
+    },
+    "SellersReferenceEmployeeId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "SellersReferenceEmployeeNo": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "SentDateTimeOffset": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "TotalAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "TotalPostedAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "VoucherDate": {
+      "type": "string"
+    },
+    "VoucherNo": {
+      "type": "integer"
+    },
+    "VoucherType": {
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-outgoinginvoices-collect",
+  "type": "object"
+}
