@@ -1,0 +1,275 @@
+{
+  "$id": "/api/pipes/xxxxxx-customers-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "Allowance": {
+      "description": "",
+      "type": "number"
+    },
+    "BillableRate": {
+      "description": "",
+      "type": "integer"
+    },
+    "ContactCreatedDateTimeOffset": {
+      "type": "string"
+    },
+    "ContactGroupIds": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "CreatedFromImportJournalId": {
+      "description": "",
+      "type": "string"
+    },
+    "CurrencyCode": {
+      "description": "",
+      "type": "string"
+    },
+    "CustomerCreatedDateTimeOffset": {
+      "type": "string"
+    },
+    "CustomerSince": {
+      "type": "string"
+    },
+    "DateOfBirth": {
+      "description": "",
+      "type": "string"
+    },
+    "DeliveryTerm": {
+      "description": "",
+      "type": "string"
+    },
+    "DeliveryTermId": {
+      "description": "",
+      "type": "integer"
+    },
+    "DepartmentCode": {
+      "description": "",
+      "type": "string"
+    },
+    "DepartmentId": {
+      "description": "",
+      "type": "integer"
+    },
+    "DoNotAddLatePaymentFees": {
+      "type": "boolean"
+    },
+    "DoNotAddLatePaymentInterest": {
+      "type": "boolean"
+    },
+    "DoNotAutomatePaymentNotifications": {
+      "type": "boolean"
+    },
+    "EmailAddress": {
+      "type": "string"
+    },
+    "ExternalImportReference": {
+      "description": "",
+      "type": "string"
+    },
+    "ExternalNumber": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "FirstName": {
+      "description": "",
+      "type": "string"
+    },
+    "Id": {
+      "type": "integer"
+    },
+    "InvoiceBrandingThemeCode": {
+      "description": "",
+      "type": "string"
+    },
+    "InvoiceBrandingThemeId": {
+      "description": "",
+      "type": "integer"
+    },
+    "InvoiceDeliveryType": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "InvoiceEmailAddress": {
+      "type": "string"
+    },
+    "InvoiceEmailAddressCC": {
+      "type": "string"
+    },
+    "IsActive": {
+      "type": "boolean"
+    },
+    "IsArchived": {
+      "type": "boolean"
+    },
+    "IsPerson": {
+      "type": "boolean"
+    },
+    "IsVatFree": {
+      "type": "boolean"
+    },
+    "LastChangedDateTimeOffset": {
+      "type": "string"
+    },
+    "LastName": {
+      "description": "",
+      "type": "string"
+    },
+    "LegalName": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "MailAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "addressLine1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "addressLine2": {
+          "type": "string"
+        },
+        "city": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "externalCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "lastChangedDateTimeOffset": {
+          "type": "string"
+        },
+        "zipCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "NationalIdNumber": {
+      "description": "",
+      "type": "string"
+    },
+    "NoticeOfDebtCollectionDeliveryType": {
+      "description": "",
+      "type": "string"
+    },
+    "Number": {
+      "type": "integer"
+    },
+    "OrganizationNumber": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "PaymentReminderEmailAddress": {
+      "type": "string"
+    },
+    "PaymentTerm": {
+      "type": "integer"
+    },
+    "PaymentTermId": {
+      "type": "integer"
+    },
+    "PhoneNumber": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "ReminderDeliveryType": {
+      "description": "",
+      "type": "string"
+    },
+    "SalesPersonEmployeeId": {
+      "description": "",
+      "type": "integer"
+    },
+    "SalesPersonEmployeeNumber": {
+      "description": "",
+      "type": "integer"
+    },
+    "SendPaymentReminders": {
+      "type": "boolean"
+    },
+    "TransferToDebtCollectionAgency": {
+      "type": "boolean"
+    },
+    "UseInvoiceFee": {
+      "type": "boolean"
+    },
+    "WebsiteUrl": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-customers-collect",
+  "type": "object"
+}

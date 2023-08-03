@@ -1,0 +1,124 @@
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "exclude_completeness": [
+      "{{@ system @}}-{{@ datatype @}}-share"
+    ],
+    "namespaced_identifiers": false,
+    "source": {
+      "operation": "list",
+      "properties": {
+        "datatype": "{{@ datatype @}}"
+      },
+      "system": "{{@ system @}}v2",
+      "type": "rest"
+    },
+    "transform": [
+      {
+        "properties": {
+          "primary_key": "id",
+          "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
+        },
+        "template": "transform-collect-rest",
+        "type": "template"
+      },
+      {
+        "rules": {
+          "default": [
+            [
+              "copy",
+              "*"
+            ],
+            [
+              "add",
+              "$last-modified",
+              [
+                "datetime-parse",
+                "%Y-%m-%dT%H:%M:%S%Z",
+                "_S.LastChangedDateTimeOffset"
+              ]
+            ]
+          ]
+        },
+        "type": "dtl"
+      }
+    ],
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-share",
+    "add_namespaces": false,
+    "batch_size": 1,
+    "compaction": {
+      "keep_versions": 100
+    },
+    "exclude_completeness": [
+      "{{@ system @}}-{{@ datatype @}}-share"
+    ],
+    "namespaced_identifiers": false,
+    "sink": {
+      "deletion_tracking": false,
+      "set_initial_offset": "onload"
+    },
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-transform",
+      "type": "dataset"
+    },
+    "transform": {
+      "properties": {
+        "operation_insert_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_lookup_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "primary_key": "id",
+        "rest_system": "{{@ system @}}v2",
+        "rewrite_rules_lookup": {
+          "rewrite_lookup": [
+            [
+              "add",
+              "response_body",
+              [
+                "map-dict",
+                [
+                  "coalesce",
+                  "_.",
+                  [
+                    "replace",
+                    [
+                      "substring",
+                      0,
+                      1,
+                      "_."
+                    ],
+                    [
+                      "upper",
+                      [
+                        "substring",
+                        0,
+                        1,
+                        "_."
+                      ]
+                    ],
+                    "_."
+                  ]
+                ],
+                [
+                  "coalesce",
+                  "_."
+                ],
+                "_S.response_body"
+              ]
+            ]
+          ]
+        },
+        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share",
+        "trace": true
+      },
+      "template": "transform-share-rest",
+      "type": "template"
+    },
+    "type": "pipe"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "$id": "/api/pipes/xxxxxx-salesorders-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "CustomMatchingReference": {
+      "description": "",
+      "type": "string"
+    },
+    "Dim1Code": {
+      "description": "",
+      "type": "string"
+    },
+    "Dim1Id": {
+      "description": "",
+      "type": "integer"
+    },
+    "Dim2Code": {
+      "description": "",
+      "type": "string"
+    },
+    "Dim2Id": {
+      "description": "",
+      "type": "integer"
+    },
+    "Dim3Code": {
+      "description": "",
+      "type": "string"
+    },
+    "Dim3Id": {
+      "description": "",
+      "type": "integer"
+    },
+    "ExternalImportReference": {
+      "description": "",
+      "type": "string"
+    },
+    "ImportedOrderNo": {
+      "description": "",
+      "type": "integer"
+    },
+    "LocationCode": {
+      "description": "",
+      "type": "string"
+    },
+    "LocationId": {
+      "description": "",
+      "type": "integer"
+    },
+    "RelatedInvoiceNo": {
+      "description": "",
+      "type": "integer"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-salesorders-collect",
+  "type": "object"
+}

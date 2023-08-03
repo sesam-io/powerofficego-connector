@@ -1,0 +1,166 @@
+{
+  "$id": "/api/pipes/xxxxxx-suppliers-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "ContactCreatedDateTimeOffset": {
+      "type": "string"
+    },
+    "ContactGroupIds": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "CreatedFromImportJournalId": {
+      "description": "",
+      "type": "string"
+    },
+    "CurrencyCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DateOfBirth": {
+      "description": "",
+      "type": "string"
+    },
+    "EmailAddress": {
+      "type": "string"
+    },
+    "ExternalImportReference": {
+      "description": "",
+      "type": "string"
+    },
+    "ExternalNumber": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "FirstName": {
+      "description": "",
+      "type": "string"
+    },
+    "Id": {
+      "type": "integer"
+    },
+    "IsActive": {
+      "type": "boolean"
+    },
+    "IsArchived": {
+      "type": "boolean"
+    },
+    "IsPerson": {
+      "type": "boolean"
+    },
+    "LastChangedDateTimeOffset": {
+      "type": "string"
+    },
+    "LastName": {
+      "description": "",
+      "type": "string"
+    },
+    "LegalName": {
+      "type": "string"
+    },
+    "MailAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "addressLine1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "addressLine2": {
+          "type": "string"
+        },
+        "city": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "externalCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "lastChangedDateTimeOffset": {
+          "type": "string"
+        },
+        "zipCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Number": {
+      "type": "integer"
+    },
+    "OrganizationNumber": {
+      "type": "string"
+    },
+    "PhoneNumber": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "SupplierCreatedDateTimeOffset": {
+      "type": "string"
+    },
+    "WebsiteUrl": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-suppliers-collect",
+  "type": "object"
+}

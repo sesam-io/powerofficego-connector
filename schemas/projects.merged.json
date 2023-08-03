@@ -1,0 +1,224 @@
+{
+  "$id": "/api/pipes/xxxxxx-projects-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "AllowAllActivities": {
+      "type": "boolean"
+    },
+    "AllowAllEmployees": {
+      "type": "boolean"
+    },
+    "AttachExpenseVouchersWhenBilling": {
+      "type": "boolean"
+    },
+    "BillableRate": {
+      "description": "",
+      "type": null
+    },
+    "BillableRateSpecification": {
+      "type": "string"
+    },
+    "BrandingThemeCode": {
+      "description": "",
+      "type": null
+    },
+    "BrandingThemeId": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedBillableRate": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedCostOfGoods": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedHours": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedOtherOperatingExpenses": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedPayrollExpenses": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedRevenueHours": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedTotalRevenue": {
+      "description": "",
+      "type": null
+    },
+    "Code": {
+      "type": "string"
+    },
+    "ContactPersonId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ContractNo": {
+      "description": "",
+      "type": null
+    },
+    "CreatedDateTimeOffset": {
+      "type": "string"
+    },
+    "CreatedFromImportJournalId": {
+      "description": "",
+      "type": null
+    },
+    "CustomerId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "CustomerNo": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "DeliveryTerm": {
+      "description": "",
+      "type": null
+    },
+    "DenyTimeTracking": {
+      "type": "boolean"
+    },
+    "DepartmentCode": {
+      "description": "",
+      "type": null
+    },
+    "DepartmentId": {
+      "description": "",
+      "type": null
+    },
+    "EndDate": {
+      "description": "",
+      "type": null
+    },
+    "ExpenseMarkupDescription": {
+      "description": "",
+      "type": null
+    },
+    "ExpenseMarkupEnabled": {
+      "description": "",
+      "type": null
+    },
+    "ExpenseMarkupFactor": {
+      "description": "",
+      "type": null
+    },
+    "ExternalNumber": {
+      "description": "",
+      "type": null
+    },
+    "FixedPrice": {
+      "type": "integer"
+    },
+    "HourlyRateMarkupDescription": {
+      "description": "",
+      "type": null
+    },
+    "HourlyRateMarkupEnabled": {
+      "description": "",
+      "type": null
+    },
+    "HourlyRateMarkupFactor": {
+      "description": "",
+      "type": null
+    },
+    "Id": {
+      "type": "integer"
+    },
+    "IsActive": {
+      "type": "boolean"
+    },
+    "IsBillable": {
+      "type": "boolean"
+    },
+    "IsInternal": {
+      "type": "boolean"
+    },
+    "LastChangedDateTimeOffset": {
+      "type": "string"
+    },
+    "LocationCode": {
+      "description": "",
+      "type": null
+    },
+    "LocationId": {
+      "description": "",
+      "type": null
+    },
+    "Name": {
+      "type": "string"
+    },
+    "ParentProjectCode": {
+      "description": "",
+      "type": null
+    },
+    "PaymentTerms": {
+      "description": "",
+      "type": null
+    },
+    "Progress": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ProjectBillingMethod": {
+      "type": "string"
+    },
+    "ProjectManagerEmployeeId": {
+      "description": "",
+      "type": null
+    },
+    "ProjectManagerEmployeeNo": {
+      "description": "",
+      "type": null
+    },
+    "ProjectStatus": {
+      "type": "string"
+    },
+    "PurchaseOrderNo": {
+      "type": "string"
+    },
+    "StartDate": {
+      "description": "",
+      "type": null
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-projects-collect",
+  "type": "object"
+}
