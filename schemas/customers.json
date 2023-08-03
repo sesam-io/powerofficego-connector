@@ -1,0 +1,142 @@
+{
+  "$id": "/api/pipes/xxxxxx-customers-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "Allowance": {
+      "description": "",
+      "type": "number"
+    },
+    "BillableRate": {
+      "description": "",
+      "type": "integer"
+    },
+    "CreatedFromImportJournalId": {
+      "description": "",
+      "type": "string"
+    },
+    "CurrencyCode": {
+      "description": "",
+      "type": "string"
+    },
+    "DateOfBirth": {
+      "description": "",
+      "type": "string"
+    },
+    "DeliveryTerm": {
+      "description": "",
+      "type": "string"
+    },
+    "DeliveryTermId": {
+      "description": "",
+      "type": "integer"
+    },
+    "DepartmentCode": {
+      "description": "",
+      "type": "string"
+    },
+    "DepartmentId": {
+      "description": "",
+      "type": "integer"
+    },
+    "ExternalImportReference": {
+      "description": "",
+      "type": "string"
+    },
+    "FirstName": {
+      "description": "",
+      "type": "string"
+    },
+    "InvoiceBrandingThemeCode": {
+      "description": "",
+      "type": "string"
+    },
+    "InvoiceBrandingThemeId": {
+      "description": "",
+      "type": "integer"
+    },
+    "LastName": {
+      "description": "",
+      "type": "string"
+    },
+    "NationalIdNumber": {
+      "description": "",
+      "type": "string"
+    },
+    "NoticeOfDebtCollectionDeliveryType": {
+      "description": "",
+      "type": "string"
+    },
+    "ReminderDeliveryType": {
+      "description": "",
+      "type": "string"
+    },
+    "SalesPersonEmployeeId": {
+      "description": "",
+      "type": "integer"
+    },
+    "SalesPersonEmployeeNumber": {
+      "description": "",
+      "type": "integer"
+    },
+    "ContactGroupIds": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "MailAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "addressLine1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "addressLine2": {
+          "type": "string"
+        },
+        "city": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "externalCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "lastChangedDateTimeOffset": {
+          "type": "string"
+        },
+        "zipCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-customers-collect",
+  "type": "object"
+}

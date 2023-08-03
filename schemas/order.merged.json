@@ -1,0 +1,163 @@
+{
+  "$id": "/api/pipes/xxxxxx-order-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "ContractNo": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "CreatedDateTimeOffset": {
+      "type": "string"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    },
+    "CustomMatchingReference": {
+      "description": "",
+      "type": "string"
+    },
+    "CustomerId": {
+      "type": "integer"
+    },
+    "CustomerNo": {
+      "type": "integer"
+    },
+    "CustomerReference": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DepartmentCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DepartmentId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Dim1Code": {
+      "description": "",
+      "type": "string"
+    },
+    "Dim1Id": {
+      "description": "",
+      "type": "integer"
+    },
+    "Dim2Code": {
+      "description": "",
+      "type": "string"
+    },
+    "Dim2Id": {
+      "description": "",
+      "type": "integer"
+    },
+    "Dim3Code": {
+      "description": "",
+      "type": "string"
+    },
+    "Dim3Id": {
+      "description": "",
+      "type": "integer"
+    },
+    "ExternalImportReference": {
+      "description": "",
+      "type": "string"
+    },
+    "Id": {
+      "type": "string"
+    },
+    "ImportedOrderNo": {
+      "description": "",
+      "type": "integer"
+    },
+    "IsCreatedByCurrentIntegration": {
+      "type": "boolean"
+    },
+    "LastChangedDateTimeOffset": {
+      "type": "string"
+    },
+    "LocationCode": {
+      "description": "",
+      "type": "string"
+    },
+    "LocationId": {
+      "description": "",
+      "type": "integer"
+    },
+    "NetAmount": {
+      "type": "integer"
+    },
+    "OrderDate": {
+      "type": "string"
+    },
+    "OrderNo": {
+      "type": "integer"
+    },
+    "OrderStatus": {
+      "type": "string"
+    },
+    "ProjectCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "ProjectId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "PurchaseOrderReference": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "RelatedInvoiceNo": {
+      "description": "",
+      "type": "integer"
+    },
+    "TotalAmount": {
+      "type": "integer"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-order-collect",
+  "type": "object"
+}
