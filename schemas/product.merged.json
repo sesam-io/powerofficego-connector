@@ -3,6 +3,10 @@
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
   "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
     "availableStock": {
       "description": "Gets the number of products available. This is the GoApi.Products.Product.ProductsOnHand reduced by the amount of products added to order lines that is yet to be billed.",
       "type": "number"

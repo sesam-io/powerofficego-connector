@@ -12,6 +12,9 @@
     "customer": {
       "template": "templates/customer.json"
     },
+    "customers": {
+      "template": "templates/customers.json"
+    },
     "employee": {
       "template": "templates/employee.json"
     },
