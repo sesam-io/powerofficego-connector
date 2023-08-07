@@ -118,8 +118,31 @@
         "url": "{{ properties.datatype }}/{{ entity.Id }}/lines"
       }
     },
+<<<<<<< HEAD
     "type": "system:rest",
     "url_pattern": "{{@ base_url @}}/%s",
     "verify_ssl": true
   }
 ]
+=======
+    "lookup": {
+      "method": "GET",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}/{{ entity.id }}"
+    },
+    "update": {
+      "method": "POST",
+      "payload-type": "json",
+      "payload_property": "data",
+      "url": "{{ properties.datatype }}"
+    },
+    "vat_list": {
+      "method": "GET",
+      "url": "{{ properties.datatype }}"
+    }
+  },
+  "type": "system:rest",
+  "url_pattern": "{{@ base_url @}}/%s",
+  "verify_ssl": true
+}
+>>>>>>> d8112b7 (IS-15502: Add VatCode to V1)
