@@ -63,6 +63,10 @@
       "payload-type": "json",
       "payload_property": "data",
       "url": "{{ properties.datatype }}"
+    },
+    "vat_list": {
+      "method": "GET",
+      "url": "{{ properties.datatype }}"
     }
   },
   "type": "system:rest",
