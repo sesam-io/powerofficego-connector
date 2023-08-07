@@ -71,7 +71,7 @@
     "verify_ssl": true
   },
   {
-    "_id": "{{@ system @}}-v2",
+    "_id": "{{@ system @}}v2",
     "headers": {
       "Ocp-Apim-Subscription-Key": "{{@ subscription_key @}}"
     },
@@ -86,9 +86,28 @@
       "token_url": "$ENV(base_url-v2)/OAuth/Token"
     },
     "operations": {
+      "delete": {
+        "method": "DELETE",
+        "url": "{{ properties.datatype }}/{{ entity.Id }}"
+      },
+      "insert": {
+        "id_expression": "{{ Id }}",
+        "method": "POST",
+        "payload-type": "json",
+        "url": "{{ properties.datatype }}"
+      },
       "list": {
+        "id_expression": "{{ Id }}",
         "method": "GET",
         "url": "{{ properties.datatype }}"
+      },
+      "lookup": {
+        "method": "GET",
+        "url": "{{ properties.datatype }}/{{ entity.Id }}"
+      },
+      "update": {
+        "method": "PATCH",
+        "url": "{{ properties.datatype }}/{{ entity.Id }}"
       }
     },
     "type": "system:rest",
