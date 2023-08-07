@@ -27,6 +27,9 @@
     "productgroup": {
       "template": "templates/employee.json"
     },
+    "projects": {
+      "template": "templates/projects.json"
+    },
     "supplier": {
       "template": "templates/customer.json"
     }
