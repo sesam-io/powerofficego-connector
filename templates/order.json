@@ -7,7 +7,7 @@
     "properties": {
       "datatype": "SalesOrders"
     },
-    "system": "{{@ system @}}-v2",
+    "system": "{{@ system @}}v2",
     "trace": true,
     "type": "rest"
   },
