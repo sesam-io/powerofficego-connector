@@ -8,6 +8,9 @@
     "contactperson": {
       "template": "templates/contactperson.json"
     },
+    "currency": {
+      "template": "templates/currency.json"
+    },
     "customer": {
       "template": "templates/customer.json"
     },
@@ -22,6 +25,9 @@
     },
     "productgroup": {
       "template": "templates/employee.json"
+    },
+    "quote": {
+      "template": "templates/quote.json"
     },
     "supplier": {
       "template": "templates/customer.json"
