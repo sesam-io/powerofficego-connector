@@ -130,6 +130,10 @@
       "payload_property": "data",
       "url": "{{ properties.datatype }}/{{ entity.id }}"
     },
+    "quote_list": {
+      "method": "GET",
+      "url": "{{ properties.datatype }}/List"
+    },
     "update": {
       "method": "POST",
       "payload-type": "json",
