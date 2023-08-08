@@ -2,13 +2,13 @@
   "_id": "{{@ system @}}-{{@ datatype @}}-collect",
   "namespaced_identifiers": false,
   "source": {
-    "id_expression": "{{ Id }}",
-    "operation": "list",
+    "id_expression": "{{ id }}",
+    "operation": "vat_list",
+    "payload_property": "data",
     "properties": {
-      "datatype": "SalesOrders"
+      "datatype": "VatCode"
     },
-    "system": "{{@ system @}}v2",
-    "trace": true,
+    "system": "{{@ system @}}",
     "type": "rest"
   },
   "type": "pipe"
