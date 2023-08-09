@@ -1,0 +1,204 @@
+{
+  "$id": "/api/pipes/xxxxxx-employees-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "ContactCreatedDateTimeOffset": {
+      "type": "string"
+    },
+    "ContactGroupIds": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "CreatedFromImportJournalId": {
+      "description": "",
+      "type": "string"
+    },
+    "DateOfBirth": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "DepartmentCode": {
+      "description": "",
+      "type": "string"
+    },
+    "DepartmentId": {
+      "description": "",
+      "type": "integer"
+    },
+    "EmailAddress": {
+      "type": "string"
+    },
+    "EmployeeCreatedDateTimeOffset": {
+      "type": "string"
+    },
+    "EndDate": {
+      "description": "",
+      "type": "string"
+    },
+    "ExternalImportReference": {
+      "description": "",
+      "type": "string"
+    },
+    "ExternalNumber": {
+      "description": "",
+      "type": "integer"
+    },
+    "FirstName": {
+      "type": "string"
+    },
+    "Gender": {
+      "description": "",
+      "type": "string"
+    },
+    "HiredDate": {
+      "description": "",
+      "type": "string"
+    },
+    "Id": {
+      "type": "integer"
+    },
+    "InternationalIdCountryCode": {
+      "description": "",
+      "type": "string"
+    },
+    "InternationalIdNumber": {
+      "description": "",
+      "type": "string"
+    },
+    "InternationalIdReportToAltinn": {
+      "type": "boolean"
+    },
+    "InternationalIdType": {
+      "description": "",
+      "type": "string"
+    },
+    "IsArchived": {
+      "type": "boolean"
+    },
+    "JobTitle": {
+      "description": "",
+      "type": "string"
+    },
+    "LastChangedDateTimeOffset": {
+      "type": "string"
+    },
+    "LastName": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "LocationCode": {
+      "description": "",
+      "type": "string"
+    },
+    "LocationId": {
+      "description": "",
+      "type": "integer"
+    },
+    "MailAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "addressLine1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "addressLine2": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "city": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "externalCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "lastChangedDateTimeOffset": {
+          "type": "string"
+        },
+        "zipCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "NationalIdNumber": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Number": {
+      "type": "integer"
+    },
+    "PhoneNumber": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "StartDate": {
+      "description": "",
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-employees-collect",
+  "type": "object"
+}

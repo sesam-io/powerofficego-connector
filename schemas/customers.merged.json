@@ -4,7 +4,8 @@
   "additionalProperties": true,
   "properties": {
     "$last-modified": {
-      "type": "null"
+      "subtype": "nanoseconds",
+      "type": "string"
     },
     "Allowance": {
       "description": "",

@@ -9,6 +9,9 @@
     "customers": {
       "template": "templates/customers.json"
     },
+    "employees": {
+      "template": "templates/customers.json"
+    },
     "order": {
       "template": "templates/order.json"
     },
