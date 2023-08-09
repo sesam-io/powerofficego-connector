@@ -1,0 +1,129 @@
+{
+  "$id": "/api/pipes/xxxxxx-projects-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "BillableRate": {
+      "description": "",
+      "type": null
+    },
+    "BrandingThemeCode": {
+      "description": "",
+      "type": null
+    },
+    "BrandingThemeId": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedBillableRate": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedCostOfGoods": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedHours": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedOtherOperatingExpenses": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedPayrollExpenses": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedRevenueHours": {
+      "description": "",
+      "type": null
+    },
+    "BudgetedTotalRevenue": {
+      "description": "",
+      "type": null
+    },
+    "ContractNo": {
+      "description": "",
+      "type": null
+    },
+    "CreatedFromImportJournalId": {
+      "description": "",
+      "type": null
+    },
+    "DeliveryTerm": {
+      "description": "",
+      "type": null
+    },
+    "DepartmentCode": {
+      "description": "",
+      "type": null
+    },
+    "DepartmentId": {
+      "description": "",
+      "type": null
+    },
+    "EndDate": {
+      "description": "",
+      "type": null
+    },
+    "ExpenseMarkupDescription": {
+      "description": "",
+      "type": null
+    },
+    "ExpenseMarkupEnabled": {
+      "description": "",
+      "type": null
+    },
+    "ExpenseMarkupFactor": {
+      "description": "",
+      "type": null
+    },
+    "ExternalNumber": {
+      "description": "",
+      "type": null
+    },
+    "HourlyRateMarkupDescription": {
+      "description": "",
+      "type": null
+    },
+    "HourlyRateMarkupEnabled": {
+      "description": "",
+      "type": null
+    },
+    "HourlyRateMarkupFactor": {
+      "description": "",
+      "type": null
+    },
+    "LocationCode": {
+      "description": "",
+      "type": null
+    },
+    "LocationId": {
+      "description": "",
+      "type": null
+    },
+    "ParentProjectCode": {
+      "description": "",
+      "type": null
+    },
+    "PaymentTerms": {
+      "description": "",
+      "type": null
+    },
+    "ProjectManagerEmployeeId": {
+      "description": "",
+      "type": null
+    },
+    "ProjectManagerEmployeeNo": {
+      "description": "",
+      "type": null
+    },
+    "StartDate": {
+      "description": "",
+      "type": null
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-projects-collect",
+  "type": "object"
+}
