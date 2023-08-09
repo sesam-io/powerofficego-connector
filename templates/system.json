@@ -96,6 +96,7 @@
     "operations": {
       "delete": {
         "method": "DELETE",
+        "payload_property": "data",
         "url": "{{ properties.datatype }}/{{ entity.Id }}"
       },
       "insert": {
@@ -111,11 +112,6 @@
       },
       "lookup": {
         "method": "GET",
-        "url": "{{ properties.datatype }}/{{ entity.Id }}"
-      },
-      "update": {
-        "method": "PATCH",
-        "payload-type": "json",
         "url": "{{ properties.datatype }}/{{ entity.Id }}"
       }
     },
