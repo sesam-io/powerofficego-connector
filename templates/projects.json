@@ -37,11 +37,6 @@
                 "%Y-%m-%dT%H:%M:%S%Z",
                 "_S.LastChangedDateTimeOffset"
               ]
-            ],
-            [
-              "add",
-              "id",
-              "_S.Id"
             ]
           ]
         },
@@ -62,113 +57,74 @@
     ],
     "namespaced_identifiers": false,
     "sink": {
-      "deletion_tracking": false,
+      "deletion_tracking": true,
       "set_initial_offset": "onload"
     },
     "source": {
       "dataset": "{{@ system @}}-{{@ datatype @}}-transform",
       "type": "dataset"
     },
-    "transform": [
-      {
-        "rules": {
-          "create-payload": [
-            [
-              "add",
-              "op",
-              "replace"
-            ],
-            [
-              "add",
-              "path",
-              "/Name"
-            ],
-            [
-              "add",
-              "value",
-              "_S.Name"
-            ]
-          ],
-          "default": [
-            [
-              "copy",
-              "*"
-            ],
-            [
-              "add",
-              "$payload",
-              [
-                "list",
-                [
-                  "apply",
-                  "create-payload",
-                  "_S."
-                ]
-              ]
-            ]
-          ]
+    "transform": {
+      "properties": {
+        "operation_delete_properties": {
+          "datatype": "Projects"
         },
-        "type": "dtl"
-      },
-      {
-        "properties": {
-          "operation_insert_properties": {
-            "datatype": "Projects"
-          },
-          "operation_lookup_properties": {
-            "datatype": "Projects"
-          },
-          "operation_update_properties": {
-            "datatype": "Projects"
-          },
-          "primary_key": "Id",
-          "rest_system": "{{@ system @}}v2",
-          "rewrite_rules_lookup": {
-            "rewrite_lookup": [
+        "operation_insert_properties": {
+          "datatype": "Projects"
+        },
+        "operation_lookup_properties": {
+          "datatype": "Projects"
+        },
+        "operation_update_properties": {
+          "datatype": "Projects"
+        },
+        "primary_key": "id",
+        "rest_system": "{{@ system @}}v2",
+        "rewrite_rules_lookup": {
+          "rewrite_lookup": [
+            [
+              "add",
+              "response_body",
               [
-                "add",
-                "response_body",
+                "map-dict",
                 [
-                  "map-dict",
+                  "coalesce",
+                  "_.",
                   [
-                    "coalesce",
-                    "_.",
+                    "replace",
                     [
-                      "replace",
+                      "substring",
+                      0,
+                      1,
+                      "_."
+                    ],
+                    [
+                      "upper",
                       [
                         "substring",
                         0,
                         1,
                         "_."
-                      ],
-                      [
-                        "upper",
-                        [
-                          "substring",
-                          0,
-                          1,
-                          "_."
-                        ]
-                      ],
-                      "_."
-                    ]
-                  ],
-                  [
-                    "coalesce",
+                      ]
+                    ],
                     "_."
-                  ],
-                  "_S.response_body"
-                ]
+                  ]
+                ],
+                [
+                  "coalesce",
+                  "_."
+                ],
+                "_S.response_body"
               ]
             ]
-          },
-          "share_dataset": "{{@ system @}}-{{@ datatype @}}-share",
-          "trace": true
+          ]
         },
-        "template": "transform-share-rest",
-        "type": "template"
-      }
-    ],
+        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share",
+        "trace": true
+      },
+      "template": "transform-share-rest",
+      "type": "template"
+    },
     "type": "pipe"
   }
 ]
