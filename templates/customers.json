@@ -8,7 +8,7 @@
     "source": {
       "operation": "list",
       "properties": {
-        "datatype": "Customers"
+        "datatype": "{{@ datatype @}}"
       },
       "system": "{{@ system @}}v2",
       "type": "rest"
@@ -34,8 +34,8 @@
               "$last-modified",
               [
                 "datetime-parse",
-                "%Y-%m-%dT%H:%M:%S%z",
-                "_S.lastChanged"
+                "%Y-%m-%dT%H:%M:%S%Z",
+                "_S.LastChangedDateTimeOffset"
               ]
             ]
           ]
@@ -67,13 +67,13 @@
     "transform": {
       "properties": {
         "operation_delete_properties": {
-          "datatype": "Customers"
+          "datatype": "{{@ datatype @}}"
         },
         "operation_insert_properties": {
-          "datatype": "Customers"
+          "datatype": "{{@ datatype @}}"
         },
         "operation_lookup_properties": {
-          "datatype": "Customers"
+          "datatype": "{{@ datatype @}}"
         },
         "primary_key": "Id",
         "rest_system": "{{@ system @}}v2",
