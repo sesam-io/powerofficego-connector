@@ -57,7 +57,7 @@
     ],
     "namespaced_identifiers": false,
     "sink": {
-      "deletion_tracking": true,
+      "deletion_tracking": false,
       "set_initial_offset": "onload"
     },
     "source": {
@@ -66,16 +66,10 @@
     },
     "transform": {
       "properties": {
-        "operation_delete_properties": {
-          "datatype": "Projects"
-        },
         "operation_insert_properties": {
           "datatype": "Projects"
         },
         "operation_lookup_properties": {
-          "datatype": "Projects"
-        },
-        "operation_update_properties": {
           "datatype": "Projects"
         },
         "primary_key": "id",
