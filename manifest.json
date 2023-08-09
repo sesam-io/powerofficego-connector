@@ -18,6 +18,9 @@
     "employee": {
       "template": "templates/employee.json"
     },
+    "employees": {
+      "template": "templates/customers.json"
+    },
     "order": {
       "template": "templates/order.json"
     },
