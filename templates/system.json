@@ -28,7 +28,7 @@
       "delete": {
         "method": "DELETE",
         "payload_property": "data",
-        "url": "{{ properties.datatype }}/{{ entity.id }}"
+        "url": "{{ properties.datatype }}/{{ entity.Id }}"
       },
       "insert": {
         "method": "POST",
@@ -77,7 +77,7 @@
     "type": "system:rest",
     "url_pattern": "{{@ base_url @}}/%s",
     "verify_ssl": true
-  }
+  },
   {
     "_id": "{{@ system @}}v2",
     "headers": {
@@ -115,6 +115,7 @@
       },
       "update": {
         "method": "PATCH",
+        "payload-type": "json",
         "url": "{{ properties.datatype }}/{{ entity.Id }}"
       }
     },
