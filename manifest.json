@@ -6,38 +6,14 @@
   },
   "auth": "api_key",
   "datatypes": {
-    "contactperson": {
-      "template": "templates/contactperson.json"
-    },
-    "currency": {
-      "template": "templates/currency.json"
-    },
-    "customer": {
-      "template": "templates/customer.json"
-    },
     "customers": {
       "template": "templates/customers.json"
-    },
-    "employee": {
-      "template": "templates/employee.json"
     },
     "order": {
       "template": "templates/order.json"
     },
-    "outgoinginvoice": {
-      "template": "templates/outgoinginvoice.json"
-    },
-    "product": {
-      "template": "templates/employee.json"
-    },
-    "productgroup": {
-      "template": "templates/employee.json"
-    },
     "projects": {
       "template": "templates/projects.json"
-    },
-    "supplier": {
-      "template": "templates/customer.json"
     }
   },
   "system": "poweroffice",
