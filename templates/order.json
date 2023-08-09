@@ -1,13 +1,13 @@
 {
-  "_id": "{{@ system @}}-{{@ datatype @}}-collect",
-  "namespaced_identifiers": false,
-  "source": {
-    "operation": "list",
-    "properties": {
-      "datatype": "SalesOrders"
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "namespaced_identifiers": false,
+    "source": {
+      "operation": "list",
+      "properties": {
+        "datatype": "SalesOrders"
+      },
+      "system": "{{@ system @}}v2",
+      "type": "rest"
     },
-    "system": "{{@ system @}}v2",
-    "type": "rest"
-  },
-  "type": "pipe"
-}
+    "type": "pipe"
+  }

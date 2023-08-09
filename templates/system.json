@@ -28,7 +28,7 @@
       "delete": {
         "method": "DELETE",
         "payload_property": "data",
-        "url": "{{ properties.datatype }}/{{ entity.id }}"
+        "url": "{{ properties.datatype }}/{{ entity.Id }}"
       },
       "insert": {
         "method": "POST",
@@ -59,10 +59,18 @@
         "payload_property": "data",
         "url": "{{ properties.datatype }}/{{ entity.id }}"
       },
+      "quote_list": {
+        "method": "GET",
+        "url": "{{ properties.datatype }}/List"
+      },
       "update": {
         "method": "POST",
         "payload-type": "json",
         "payload_property": "data",
+        "url": "{{ properties.datatype }}"
+      },
+      "vat_list": {
+        "method": "GET",
         "url": "{{ properties.datatype }}"
       }
     },
