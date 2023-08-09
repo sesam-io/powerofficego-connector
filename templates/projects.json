@@ -67,10 +67,10 @@
     "transform": {
       "properties": {
         "operation_insert_properties": {
-          "datatype": "Projects"
+          "datatype": "{{@ datatype @}}"
         },
         "operation_lookup_properties": {
-          "datatype": "Projects"
+          "datatype": "{{@ datatype @}}"
         },
         "primary_key": "id",
         "rest_system": "{{@ system @}}v2",
