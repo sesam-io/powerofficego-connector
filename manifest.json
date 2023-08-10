@@ -16,7 +16,7 @@
       "template": "templates/salesorders.json"
     },
     "outgoinginvoices": {
-      "template": "templates/outgoinginvoices.json"
+      "template": "templates/salesorders.json"
     },
     "outgoinginvoiceslines": {
       "template": "templates/outgoinginvoiceslines.json"
