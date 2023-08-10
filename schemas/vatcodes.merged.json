@@ -1,0 +1,63 @@
+{
+  "$id": "/api/pipes/xxxxxx-vatcodes-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "BaseVatCodeId": {
+      "description": "",
+      "type": "integer"
+    },
+    "Code": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Id": {
+      "type": "integer"
+    },
+    "IsActive": {
+      "type": "boolean"
+    },
+    "IsCustom": {
+      "type": "boolean"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Rate": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "ValidFrom": {
+      "type": "string"
+    },
+    "ValidTo": {
+      "description": "",
+      "type": "string"
+    },
+    "VatBasisRatio": {
+      "description": "",
+      "type": "number"
+    },
+    "VatBasisRatioValidFrom": {
+      "description": "",
+      "type": "string"
+    },
+    "VatBasisRatios": {
+      "items": {
+        "anyOf": []
+      },
+      "type": "array"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-vatcodes-collect",
+  "type": "object"
+}
