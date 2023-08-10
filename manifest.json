@@ -9,6 +9,9 @@
     "customers": {
       "template": "templates/customers.json"
     },
+    "departments": {
+      "template": "templates/departments.json"
+    },
     "employees": {
       "template": "templates/customers.json"
     },
@@ -22,7 +25,7 @@
       "template": "templates/outgoinginvoiceslines.json"
     },
     "projects": {
-      "template": "templates/projects.json"
+      "template": "templates/departments.json"
     },
     "salesorders": {
       "template": "templates/salesorders.json"
