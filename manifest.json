@@ -13,7 +13,13 @@
       "template": "templates/customers.json"
     },
     "salesorders": {
-      "template": "templates/order.json"
+      "template": "templates/salesorders.json"
+    },
+    "outgoinginvoices": {
+      "template": "templates/salesorders.json"
+    },
+    "outgoinginvoiceslines": {
+      "template": "templates/outgoinginvoiceslines.json"
     },
     "projects": {
       "template": "templates/projects.json"

@@ -113,6 +113,10 @@
       "lookup": {
         "method": "GET",
         "url": "{{ properties.datatype }}/{{ entity.Id }}"
+      },
+      "outgoinginvoiceslines_list": {
+        "method": "GET",
+        "url": "{{ properties.datatype }}/{{ entity.Id }}/lines"
       }
     },
     "type": "system:rest",
