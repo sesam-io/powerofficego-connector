@@ -12,7 +12,7 @@
     "employees": {
       "template": "templates/customers.json"
     },
-    "salesorders": {
+    "incominginvoices": {
       "template": "templates/salesorders.json"
     },
     "outgoinginvoices": {
@@ -23,6 +23,9 @@
     },
     "projects": {
       "template": "templates/projects.json"
+    },
+    "salesorders": {
+      "template": "templates/salesorders.json"
     },
     "suppliers": {
       "template": "templates/customers.json"
