@@ -12,11 +12,14 @@
     "employees": {
       "template": "templates/customers.json"
     },
-    "order": {
+    "salesorders": {
       "template": "templates/order.json"
     },
     "projects": {
       "template": "templates/projects.json"
+    },
+    "suppliers": {
+      "template": "templates/customers.json"
     }
   },
   "system": "poweroffice",
