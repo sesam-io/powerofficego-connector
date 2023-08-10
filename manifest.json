@@ -26,6 +26,9 @@
     },
     "suppliers": {
       "template": "templates/customers.json"
+    },
+    "vatcodes": {
+      "template": "templates/salesorders.json"
     }
   },
   "system": "poweroffice",
