@@ -15,6 +15,12 @@
     "order": {
       "template": "templates/order.json"
     },
+    "outgoinginvoices": {
+      "template": "templates/outgoinginvoices.json"
+    },
+    "outgoinginvoiceslines": {
+      "template": "templates/outgoinginvoiceslines.json"
+    },
     "projects": {
       "template": "templates/projects.json"
     }
