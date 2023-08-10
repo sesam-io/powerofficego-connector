@@ -1,0 +1,86 @@
+{
+  "$id": "/api/pipes/xxxxxx-suppliers-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "CreatedFromImportJournalId": {
+      "description": "",
+      "type": "string"
+    },
+    "DateOfBirth": {
+      "description": "",
+      "type": "string"
+    },
+    "ExternalImportReference": {
+      "description": "",
+      "type": "string"
+    },
+    "FirstName": {
+      "description": "",
+      "type": "string"
+    },
+    "LastName": {
+      "description": "",
+      "type": "string"
+    },
+    "ContactGroupIds": {
+      "items": {
+        "type": "integer"
+      },
+      "type": "array"
+    },
+    "MailAddress": {
+      "additionalProperties": true,
+      "properties": {
+        "addressLine1": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "addressLine2": {
+          "type": "string"
+        },
+        "city": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "externalCode": {
+          "type": "string"
+        },
+        "id": {
+          "type": "integer"
+        },
+        "lastChangedDateTimeOffset": {
+          "type": "string"
+        },
+        "zipCode": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "type": "object"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-suppliers-collect",
+  "type": "object"
+}
