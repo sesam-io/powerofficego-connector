@@ -81,14 +81,14 @@
   {
     "_id": "{{@ system @}}v2",
     "headers": {
-      "Ocp-Apim-Subscription-Key": "{{@ subscription_key @}}"
+      "Ocp-Apim-Subscription-Key": "$ENV(subscription_key)"
     },
     "oauth2": {
       "client_id": "{{@ application_key @}}",
       "client_secret": "$SECRET(api_key)",
       "extra": {
         "headers": {
-          "Ocp-Apim-Subscription-Key": "{{@ subscription_key @}}"
+          "Ocp-Apim-Subscription-Key": "$ENV(subscription_key)"
         }
       },
       "token_url": "$ENV(base_url-v2)/OAuth/Token"
