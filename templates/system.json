@@ -28,7 +28,7 @@
       "delete": {
         "method": "DELETE",
         "payload_property": "data",
-        "url": "{{ properties.datatype }}/{{ entity.Id }}"
+        "url": "{{ properties.datatype }}/{{ entity.id }}"
       },
       "insert": {
         "method": "POST",
@@ -91,7 +91,7 @@
           "Ocp-Apim-Subscription-Key": "{{@ subscription_key @}}"
         }
       },
-      "url": "{{ properties.datatype }}"
+      "token_url": "$ENV(base_url-v2)/OAuth/Token"
     },
     "operations": {
       "delete": {
@@ -118,35 +118,8 @@
         "url": "{{ properties.datatype }}/{{ entity.Id }}/lines"
       }
     },
-<<<<<<< HEAD
     "type": "system:rest",
-    "url_pattern": "{{@ base_url @}}/%s",
+    "url_pattern": "$ENV(base_url-v2)/v2/%s",
     "verify_ssl": true
   }
 ]
-=======
-    "lookup": {
-      "method": "GET",
-      "payload_property": "data",
-      "url": "{{ properties.datatype }}/{{ entity.id }}"
-    },
-    "quote_list": {
-      "method": "GET",
-      "url": "{{ properties.datatype }}/List"
-    },
-    "update": {
-      "method": "POST",
-      "payload-type": "json",
-      "payload_property": "data",
-      "url": "{{ properties.datatype }}"
-    },
-    "vat_list": {
-      "method": "GET",
-      "url": "{{ properties.datatype }}"
-    }
-  },
-  "type": "system:rest",
-  "url_pattern": "{{@ base_url @}}/%s",
-  "verify_ssl": true
-}
->>>>>>> d8112b7 (IS-15502: Add VatCode to V1)
