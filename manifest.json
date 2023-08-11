@@ -1,7 +1,8 @@
 {
   "additional_parameters": {
     "application_key": {},
-    "base_url": {}
+    "base_url": {},
+    "subscription_key": {}
   },
   "auth": "api_key",
   "datatypes": {
@@ -14,32 +15,14 @@
     "customer": {
       "template": "templates/customer.json"
     },
-    "employee": {
-      "template": "templates/employee.json"
-    },
-    "outgoinginvoice": {
-      "template": "templates/outgoinginvoice.json"
-    },
-    "product": {
-      "template": "templates/employee.json"
-    },
-    "productgroup": {
-      "template": "templates/employee.json"
-    },
-    "quote": {
-      "template": "templates/quote.json"
-    },
-    "supplier": {
-      "template": "templates/customer.json"
-    },
-    "vatcode": {
-      "template": "templates/vatcode.json"
-    },
     "customers": {
       "template": "templates/customers.json"
     },
     "departments": {
       "template": "templates/departments.json"
+    },
+    "employee": {
+      "template": "templates/employee.json"
     },
     "employees": {
       "template": "templates/customers.json"
@@ -47,20 +30,38 @@
     "incominginvoices": {
       "template": "templates/salesorders.json"
     },
+    "outgoinginvoice": {
+      "template": "templates/outgoinginvoice.json"
+    },
     "outgoinginvoices": {
       "template": "templates/salesorders.json"
     },
     "outgoinginvoiceslines": {
       "template": "templates/outgoinginvoiceslines.json"
     },
+    "product": {
+      "template": "templates/employee.json"
+    },
+    "productgroup": {
+      "template": "templates/employee.json"
+    },
     "projects": {
       "template": "templates/departments.json"
+    },
+    "quote": {
+      "template": "templates/quote.json"
     },
     "salesorders": {
       "template": "templates/salesorders.json"
     },
+    "supplier": {
+      "template": "templates/customer.json"
+    },
     "suppliers": {
       "template": "templates/customers.json"
+    },
+    "vatcode": {
+      "template": "templates/vatcode.json"
     },
     "vatcodes": {
       "template": "templates/salesorders.json"
