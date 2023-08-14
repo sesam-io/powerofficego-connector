@@ -1,10 +1,10 @@
 [
   {
-    "_id": "{{@ system @}}",
+    "_id": "{{@ system @}}v1",
     "oauth2": {
       "client_id": "{{@ application_key @}}",
       "client_secret": "$SECRET(api_key)",
-      "token_url": "{{@ base_url @}}/OAuth/Token"
+      "token_url": "{{@ base_url_v1 @}}/OAuth/Token"
     },
     "operations": {
       "alternate_list": {
@@ -41,7 +41,7 @@
           "X-Sesam-Page": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}1{% endif %}"
         },
         "method": "GET",
-        "next_page_link": "{{@ base_url @}}/{{ properties.datatype }}",
+        "next_page_link": "{{@ base_url_v1 @}}/{{ properties.datatype }}",
         "next_page_termination_strategy": [
           "same-next-page-request",
           "empty-result"
@@ -75,11 +75,11 @@
       }
     },
     "type": "system:rest",
-    "url_pattern": "{{@ base_url @}}/%s",
+    "url_pattern": "{{@ base_url_v1 @}}/%s",
     "verify_ssl": true
   },
   {
-    "_id": "{{@ system @}}v2",
+    "_id": "{{@ system @}}",
     "headers": {
       "Ocp-Apim-Subscription-Key": "$ENV(subscription_key)"
     },
@@ -91,7 +91,7 @@
           "Ocp-Apim-Subscription-Key": "$ENV(subscription_key)"
         }
       },
-      "token_url": "$ENV(base_url-v2)/OAuth/Token"
+      "token_url": "$ENV(base_url)/OAuth/Token"
     },
     "operations": {
       "delete": {
@@ -120,7 +120,7 @@
       }
     },
     "type": "system:rest",
-    "url_pattern": "$ENV(base_url-v2)/v2/%s",
+    "url_pattern": "$ENV(base_url)/v2/%s",
     "verify_ssl": true
   }
 ]

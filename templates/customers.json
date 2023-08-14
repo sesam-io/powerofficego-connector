@@ -10,7 +10,7 @@
       "properties": {
         "datatype": "{{@ datatype @}}"
       },
-      "system": "{{@ system @}}v2",
+      "system": "{{@ system @}}",
       "type": "rest"
     },
     "transform": [
@@ -76,7 +76,7 @@
           "datatype": "{{@ datatype @}}"
         },
         "primary_key": "Id",
-        "rest_system": "{{@ system @}}v2",
+        "rest_system": "{{@ system @}}",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
       "template": "transform-share-rest",
