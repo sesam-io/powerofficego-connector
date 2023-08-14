@@ -41,7 +41,7 @@
           "X-Sesam-Page": "{% if (previous_request_headers is defined and previous_request_headers['X-Sesam-Page'] is defined) %}{{ previous_request_headers['X-Sesam-Page']|int + 1 }}{% else %}1{% endif %}"
         },
         "method": "GET",
-        "next_page_link": "{{@ base_url_v1 @}}/{{ properties.datatype }}",
+        "next_page_link": "$ENV(base_url_v1)/{{ properties.datatype }}",
         "next_page_termination_strategy": [
           "same-next-page-request",
           "empty-result"
@@ -75,7 +75,7 @@
       }
     },
     "type": "system:rest",
-    "url_pattern": "{{@ base_url_v1 @}}/%s",
+    "url_pattern": "$ENV(base_url_v1)/%s",
     "verify_ssl": true
   },
   {
