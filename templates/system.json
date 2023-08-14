@@ -117,6 +117,11 @@
       "outgoinginvoiceslines_list": {
         "method": "GET",
         "url": "{{ properties.datatype }}/{{ entity.Id }}/lines"
+      },
+      "update": {
+        "method": "PATCH",
+        "payload-type": "json",
+        "url": "{{ properties.datatype }}/{{ entity.Id }}"
       }
     },
     "type": "system:rest",
