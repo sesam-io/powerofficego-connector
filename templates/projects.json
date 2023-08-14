@@ -11,7 +11,7 @@
       "properties": {
         "datatype": "{{@ datatype @}}"
       },
-      "system": "{{@ system @}}v2",
+      "system": "{{@ system @}}",
       "type": "rest"
     },
     "transform": [
@@ -78,7 +78,7 @@
           "datatype": "{{@ datatype @}}"
         },
         "primary_key": "Id",
-        "rest_system": "{{@ system @}}v2",
+        "rest_system": "{{@ system @}}",
         "rewrite_rules_lookup": {
           "rewrite_lookup": [
             [
@@ -121,6 +121,10 @@
         "rewrite_rules_payload": {
           "alter_payload": [
             [
+              "comment",
+              "*** Added this custom rule to ensure that we create the payload needed for POv2***"
+            ],
+            [
               "merge",
               [
                 "dict",
@@ -143,6 +147,19 @@
               ]
             ]
           ],
+          "remove_non_payload_properties": [
+            [
+              "copy",
+              "*",
+              [
+                "list",
+                "_*",
+                "$based_on_properties",
+                "$based_on",
+                "Id"
+              ]
+            ]
+          ],
           "rewrite_update_payload": [
             [
               "add",
@@ -152,7 +169,11 @@
                 "alter_payload",
                 [
                   "items",
-                  "_S.$source"
+                  [
+                    "apply",
+                    "remove_non_payload_properties",
+                    "_S.$source"
+                  ]
                 ]
               ]
             ]

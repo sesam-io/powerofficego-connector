@@ -10,7 +10,7 @@
       "properties": {
         "datatype": "{{@ datatype @}}"
       },
-      "system": "{{@ system @}}v2",
+      "system": "{{@ system @}}",
       "type": "rest"
     },
     "transform": [
@@ -72,8 +72,8 @@
         "operation_lookup_properties": {
           "datatype": "{{@ datatype @}}"
         },
-        "primary_key": "Id",
-        "rest_system": "{{@ system @}}v2",
+        "primary_key": "id",
+        "rest_system": "{{@ system @}}",
         "rewrite_rules_lookup": {
           "rewrite_lookup": [
             [

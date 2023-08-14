@@ -16,7 +16,7 @@
           "datatype": "outgoinginvoices"
         },
         "primary_key": "Id",
-        "rest_system": "{{@ system @}}v2",
+        "rest_system": "{{@ system @}}",
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
       "template": "transform-collect-rest",

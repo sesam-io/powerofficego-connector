@@ -6,7 +6,7 @@
     "properties": {
       "datatype": "{{@ datatype @}}"
     },
-    "system": "{{@ system @}}v2",
+    "system": "{{@ system @}}",
     "type": "rest"
   },
   "type": "pipe"

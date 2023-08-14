@@ -2,15 +2,28 @@
   "additional_parameters": {
     "application_key": {},
     "base_url": {},
+    "base_url_v1": {},
     "subscription_key": {}
   },
   "auth": "api_key",
   "datatypes": {
+    "contactperson": {
+      "template": "templates/contactperson.json"
+    },
+    "currency": {
+      "template": "templates/currency.json"
+    },
+    "customer": {
+      "template": "templates/customer.json"
+    },
     "customers": {
       "template": "templates/customers.json"
     },
     "departments": {
       "template": "templates/departments.json"
+    },
+    "employee": {
+      "template": "templates/employee.json"
     },
     "employees": {
       "template": "templates/customers.json"
@@ -18,20 +31,38 @@
     "incominginvoices": {
       "template": "templates/salesorders.json"
     },
+    "outgoinginvoice": {
+      "template": "templates/outgoinginvoice.json"
+    },
     "outgoinginvoices": {
       "template": "templates/salesorders.json"
     },
     "outgoinginvoiceslines": {
       "template": "templates/outgoinginvoiceslines.json"
     },
+    "product": {
+      "template": "templates/product.json"
+    },
+    "productgroup": {
+      "template": "templates/productgroup.json"
+    },
     "projects": {
       "template": "templates/projects.json"
+    },
+    "quote": {
+      "template": "templates/quote.json"
     },
     "salesorders": {
       "template": "templates/salesorders.json"
     },
+    "supplier": {
+      "template": "templates/supplier.json"
+    },
     "suppliers": {
       "template": "templates/customers.json"
+    },
+    "vatcode": {
+      "template": "templates/vatcode.json"
     },
     "vatcodes": {
       "template": "templates/salesorders.json"
