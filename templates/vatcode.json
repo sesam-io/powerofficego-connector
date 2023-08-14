@@ -8,7 +8,7 @@
     "properties": {
       "datatype": "VatCode"
     },
-    "system": "{{@ system @}}",
+    "system": "{{@ system @}}v1",
     "type": "rest"
   },
   "type": "pipe"

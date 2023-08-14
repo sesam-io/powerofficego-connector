@@ -1,6 +1,7 @@
 {
   "additional_parameters": {
     "application_key": {},
+    "base_url_v1": {},
     "base_url": {},
     "subscription_key": {}
   },
