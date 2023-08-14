@@ -4,7 +4,7 @@
     "oauth2": {
       "client_id": "{{@ application_key @}}",
       "client_secret": "$SECRET(api_key)",
-      "token_url": "{{@ base_url_v1 @}}/OAuth/Token"
+      "token_url": "$ENV(base_url_v1)/OAuth/Token"
     },
     "operations": {
       "alternate_list": {
