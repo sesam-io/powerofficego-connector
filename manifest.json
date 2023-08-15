@@ -31,6 +31,9 @@
     "incominginvoices": {
       "template": "templates/salesorders.json"
     },
+    "location": {
+      "template": "templates/location.json"
+    },
     "outgoinginvoice": {
       "template": "templates/outgoinginvoice.json"
     },
