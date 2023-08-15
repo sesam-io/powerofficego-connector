@@ -1,0 +1,21 @@
+{
+  "$id": "/api/pipes/xxxxxx-departments-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "CreatedFromImportJournalId": {
+      "description": "",
+      "type": null
+    },
+    "ManagerEmployeeId": {
+      "description": "",
+      "type": null
+    },
+    "ManagerEmployeeNo": {
+      "description": "",
+      "type": null
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-departments-collect",
+  "type": "object"
+}

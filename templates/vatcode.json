@@ -1,0 +1,15 @@
+{
+  "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+  "namespaced_identifiers": false,
+  "source": {
+    "id_expression": "{{ id }}",
+    "operation": "vat_list",
+    "payload_property": "data",
+    "properties": {
+      "datatype": "VatCode"
+    },
+    "system": "{{@ system @}}v1",
+    "type": "rest"
+  },
+  "type": "pipe"
+}

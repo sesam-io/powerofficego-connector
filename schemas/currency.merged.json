@@ -1,0 +1,18 @@
+{
+  "$id": "/api/pipes/xxxxxx-currency-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "notation": {
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-currency-collect",
+  "type": "object"
+}

@@ -1,0 +1,61 @@
+{
+  "$id": "/api/pipes/xxxxxx-productgroup-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "code": {
+      "description": "Gets or sets the code of the product group. This is a unique identification of the group.",
+      "type": "string"
+    },
+    "costPrice": {
+      "description": "Gets or sets the default cost price for products in this product group.",
+      "type": "integer"
+    },
+    "createdFromImportJournalId": {
+      "description": "Gets the identifier of the Import that created this product group.",
+      "type": "string (GUID)"
+    },
+    "description": {
+      "description": "Gets or sets the description.",
+      "type": "string"
+    },
+    "id": {
+      "description": "Gets the identifier. This identifier is unique and assigned by PowerOffice Go when a new entity is saved, and should be provided when an entity should be edited. If this identifier is not provided, PowerOffice Go will try to create a new entity.",
+      "type": "integer"
+    },
+    "lastChanged": {
+      "description": "Gets the last changed date.",
+      "type": "string (date)"
+    },
+    "name": {
+      "description": "Gets or sets the product group name.",
+      "type": "string"
+    },
+    "salesAccount": {
+      "description": "Gets or sets the code of the default GeneralLedgerAccount for products in this product group.",
+      "type": "integer"
+    },
+    "salesPrice": {
+      "description": "Gets or sets the default sales price exempt value added tax (VAT) for products in this product group.",
+      "type": "integer"
+    },
+    "type": {
+      "description": "Gets or sets the default product type for products in this product group.",
+      "type": "integer"
+    },
+    "unit": {
+      "description": "Gets or sets the default Oasis compatible unit-of-measure code. for products in this product group.",
+      "type": "string"
+    },
+    "vatExemptSalesAccount": {
+      "description": "Gets or sets the code of the GeneralLedgerAccount that will be used for posting the revenue from the product group when the invoice is sent if the customer is exempt VAT (Value added tax), or the invoice line on the invoice with a product in the product group has ExemptVat set to true. The alternative sales account will be used for posting the revenue from a product in the product group when the invoice is sent if the customer is exempt vat, or the invoice line has ExemptVat set to true. The usual application in Go is that the alternative sales account is used for vat free sales with code 5. The alternative sales account can, however, be used with an account with vat in order to alternate between different vat codes on the product group.",
+      "type": "integer"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-productgroup-collect",
+  "type": "object"
+}

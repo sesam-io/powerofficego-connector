@@ -1,0 +1,90 @@
+{
+  "$id": "/api/pipes/xxxxxx-quote-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "$last-modified": {
+      "subtype": "nanoseconds",
+      "type": "string"
+    },
+    "brandingThemeCode": {
+      "type": "string"
+    },
+    "contractNo": {
+      "type": "string"
+    },
+    "createdDate": {
+      "type": "string"
+    },
+    "currencyCode": {
+      "type": "string"
+    },
+    "customerCode": {
+      "type": "integer"
+    },
+    "customerEmail": {
+      "type": "string"
+    },
+    "departmentCode": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "invoiceDeliveryDate": {
+      "type": "string"
+    },
+    "invoiceDeliveryType": {
+      "type": "integer"
+    },
+    "isInvoiceBeingProcessed": {
+      "type": "boolean"
+    },
+    "lastChanged": {
+      "type": "string"
+    },
+    "netAmount": {
+      "type": "integer"
+    },
+    "orderDate": {
+      "type": "string"
+    },
+    "ourReferenceEmployeeCode": {
+      "type": "integer"
+    },
+    "projectCode": {
+      "type": "string"
+    },
+    "purchaseOrderNo": {
+      "type": "string"
+    },
+    "quoteAcceptanceDate": {
+      "type": "string"
+    },
+    "quoteAcceptanceStatus": {
+      "type": "integer"
+    },
+    "quoteDate": {
+      "type": "string"
+    },
+    "quoteNo": {
+      "type": "integer"
+    },
+    "status": {
+      "type": "integer"
+    },
+    "totalAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-quote-collect",
+  "type": "object"
+}
