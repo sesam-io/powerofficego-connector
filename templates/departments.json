@@ -76,6 +76,7 @@
           "datatype": "{{@ datatype @}}"
         },
         "primary_key": "Id",
+        "primary_key_insert": "id",
         "rest_system": "{{@ system @}}",
         "rewrite_rules_lookup": {
           "rewrite_lookup": [
