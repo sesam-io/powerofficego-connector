@@ -28,7 +28,7 @@
       "delete": {
         "method": "DELETE",
         "payload_property": "data",
-        "url": "{{ properties.datatype }}/{{ entity.Id }}"
+        "url": "{{ properties.datatype }}/{{ entity.id }}"
       },
       "insert": {
         "method": "POST",
