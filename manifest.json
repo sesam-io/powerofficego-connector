@@ -41,10 +41,10 @@
       "template": "templates/outgoinginvoiceslines.json"
     },
     "product": {
-      "template": "templates/product.json"
+      "template": "templates/employee.json"
     },
     "productgroup": {
-      "template": "templates/productgroup.json"
+      "template": "templates/employee.json"
     },
     "projects": {
       "template": "templates/departments.json"
@@ -56,7 +56,7 @@
       "template": "templates/salesorders.json"
     },
     "supplier": {
-      "template": "templates/supplier.json"
+      "template": "templates/customer.json"
     },
     "suppliers": {
       "template": "templates/customers.json"
