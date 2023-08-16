@@ -16,7 +16,7 @@
     "transform": [
       {
         "properties": {
-          "primary_key": "id",
+          "primary_key": "Id",
           "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
         },
         "template": "transform-collect-rest",
