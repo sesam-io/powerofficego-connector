@@ -2,7 +2,209 @@
   "$id": "/api/pipes/xxxxxx-outgoinginvoiceslines-collect/entity-types/sink",
   "$schema": "http://json-schema.org/schema#",
   "additionalProperties": true,
-  "properties": {},
+  "properties": {
+    "AccountNo": {
+      "type": "integer"
+    },
+    "Allowance": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "DepartmentCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DepartmentId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Description": {
+      "type": "string"
+    },
+    "Dim1Code": {
+      "type": "null"
+    },
+    "Dim1Id": {
+      "type": "null"
+    },
+    "Dim2Code": {
+      "type": "null"
+    },
+    "Dim2Id": {
+      "type": "null"
+    },
+    "Dim3Code": {
+      "type": "null"
+    },
+    "Dim3Id": {
+      "type": "null"
+    },
+    "ExternalImportReference": {
+      "type": "null"
+    },
+    "Id": {
+      "type": "integer"
+    },
+    "IsAccrued": {
+      "type": "boolean"
+    },
+    "LineType": {
+      "type": "string"
+    },
+    "LocationCode": {
+      "type": "null"
+    },
+    "LocationId": {
+      "type": "null"
+    },
+    "NetAmount": {
+      "type": "integer"
+    },
+    "NetPostedAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "ProductCode": {
+      "type": "string"
+    },
+    "ProductId": {
+      "type": "integer"
+    },
+    "ProductUnitCost": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ProductUnitPrice": {
+      "type": "integer"
+    },
+    "ProjectCode": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "ProjectId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "Quantity": {
+      "type": "integer"
+    },
+    "SellersReferenceEmployeeId": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "SellersReferenceEmployeeNo": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "SortOrder": {
+      "type": "integer"
+    },
+    "TotalAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "TotalPostedAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "UnitOfMeasureCode": {
+      "type": "string"
+    },
+    "VatAmount": {
+      "anyOf": [
+        {
+          "subtype": "decimal",
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ]
+    },
+    "VatCode": {
+      "type": "string"
+    },
+    "VatId": {
+      "type": "integer"
+    },
+    "VatRate": {
+      "subtype": "decimal",
+      "type": "string"
+    },
+    "VatReturnSpecification": {
+      "type": "string"
+    }
+  },
   "title": "Pipe sink entity type: xxxxxx-outgoinginvoiceslines-collect",
   "type": "object"
 }

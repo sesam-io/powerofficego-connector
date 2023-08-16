@@ -1,0 +1,21 @@
+{
+  "$id": "/api/pipes/xxxxxx-location-collect/entity-types/sink",
+  "$schema": "http://json-schema.org/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer"
+    },
+    "isActive": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "title": "Pipe sink entity type: xxxxxx-location-collect",
+  "type": "object"
+}
