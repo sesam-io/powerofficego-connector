@@ -1,6 +1,7 @@
 [
   {
     "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "comment": "WARNING! This pipe is generated from the template of the 'departments' datatype and changes will be silently ignored during collapse. For more information see the connectorpy README.",
     "exclude_completeness": [
       "{{@ system @}}-{{@ datatype @}}-share"
     ],
@@ -49,6 +50,7 @@
     "_id": "{{@ system @}}-{{@ datatype @}}-share",
     "add_namespaces": false,
     "batch_size": 1,
+    "comment": "WARNING! This pipe is generated from the template of the 'departments' datatype and changes will be silently ignored during collapse. For more information see the connectorpy README.",
     "compaction": {
       "keep_versions": 100
     },
@@ -79,7 +81,47 @@
           "datatype": "{{@ datatype @}}"
         },
         "primary_key": "Id",
+        "primary_key_insert": "id",
         "rest_system": "{{@ system @}}",
+        "rewrite_rules_lookup": {
+          "rewrite_lookup": [
+            [
+              "add",
+              "response_body",
+              [
+                "map-dict",
+                [
+                  "coalesce",
+                  "_.",
+                  [
+                    "replace",
+                    [
+                      "substring",
+                      0,
+                      1,
+                      "_."
+                    ],
+                    [
+                      "upper",
+                      [
+                        "substring",
+                        0,
+                        1,
+                        "_."
+                      ]
+                    ],
+                    "_."
+                  ]
+                ],
+                [
+                  "coalesce",
+                  "_."
+                ],
+                "_S.response_body"
+              ]
+            ]
+          ]
+        },
         "rewrite_rules_payload": {
           "alter_payload": [
             [
@@ -141,7 +183,9 @@
             ]
           ]
         },
-        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
+        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share",
+        "trace": true,
+        "trace-update": true
       },
       "template": "transform-share-rest",
       "type": "template"

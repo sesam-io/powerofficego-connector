@@ -72,7 +72,11 @@
         "operation_lookup_properties": {
           "datatype": "{{@ datatype @}}"
         },
-        "primary_key": "id",
+        "operation_update_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "primary_key": "Id",
+        "primary_key_insert": "id",
         "rest_system": "{{@ system @}}",
         "rewrite_rules_lookup": {
           "rewrite_lookup": [
@@ -109,6 +113,67 @@
                   "_."
                 ],
                 "_S.response_body"
+              ]
+            ]
+          ]
+        },
+        "rewrite_rules_payload": {
+          "alter_payload": [
+            [
+              "comment",
+              "*** Added this custom rule to ensure that we create the payload needed for POv2***"
+            ],
+            [
+              "merge",
+              [
+                "dict",
+                "op",
+                "replace",
+                "path",
+                [
+                  "concat",
+                  "/",
+                  [
+                    "first",
+                    "_S."
+                  ]
+                ],
+                "value",
+                [
+                  "last",
+                  "_S."
+                ]
+              ]
+            ]
+          ],
+          "remove_non_payload_properties": [
+            [
+              "copy",
+              "*",
+              [
+                "list",
+                "_*",
+                "$based_on_properties",
+                "$based_on",
+                "Id"
+              ]
+            ]
+          ],
+          "rewrite_update_payload": [
+            [
+              "add",
+              "$payload",
+              [
+                "apply",
+                "alter_payload",
+                [
+                  "items",
+                  [
+                    "apply",
+                    "remove_non_payload_properties",
+                    "_S.$source"
+                  ]
+                ]
               ]
             ]
           ]
