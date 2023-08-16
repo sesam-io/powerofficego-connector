@@ -69,7 +69,6 @@
     },
     "transform": {
       "properties": {
-        "enable_deletes": true,
         "operation_delete_properties": {
           "datatype": "{{@ datatype @}}"
         },
