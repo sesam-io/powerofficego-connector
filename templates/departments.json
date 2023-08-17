@@ -153,8 +153,7 @@
               [
                 "list",
                 "_*",
-                "$based_on_properties",
-                "$based_on",
+                "$*",
                 "Id"
               ]
             ]
