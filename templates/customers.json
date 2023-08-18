@@ -117,7 +117,8 @@
                 "list",
                 "_*",
                 "$*",
-                "Id"
+                "Id",
+                "DepartmentId"
               ]
             ]
           ],
