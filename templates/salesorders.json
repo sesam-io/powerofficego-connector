@@ -10,6 +10,21 @@
       "system": "{{@ system @}}",
       "type": "rest"
     },
+    "transform": [
+      {
+        "properties": {
+          "operation_lookup": "{{@ datatype @}}_lookup",
+          "operation_lookup_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
+          "primary_key": "Id",
+          "rest_system": "{{@ system @}}",
+          "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
+        },
+        "template": "transform-collect-rest",
+        "type": "template"
+      }
+    ],
     "type": "pipe"
   },
   {
@@ -33,6 +48,11 @@
     },
     "transform": {
       "properties": {
+        "operation_insert": "{{@ datatype @}}_insert",
+        "operation_insert_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_lookup": "{{@ datatype @}}_lookup",
         "operation_lookup_properties": {
           "datatype": "{{@ datatype @}}"
         },
@@ -96,6 +116,7 @@
                 "ProjectId",
                 "SalesOrderNo",
                 "SalesPersonEmployeeId",
+                "SalesOrderLines",
                 "TotalAmount"
               ]
             ]
@@ -119,7 +140,8 @@
             ]
           ]
         },
-        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
+        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share",
+        "truncation_check": false
       },
       "template": "transform-share-rest",
       "type": "template"
