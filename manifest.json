@@ -1,8 +1,8 @@
 {
   "additional_parameters": {
     "application_key": {},
-    "base_url_v1": {},
     "base_url": {},
+    "base_url_v1": {},
     "subscription_key": {}
   },
   "auth": "api_key",
@@ -54,6 +54,9 @@
     },
     "quote": {
       "template": "templates/quote.json"
+    },
+    "salesorderlines": {
+      "template": "templates/salesorderlines.json"
     },
     "salesorders": {
       "template": "templates/salesorders.json"

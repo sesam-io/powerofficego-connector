@@ -118,6 +118,22 @@
         "method": "GET",
         "url": "{{ properties.datatype }}/{{ entity.Id }}/lines"
       },
+      "salesorderlines_insert": {
+        "method": "POST",
+        "url": "{{ properties.datatype }}/{{ entity['$source']['sesam_SalesOrdersId'] }}/lines"
+      },
+      "salesorderlines_lookup": {
+        "method": "GET",
+        "url": "{{ properties.datatype }}/{{ entity['$source']['sesam_SalesOrdersId'] }}/lines/{{ entity.Id }}"
+      },
+      "salesorders_insert": {
+        "method": "POST",
+        "url": "{{ properties.datatype }}/complete"
+      },
+      "salesorders_lookup": {
+        "method": "GET",
+        "url": "{{ properties.datatype }}/{{ entity.Id }}/complete"
+      },
       "update": {
         "method": "PATCH",
         "payload-type": "json",
