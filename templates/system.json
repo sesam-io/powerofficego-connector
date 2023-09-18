@@ -2,7 +2,7 @@
   {
     "_id": "{{@ system @}}v1",
     "oauth2": {
-      "client_id": "{{@ application_key @}}",
+      "client_id": "$SECRET(powerofficego_application_key)",
       "client_secret": "$SECRET(api_key)",
       "token_url": "$ENV(base_url_v1)/OAuth/Token"
     },
@@ -81,14 +81,14 @@
   {
     "_id": "{{@ system @}}",
     "headers": {
-      "Ocp-Apim-Subscription-Key": "$ENV(subscription_key)"
+      "Ocp-Apim-Subscription-Key": "$SECRET(powerofficego_subscription_key)"
     },
     "oauth2": {
-      "client_id": "{{@ application_key @}}",
+      "client_id": "$SECRET(powerofficego_application_key)",
       "client_secret": "$SECRET(api_key)",
       "extra": {
         "headers": {
-          "Ocp-Apim-Subscription-Key": "$ENV(subscription_key)"
+          "Ocp-Apim-Subscription-Key": "$SECRET(powerofficego_subscription_key)"
         }
       },
       "token_url": "$ENV(base_url)/OAuth/Token"
