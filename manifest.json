@@ -1,9 +1,7 @@
 {
   "additional_parameters": {
-    "application_key": {},
     "base_url": {},
-    "base_url_v1": {},
-    "subscription_key": {}
+    "base_url_v1": {}
   },
   "auth": "api_key",
   "datatypes": {
@@ -29,7 +27,7 @@
       "template": "templates/customers.json"
     },
     "incominginvoices": {
-      "template": "templates/salesorders.json"
+      "template": "templates/incominginvoices.json"
     },
     "location": {
       "template": "templates/location.json"
@@ -38,7 +36,7 @@
       "template": "templates/outgoinginvoice.json"
     },
     "outgoinginvoices": {
-      "template": "templates/salesorders.json"
+      "template": "templates/incominginvoices.json"
     },
     "outgoinginvoiceslines": {
       "template": "templates/outgoinginvoiceslines.json"
@@ -71,7 +69,7 @@
       "template": "templates/vatcode.json"
     },
     "vatcodes": {
-      "template": "templates/salesorders.json"
+      "template": "templates/incominginvoices.json"
     }
   },
   "system": "poweroffice",
