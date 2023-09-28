@@ -59,12 +59,6 @@
     "salesorders": {
       "template": "templates/salesorders.json"
     },
-    "supplier": {
-      "template": "templates/customer.json"
-    },
-    "suppliers": {
-      "template": "templates/customers.json"
-    },
     "vatcode": {
       "template": "templates/vatcode.json"
     },
