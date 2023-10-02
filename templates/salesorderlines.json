@@ -98,8 +98,84 @@
         "operation_lookup_properties": {
           "datatype": "salesorders"
         },
+        "operation_update": "{{@ datatype @}}_update",
+        "operation_update_properties": {
+          "datatype": "salesorders"
+        },
         "primary_key": "Id",
         "rest_system": "{{@ system @}}",
+        "rewrite_rules_payload": {
+          "alter_payload": [
+            [
+              "comment",
+              "*** Added this custom rule to ensure that we create the payload needed for POv2***"
+            ],
+            [
+              "merge",
+              [
+                "dict",
+                "op",
+                "replace",
+                "path",
+                [
+                  "concat",
+                  "/",
+                  [
+                    "first",
+                    "_S."
+                  ]
+                ],
+                "value",
+                [
+                  "last",
+                  "_S."
+                ]
+              ]
+            ]
+          ],
+          "remove_non_payload_properties": [
+            [
+              "copy",
+              "*",
+              [
+                "list",
+                "_*",
+                "$*",
+                "sesam_SalesOrdersId",
+                "DepartmentId",
+                "Dim3Id",
+                "Id",
+                "LocationId",
+                "NetAmount",
+                "ProjectId",
+                "SellersReferenceEmployeeId",
+                "TotalAmount",
+                "VatAmount",
+                "VatCode",
+                "VatId",
+                "VatRate"
+              ]
+            ]
+          ],
+          "rewrite_update_payload": [
+            [
+              "add",
+              "$payload",
+              [
+                "apply",
+                "alter_payload",
+                [
+                  "items",
+                  [
+                    "apply",
+                    "remove_non_payload_properties",
+                    "_S.$source"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        },
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
       "template": "transform-share-rest",
