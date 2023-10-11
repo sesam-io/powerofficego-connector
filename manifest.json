@@ -11,35 +11,17 @@
     "currency": {
       "template": "templates/currency.json"
     },
-    "customer": {
-      "template": "templates/customer.json"
-    },
     "customers": {
       "template": "templates/customers.json"
     },
     "departments": {
       "template": "templates/departments.json"
     },
-    "employee": {
-      "template": "templates/employee.json"
-    },
     "employees": {
       "template": "templates/customers.json"
     },
-    "incominginvoices": {
-      "template": "templates/incominginvoices.json"
-    },
     "location": {
       "template": "templates/location.json"
-    },
-    "outgoinginvoice": {
-      "template": "templates/outgoinginvoice.json"
-    },
-    "outgoinginvoices": {
-      "template": "templates/incominginvoices.json"
-    },
-    "outgoinginvoiceslines": {
-      "template": "templates/outgoinginvoiceslines.json"
     },
     "product": {
       "template": "templates/employee.json"
@@ -50,17 +32,11 @@
     "projects": {
       "template": "templates/departments.json"
     },
-    "quote": {
-      "template": "templates/quote.json"
-    },
     "salesorderlines": {
       "template": "templates/salesorderlines.json"
     },
     "salesorders": {
       "template": "templates/salesorders.json"
-    },
-    "vatcode": {
-      "template": "templates/vatcode.json"
     },
     "vatcodes": {
       "template": "templates/incominginvoices.json"
