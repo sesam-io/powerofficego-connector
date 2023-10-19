@@ -35,6 +35,10 @@
         "method": "GET",
         "url": "{{ properties.datatype }}/{{ entity.Id }}"
       },
+      "lookup-customer": {
+        "method": "GET",
+        "url": "customers/{{ entity.CustomerId }}"
+      },
       "outgoinginvoiceslines_list": {
         "method": "GET",
         "url": "{{ properties.datatype }}/{{ entity.Id }}/lines"

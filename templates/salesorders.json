@@ -49,106 +49,176 @@
       "dataset": "{{@ system @}}-{{@ datatype @}}-transform",
       "type": "dataset"
     },
-    "transform": {
-      "properties": {
-        "operation_insert": "{{@ datatype @}}_insert",
-        "operation_insert_properties": {
-          "datatype": "{{@ datatype @}}"
-        },
-        "operation_lookup": "{{@ datatype @}}_lookup",
-        "operation_lookup_properties": {
-          "datatype": "{{@ datatype @}}"
-        },
-        "operation_update_properties": {
-          "datatype": "{{@ datatype @}}"
-        },
-        "primary_key": "Id",
-        "rest_system": "{{@ system @}}",
-        "rewrite_rules_payload": {
-          "alter_payload": [
+    "transform": [
+      {
+        "rules": {
+          "default": [
             [
-              "comment",
-              "*** Added this custom rule to ensure that we create the payload needed for POv2***"
+              "copy",
+              "*"
             ],
             [
-              "merge",
+              "if",
               [
-                "dict",
-                "op",
-                "replace",
-                "path",
-                [
-                  "concat",
-                  "/",
-                  [
-                    "first",
-                    "_S."
-                  ]
-                ],
-                "value",
-                [
-                  "last",
-                  "_S."
-                ]
+                "is-not-null",
+                "_S.CustomerId"
+              ],
+              [
+                "add",
+                "$operation",
+                "lookup-customer"
               ]
             ]
-          ],
-          "remove_non_payload_properties": [
+          ]
+        },
+        "type": "dtl"
+      },
+      {
+        "allowed_status_codes": "100-428,430-599",
+        "operation": "lookup-customer",
+        "response_property": "customer_response",
+        "response_status_property": "customer_status",
+        "system": "{{@ system @}}",
+        "trace": true,
+        "trigger_on": {
+          "key": "$operation",
+          "value": "lookup-customer"
+        },
+        "type": "rest"
+      },
+      {
+        "rules": {
+          "default": [
             [
               "copy",
               "*",
               [
                 "list",
-                "_*",
-                "$*",
-                "Id",
-                "DepartmentId",
-                "BrandingThemeId",
-                "CreatedDateTimeOffset",
-                "CustomerId",
-                "DeliveryTermId",
-                "Dim1Id",
-                "Dim2Id",
-                "Dim3Id",
-                "IsCreatedByCurrentIntegration",
-                "LastChangedDateTimeOffset",
-                "LineCount",
-                "LocationId",
-                "NetAmount",
-                "PaymentTermId",
-                "ProjectId",
-                "SalesOrderNo",
-                "SalesPersonEmployeeId",
-                "SalesOrderLines",
-                "TotalAmount"
+                "customer_response",
+                "customer_status"
               ]
-            ]
-          ],
-          "rewrite_update_payload": [
+            ],
             [
-              "add",
-              "$payload",
+              "if",
               [
-                "apply",
-                "alter_payload",
+                "eq",
+                "_S.customer_status",
+                200
+              ],
+              [
+                "add",
+                "CustomerNo",
                 [
-                  "items",
-                  [
-                    "apply",
-                    "remove_non_payload_properties",
-                    "_S.$source"
-                  ]
+                  "first",
+                  "_S.customer_response.Number"
                 ]
               ]
             ]
           ]
         },
-        "share_dataset": "{{@ system @}}-{{@ datatype @}}-share",
-        "truncation_check": false
+        "type": "dtl"
       },
-      "template": "transform-share-rest",
-      "type": "template"
-    },
+      {
+        "properties": {
+          "operation_insert": "{{@ datatype @}}_insert",
+          "operation_insert_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
+          "operation_lookup": "{{@ datatype @}}_lookup",
+          "operation_lookup_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
+          "operation_update_properties": {
+            "datatype": "{{@ datatype @}}"
+          },
+          "primary_key": "Id",
+          "rest_system": "{{@ system @}}",
+          "rewrite_rules_payload": {
+            "alter_payload": [
+              [
+                "comment",
+                "*** Added this custom rule to ensure that we create the payload needed for POv2***"
+              ],
+              [
+                "merge",
+                [
+                  "dict",
+                  "op",
+                  "replace",
+                  "path",
+                  [
+                    "concat",
+                    "/",
+                    [
+                      "first",
+                      "_S."
+                    ]
+                  ],
+                  "value",
+                  [
+                    "last",
+                    "_S."
+                  ]
+                ]
+              ]
+            ],
+            "remove_non_payload_properties": [
+              [
+                "copy",
+                "*",
+                [
+                  "list",
+                  "_*",
+                  "$*",
+                  "Id",
+                  "DepartmentId",
+                  "BrandingThemeId",
+                  "CreatedDateTimeOffset",
+                  "CustomerId",
+                  "DeliveryTermId",
+                  "Dim1Id",
+                  "Dim2Id",
+                  "Dim3Id",
+                  "IsCreatedByCurrentIntegration",
+                  "LastChangedDateTimeOffset",
+                  "LineCount",
+                  "LocationId",
+                  "NetAmount",
+                  "PaymentTermId",
+                  "ProjectId",
+                  "SalesOrderNo",
+                  "SalesPersonEmployeeId",
+                  "SalesOrderLines",
+                  "TotalAmount"
+                ]
+              ]
+            ],
+            "rewrite_update_payload": [
+              [
+                "add",
+                "$payload",
+                [
+                  "apply",
+                  "alter_payload",
+                  [
+                    "items",
+                    [
+                      "apply",
+                      "remove_non_payload_properties",
+                      "_S.$source"
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          },
+          "share_dataset": "{{@ system @}}-{{@ datatype @}}-share",
+          "truncation_check": false
+        },
+        "template": "transform-share-rest",
+        "type": "template"
+      }
+    ],
     "type": "pipe"
   }
 ]
