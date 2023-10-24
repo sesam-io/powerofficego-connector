@@ -189,7 +189,8 @@
                   "SalesOrderNo",
                   "SalesPersonEmployeeId",
                   "SalesOrderLines",
-                  "TotalAmount"
+                  "TotalAmount",
+                  "ProductId"
                 ]
               ]
             ],
