@@ -133,6 +133,11 @@
         "payload_property": "data",
         "url": "{{ properties.datatype }}/{{ entity.id }}"
       },
+      "lookup-product": {
+        "method": "GET",
+        "payload_property": "data",
+        "url": "product/{{ entity.ProductId }}"
+      },
       "quote_list": {
         "method": "GET",
         "url": "{{ properties.datatype }}/List"
