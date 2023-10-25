@@ -10,6 +10,7 @@
       "properties": {
         "datatype": "{{@ datatype @}}"
       },
+      "supports_since": true,
       "system": "{{@ system @}}",
       "type": "rest"
     },
