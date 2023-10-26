@@ -29,6 +29,19 @@
       "list": {
         "id_expression": "{{ Id }}",
         "method": "GET",
+        "next_page_link": "{{@ base_url @}}/v2/{{ properties.datatype }}",
+        "next_page_termination_strategy": [
+          "empty-result",
+          "not-full-page"
+        ],
+        "page_size": 5000,
+        "params": {
+          "pageNumber": "{{ page + 1 }}",
+          "pageSize": "{{ page_size }}",
+          "useDatabaseValidation": false
+        },
+        "since_property_name": "lastChangedDateTimeOffsetGreaterThan",
+        "updated_expression": "{{ LastChangedDateTimeOffset }}",
         "url": "{{ properties.datatype }}"
       },
       "lookup": {
