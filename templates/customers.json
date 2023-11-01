@@ -112,6 +112,10 @@
           ],
           "conditionally-change-invoice-method": [
             [
+              "comment",
+              "Poweroffice requires either an email, or for the invoice delivery type to be print. Some systems (like Hubspot) can't send emails"
+            ],
+            [
               "copy",
               "*"
             ],
