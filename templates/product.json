@@ -7,7 +7,7 @@
     "namespaced_identifiers": false,
     "source": {
       "id_expression": "{{ id }}",
-      "operation": "{{@ datatype @}}_list",
+      "operation": "alternate_list",
       "payload_property": "data",
       "properties": {
         "datatype": "{{@ datatype @}}"
@@ -79,6 +79,9 @@
           "datatype": "{{@ datatype @}}"
         },
         "operation_lookup_properties": {
+          "datatype": "{{@ datatype @}}"
+        },
+        "operation_update_properties": {
           "datatype": "{{@ datatype @}}"
         },
         "primary_key": "id",

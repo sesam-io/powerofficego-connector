@@ -110,6 +110,31 @@
               ]
             ]
           ],
+          "conditionally-change-invoice-method": [
+            [
+              "copy",
+              "*"
+            ],
+            [
+              "if",
+              [
+                "and",
+                [
+                  "is-null",
+                  "_S.EmailAddress"
+                ],
+                [
+                  "is-null",
+                  "_S.InvoiceEmailAddress"
+                ]
+              ],
+              [
+                "add",
+                "InvoiceDeliveryType",
+                "print"
+              ]
+            ]
+          ],
           "remove_non_payload_properties": [
             [
               "copy",
@@ -120,6 +145,21 @@
                 "$*",
                 "Id",
                 "DepartmentId"
+              ]
+            ]
+          ],
+          "rewrite_insert_payload": [
+            [
+              "add",
+              "$payload",
+              [
+                "apply",
+                "remove_non_payload_properties",
+                [
+                  "apply",
+                  "conditionally-change-invoice-method",
+                  "_S."
+                ]
               ]
             ]
           ],
