@@ -18,16 +18,13 @@
       "template": "templates/departments.json"
     },
     "employees": {
-      "template": "templates/customers.json"
-    },
-    "location": {
-      "template": "templates/location.json"
+      "template": "templates/employees.json"
     },
     "product": {
-      "template": "templates/employee.json"
+      "template": "templates/product.json"
     },
     "productgroup": {
-      "template": "templates/employee.json"
+      "template": "templates/product.json"
     },
     "projects": {
       "template": "templates/departments.json"

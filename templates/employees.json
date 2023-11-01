@@ -6,23 +6,21 @@
     ],
     "namespaced_identifiers": false,
     "source": {
-      "id_expression": "{{ id }}",
-      "operation": "vat_list",
-      "payload_property": "data",
+      "operation": "list",
       "properties": {
         "datatype": "{{@ datatype @}}"
       },
-      "system": "{{@ system @}}v1",
+      "supports_since": true,
+      "system": "{{@ system @}}",
       "type": "rest"
     },
     "transform": [
       {
         "properties": {
-          "primary_key": "id",
+          "primary_key": "Id",
           "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
         },
         "template": "transform-collect-rest",
-        "trace": true,
         "type": "template"
       },
       {
@@ -37,8 +35,8 @@
               "$last-modified",
               [
                 "datetime-parse",
-                "%Y-%m-%dT%H:%M:%S%z",
-                "_S.lastChanged"
+                "%Y-%m-%dT%H:%M:%S%Z",
+                "_S.LastChangedDateTimeOffset"
               ]
             ]
           ]
@@ -81,8 +79,69 @@
         "operation_update_properties": {
           "datatype": "{{@ datatype @}}"
         },
-        "primary_key": "id",
-        "rest_system": "{{@ system @}}v1",
+        "primary_key": "Id",
+        "rest_system": "{{@ system @}}",
+        "rewrite_rules_payload": {
+          "alter_payload": [
+            [
+              "comment",
+              "*** Added this custom rule to ensure that we create the payload needed for POv2***"
+            ],
+            [
+              "merge",
+              [
+                "dict",
+                "op",
+                "replace",
+                "path",
+                [
+                  "concat",
+                  "/",
+                  [
+                    "first",
+                    "_S."
+                  ]
+                ],
+                "value",
+                [
+                  "last",
+                  "_S."
+                ]
+              ]
+            ]
+          ],
+          "remove_non_payload_properties": [
+            [
+              "copy",
+              "*",
+              [
+                "list",
+                "_*",
+                "$*",
+                "Id",
+                "DepartmentId"
+              ]
+            ]
+          ],
+          "rewrite_update_payload": [
+            [
+              "add",
+              "$payload",
+              [
+                "apply",
+                "alter_payload",
+                [
+                  "items",
+                  [
+                    "apply",
+                    "remove_non_payload_properties",
+                    "_S.$source"
+                  ]
+                ]
+              ]
+            ]
+          ]
+        },
         "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
       },
       "template": "transform-share-rest",
