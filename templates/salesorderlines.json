@@ -1,67 +1,83 @@
 [
   {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all",
+    "namespaced_identifiers": false,
+    "source": {
+      "dataset": "{{@ system @}}-salesorders-collect",
+      "type": "dataset"
+    },
+    "transform": {
+      "rules": {
+        "create-versions": [
+          [
+            "copy",
+            "*"
+          ],
+          [
+            "add",
+            "_id",
+            [
+              "string",
+              "_S.Id"
+            ]
+          ],
+          [
+            "add",
+            "sesam_SalesOrderId",
+            "_R._S.Id"
+          ],
+          [
+            "add",
+            "$last-modified",
+            "_R._S.LastChangedDateTimeOffset"
+          ]
+        ],
+        "default": [
+          [
+            "create-child",
+            [
+              "apply",
+              "create-versions",
+              "_S.SalesOrderLines"
+            ]
+          ]
+        ]
+      },
+      "type": "dtl"
+    },
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all2",
+    "namespaced_identifiers": false,
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all",
+      "type": "dataset"
+    },
+    "transform": {
+      "type": "emit_children"
+    },
+    "type": "pipe"
+  },
+  {
     "_id": "{{@ system @}}-{{@ datatype @}}-collect",
     "exclude_completeness": [
       "{{@ system @}}-{{@ datatype @}}-share"
     ],
     "namespaced_identifiers": false,
     "source": {
-      "dataset": "{{@ system @}}-salesorders-collect",
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all2",
       "type": "dataset"
     },
     "transform": [
       {
-        "rules": {
-          "default": [
-            [
-              "copy",
-              "*"
-            ],
-            [
-              "filter",
-              [
-                "is-not-null",
-                "_S.SalesOrderLines"
-              ]
-            ]
-          ]
-        },
-        "type": "dtl"
-      },
-      {
         "properties": {
-          "allowed_status_codes": "200-299",
-          "operation_lookup": "outgoinginvoiceslines_list",
-          "operation_lookup_properties": {
-            "datatype": "salesorders"
-          },
           "primary_key": "Id",
           "rest_system": "{{@ system @}}",
           "share_dataset": "{{@ system @}}-{{@ datatype @}}-share"
         },
         "template": "transform-collect-rest",
         "type": "template"
-      },
-      {
-        "rules": {
-          "default": [
-            [
-              "copy",
-              "*"
-            ],
-            [
-              "add",
-              "sesam_SalesOrdersId",
-              "_S._id"
-            ],
-            [
-              "add",
-              "_id",
-              "_S.Id"
-            ]
-          ]
-        },
-        "type": "dtl"
       }
     ],
     "type": "pipe"
