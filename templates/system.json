@@ -58,15 +58,15 @@
       },
       "salesorderlines_insert": {
         "method": "POST",
-        "url": "{{ properties.datatype }}/{{ entity['$source']['sesam_SalesOrdersId'] }}/lines"
+        "url": "{{ properties.datatype }}/{{ entity['$source']['sesam_SalesOrderId'] }}/lines"
       },
       "salesorderlines_lookup": {
         "method": "GET",
-        "url": "{{ properties.datatype }}/{{ entity['$source']['sesam_SalesOrdersId'] }}/lines/{{ entity.Id }}"
+        "url": "{{ properties.datatype }}/{{ entity['$source']['sesam_SalesOrderId'] }}/lines/{{ entity.Id }}"
       },
       "salesorderlines_update": {
         "method": "PATCH",
-        "url": "{{ properties.datatype }}/{{ entity['$source']['sesam_SalesOrdersId'] }}/lines/{{ entity.Id }}"
+        "url": "{{ properties.datatype }}/{{ entity['$source']['sesam_SalesOrderId'] }}/lines/{{ entity.Id }}"
       },
       "salesorders_insert": {
         "method": "POST",
