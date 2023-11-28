@@ -226,7 +226,7 @@
                   "list",
                   "_*",
                   "$*",
-                  "sesam_SalesOrdersId",
+                  "sesam_SalesOrderId",
                   "DepartmentId",
                   "Dim3Id",
                   "Id",
