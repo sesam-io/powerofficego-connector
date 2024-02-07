@@ -107,7 +107,6 @@
                   "DepartmentId",
                   "BrandingThemeId",
                   "CreatedDateTimeOffset",
-                  "CustomerId",
                   "DeliveryTermId",
                   "Dim1Id",
                   "Dim2Id",
