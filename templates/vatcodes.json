@@ -3,13 +3,11 @@
     "_id": "{{@ system @}}-{{@ datatype @}}-all",
     "namespaced_identifiers": false,
     "source": {
-      "id_expression": "{{ code }}",
-      "operation": "vat_list",
-      "payload_property": "data",
+      "operation": "list",
       "properties": {
         "datatype": "{{@ datatype @}}"
       },
-      "system": "{{@ system @}}v1",
+      "system": "{{@ system @}}",
       "type": "rest"
     },
     "type": "pipe"
