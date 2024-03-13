@@ -27,7 +27,7 @@
       "template": "templates/product.json"
     },
     "projects": {
-      "template": "templates/departments.json"
+      "template": "templates/projects.json"
     },
     "salesorderlines": {
       "template": "templates/salesorderlines.json"
