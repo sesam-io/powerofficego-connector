@@ -3,7 +3,7 @@
     "_id": "{{@ system @}}-{{@ datatype @}}-all",
     "namespaced_identifiers": false,
     "source": {
-      "operation": "list",
+      "operation": "vatcode-list",
       "properties": {
         "datatype": "{{@ datatype @}}"
       },
