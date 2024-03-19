@@ -3,11 +3,12 @@
     "_id": "{{@ system @}}-{{@ datatype @}}-all",
     "namespaced_identifiers": false,
     "source": {
-      "operation": "list",
+      "operation": "vatcode-list",
       "properties": {
-        "datatype": "{{@ datatype @}}"
+        "datatype": "VatCodes"
       },
       "system": "{{@ system @}}",
+      "trace": true,
       "type": "rest"
     },
     "type": "pipe"

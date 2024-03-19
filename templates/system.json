@@ -80,6 +80,22 @@
         "method": "PATCH",
         "payload-type": "json",
         "url": "{{ properties.datatype }}/{{ entity.Id }}"
+      },
+      "vatcode-list": {
+        "id_expression": "{{ Id }}",
+        "method": "GET",
+        "next_page_link": "{{@ base_url @}}/v2/{{ properties.datatype }}",
+        "next_page_termination_strategy": [
+          "empty-result",
+          "not-full-page"
+        ],
+        "page_size": 5000,
+        "params": {
+          "pageNumber": "{{ page + 1 }}",
+          "pageSize": "{{ page_size }}",
+          "useDatabaseValidation": false
+        },
+        "url": "{{ properties.datatype }}"
       }
     },
     "type": "system:rest",
