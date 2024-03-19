@@ -5,7 +5,7 @@
     "source": {
       "operation": "vatcode-list",
       "properties": {
-        "datatype": "VatCodes"
+        "datatype": "{{@ datatype @}}"
       },
       "system": "{{@ system @}}",
       "trace": true,
