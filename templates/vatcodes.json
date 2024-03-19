@@ -8,7 +8,6 @@
         "datatype": "{{@ datatype @}}"
       },
       "system": "{{@ system @}}",
-      "trace": true,
       "type": "rest"
     },
     "type": "pipe"
