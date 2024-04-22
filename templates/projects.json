@@ -40,27 +40,6 @@
               "*"
             ],
             [
-              "comment",
-              "IS-17331"
-            ],
-            [
-              "if",
-              [
-                "is-not-empty",
-                "_S.ParentProjectId"
-              ],
-              [
-                "add",
-                "sesam_hierarchyLevel",
-                1
-              ],
-              [
-                "add",
-                "sesam_hierarchyLevel",
-                0
-              ]
-            ],
-            [
               "add",
               "EndDate",
               [
