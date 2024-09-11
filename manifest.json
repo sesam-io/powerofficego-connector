@@ -26,6 +26,9 @@
     "productgroup": {
       "template": "templates/product.json"
     },
+    "projectactivity": {
+      "template": "templates/projectactivity.json"
+    },
     "projects": {
       "template": "templates/projects.json"
     },
