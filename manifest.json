@@ -38,9 +38,6 @@
     "salesorders": {
       "template": "templates/salesorders.json"
     },
-    "timetrackingactivity": {
-      "template": "templates/timetrackingactivity.json"
-    },
     "vatcodes": {
       "template": "templates/vatcodes.json"
     }
