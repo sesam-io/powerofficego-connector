@@ -26,6 +26,9 @@
     "productgroup": {
       "template": "templates/product.json"
     },
+    "projectactivity": {
+      "template": "templates/projectactivity.json"
+    },
     "projects": {
       "template": "templates/projects.json"
     },
@@ -34,6 +37,9 @@
     },
     "salesorders": {
       "template": "templates/salesorders.json"
+    },
+    "timetrackingactivity": {
+      "template": "templates/timetrackingactivity.json"
     },
     "vatcodes": {
       "template": "templates/vatcodes.json"

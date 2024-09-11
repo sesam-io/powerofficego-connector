@@ -1,0 +1,23 @@
+[
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-all",
+    "namespaced_identifiers": false,
+    "source": {
+      "id_expression": "{{ id }}",
+      "operation": "{{@ datatype @}}_list",
+      "payload_property": "data",
+      "system": "{{@ system @}}v1",
+      "type": "rest"
+    },
+    "type": "pipe"
+  },
+  {
+    "_id": "{{@ system @}}-{{@ datatype @}}-collect",
+    "namespaced_identifiers": false,
+    "source": {
+      "dataset": "{{@ system @}}-{{@ datatype @}}-all",
+      "type": "dataset"
+    },
+    "type": "pipe"
+  }
+]
