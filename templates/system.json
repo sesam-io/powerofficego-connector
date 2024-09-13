@@ -175,6 +175,31 @@
         "method": "GET",
         "url": "{{ properties.datatype }}/List"
       },
+      "timetrackingactivity-delete": {
+        "method": "DELETE",
+        "url": "timetracking/activity/{{ entity.id }}"
+      },
+      "timetrackingactivity-insert": {
+        "method": "POST",
+        "payload-type": "json",
+        "payload_property": "data",
+        "url": "timetracking/activity/"
+      },
+      "timetrackingactivity-list": {
+        "method": "GET",
+        "url": "timetracking/activity/"
+      },
+      "timetrackingactivity-lookup": {
+        "method": "GET",
+        "payload_property": "data",
+        "url": "timetracking/activity/{{ entity.id }}"
+      },
+      "timetrackingactivity-update": {
+        "method": "POST",
+        "payload-type": "json",
+        "payload_property": "data",
+        "url": "timetracking/activity/"
+      },
       "update": {
         "method": "POST",
         "payload-type": "json",
