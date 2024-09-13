@@ -3,7 +3,7 @@
   "namespaced_identifiers": false,
   "source": {
     "id_expression": "{{ id }}",
-    "operation": "{{@ datatype @}}_list",
+    "operation": "{{@ datatype @}}-list",
     "payload_property": "data",
     "system": "{{@ system @}}v1",
     "type": "rest"
