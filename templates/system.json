@@ -180,21 +180,21 @@
         "method": "GET",
         "url": "{{ properties.datatype }}/List"
       },
-      "timetrackingactivity_delete": {
+      "timetrackingactivity-delete": {
         "method": "DELETE",
         "url": "timetracking/activity/{{ entity.id }}"
       },
-      "timetrackingactivity_insert": {
+      "timetrackingactivity-insert": {
         "method": "POST",
         "payload-type": "json",
         "payload_property": "data",
         "url": "timetracking/activity/"
       },
-      "timetrackingactivity_list": {
+      "timetrackingactivity-list": {
         "method": "GET",
         "url": "timetracking/activity/"
       },
-      "timetrackingactivity_lookup": {
+      "timetrackingactivity-lookup": {
         "method": "GET",
         "payload_property": "data",
         "url": "{{ properties.parenttype }}/{{ entity['$source']['partyId'] }}/{{ properties.datatype }}/{{ entity.id }}"
