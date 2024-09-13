@@ -197,7 +197,13 @@
       "timetrackingactivity-lookup": {
         "method": "GET",
         "payload_property": "data",
-        "url": "{{ properties.parenttype }}/{{ entity['$source']['partyId'] }}/{{ properties.datatype }}/{{ entity.id }}"
+        "url": "timetracking/activity/{{ entity.id }}"
+      },
+      "timetrackingactivity-update": {
+        "method": "POST",
+        "payload-type": "json",
+        "payload_property": "data",
+        "url": "timetracking/activity/"
       },
       "update": {
         "method": "POST",
