@@ -171,11 +171,6 @@
         "method": "GET",
         "url": "projectactivity/"
       },
-      "projectactivity_lookup": {
-        "method": "GET",
-        "payload_property": "data",
-        "url": "{{ properties.parenttype }}/{{ entity['$source']['partyId'] }}/{{ properties.datatype }}/{{ entity.id }}"
-      },
       "quote_list": {
         "method": "GET",
         "url": "{{ properties.datatype }}/List"
