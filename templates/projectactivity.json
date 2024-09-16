@@ -18,6 +18,63 @@
       "dataset": "{{@ system @}}-{{@ datatype @}}-all",
       "type": "dataset"
     },
+    "transform": {
+      "rules": {
+        "default": [
+          [
+            "copy",
+            "*"
+          ],
+          [
+            "add",
+            "sesam_projectid",
+            [
+              "first",
+              [
+                "hops",
+                {
+                  "datasets": [
+                    "{{@ system @}}-projects-collect pc"
+                  ],
+                  "return": "pc.Id",
+                  "where": [
+                    [
+                      "eq",
+                      "_S.projectCode",
+                      "pc.Code"
+                    ]
+                  ]
+                }
+              ]
+            ]
+          ],
+          [
+            "add",
+            "sesam_activityid",
+            [
+              "first",
+              [
+                "hops",
+                {
+                  "datasets": [
+                    "{{@ system @}}-timetrackingactivity-collect pc"
+                  ],
+                  "return": "pc.id",
+                  "where": [
+                    [
+                      "eq",
+                      "_S.activityCode",
+                      "pc.code"
+                    ]
+                  ]
+                }
+              ]
+            ]
+          ]
+        ]
+      },
+      "type": "dtl"
+    },
     "type": "pipe"
   }
 ]

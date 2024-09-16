@@ -42,7 +42,7 @@
       "template": "templates/timetrackingactivity.json"
     },
     "vatcodes": {
-        "template": "templates/vatcodes.json"
+      "template": "templates/vatcodes.json"
     }
   },
   "system": "poweroffice",
