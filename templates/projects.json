@@ -2,6 +2,9 @@
   {
     "_id": "{{@ system @}}-{{@ datatype @}}-all",
     "namespaced_identifiers": false,
+    "pump": {
+      "cron_expression": "0 0 * * ?"
+    },
     "source": {
       "operation": "list",
       "properties": {
@@ -38,6 +41,19 @@
             [
               "copy",
               "*"
+            ],
+            [
+              "add",
+              "sesam_hierarchyLevel",
+              [
+                "if",
+                [
+                  "is-not-null",
+                  "_S.ParentProjectId"
+                ],
+                1,
+                0
+              ]
             ],
             [
               "add",
