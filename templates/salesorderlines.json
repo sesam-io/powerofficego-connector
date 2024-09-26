@@ -103,74 +103,6 @@
     },
     "transform": [
       {
-        "rules": {
-          "default": [
-            [
-              "copy",
-              "*"
-            ],
-            [
-              "if",
-              [
-                "is-not-null",
-                "_S.ProductId"
-              ],
-              [
-                "add",
-                "$operation",
-                "lookup-product"
-              ]
-            ]
-          ]
-        },
-        "type": "dtl"
-      },
-      {
-        "allowed_status_codes": "100-428,430-599",
-        "operation": "lookup-product",
-        "response_property": "product_response",
-        "response_status_property": "product_status",
-        "system": "{{@ system @}}v1",
-        "trace": true,
-        "trigger_on": {
-          "key": "$operation",
-          "value": "lookup-product"
-        },
-        "type": "rest"
-      },
-      {
-        "rules": {
-          "default": [
-            [
-              "copy",
-              "*",
-              [
-                "list",
-                "product_response",
-                "product_status"
-              ]
-            ],
-            [
-              "if",
-              [
-                "eq",
-                "_S.product_status",
-                200
-              ],
-              [
-                "add",
-                "ProductCode",
-                [
-                  "first",
-                  "_S.product_response.code"
-                ]
-              ]
-            ]
-          ]
-        },
-        "type": "dtl"
-      },
-      {
         "properties": {
           "operation_delete_properties": {
             "datatype": "salesorders"
@@ -238,8 +170,7 @@
                   "VatAmount",
                   "VatCode",
                   "VatId",
-                  "VatRate",
-                  "ProductId"
+                  "VatRate"
                 ]
               ]
             ],
